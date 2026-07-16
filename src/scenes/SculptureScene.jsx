@@ -320,15 +320,43 @@ export default function SculptureScene({
             REQUEST INFORMATION
           </button>
 
-          <button
-            onClick={onReturn}
-            style={{
-              ...buttonStyle,
-              marginTop: "3rem"
-            }}
-          >
-            RETURN TO ARCHIVE
-          </button>
+         <button
+  onClick={onReturn}
+  style={{
+    position: "fixed",
+    top: "120px",
+    left: "120px",
+
+    width: "48px",
+    height: "48px",
+
+    background: "transparent",
+    border: "none",
+
+    color: "rgba(255,255,255,0.7)",
+    fontSize: "2rem",
+
+    cursor: "pointer",
+
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+
+    zIndex: 9999,
+
+    transition: "0.25s"
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.transform = "translateX(-4px)";
+    e.currentTarget.style.color = "#ffffff";
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.transform = "translateX(0)";
+    e.currentTarget.style.color = "rgba(255,255,255,0.7)";
+  }}
+>
+  ←
+</button>
         </div>
       </div>
 

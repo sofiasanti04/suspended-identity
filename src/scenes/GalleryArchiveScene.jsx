@@ -16,6 +16,39 @@ export default function GalleryArchiveScene({
         textAlign: "center"
       }}
     >
+      {/* Freccia di ritorno */}
+
+      <button
+        onClick={onReturn}
+        style={{
+          position: "fixed",
+          top: "120px",
+          left: "120px",
+          width: "48px",
+          height: "48px",
+          background: "transparent",
+          border: "none",
+          color: "rgba(255,255,255,0.7)",
+          fontSize: "2rem",
+          cursor: "pointer",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          zIndex: 9999,
+          transition: "0.25s"
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.color = "white";
+          e.currentTarget.style.transform = "translateX(-4px)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.color = "rgba(255,255,255,0.7)";
+          e.currentTarget.style.transform = "translateX(0)";
+        }}
+      >
+        ←
+      </button>
+
       <p
         style={{
           color: "#8f8f8f",
@@ -37,24 +70,14 @@ export default function GalleryArchiveScene({
         {selectedBust}
       </h1>
 
-      <p style={{ color: "#bdbdbd" }}>
+      <p
+        style={{
+          color: "#bdbdbd"
+        }}
+      >
         Environmental portraits associated with this
         sculpture will appear here.
       </p>
-
-      <button
-        onClick={onReturn}
-        style={{
-          marginTop: "4rem",
-          padding: "1rem 2rem",
-          background: "transparent",
-          border: "1px solid rgba(255,255,255,0.25)",
-          color: "white",
-          cursor: "pointer"
-        }}
-      >
-        RETURN TO ARCHIVE
-      </button>
     </main>
   );
 }

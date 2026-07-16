@@ -8,23 +8,23 @@ export default function ArchiveScene({
 }) {
   const artwork = archiveData[selectedBust];
 
-if (!artwork) {
-  return (
-    <main
-      style={{
-        width: "100vw",
-        height: "100vh",
-        background: "#02050c",
-        color: "white",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center"
-      }}
-    >
-      Nessun archivio trovato per: {String(selectedBust)}
-    </main>
-  );
-}
+  if (!artwork) {
+    return (
+      <main
+        style={{
+          width: "100vw",
+          height: "100vh",
+          background: "#02050c",
+          color: "white",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}
+      >
+        Nessun archivio trovato per: {String(selectedBust)}
+      </main>
+    );
+  }
 
   return (
     <main
@@ -40,6 +40,39 @@ if (!artwork) {
         textAlign: "center"
       }}
     >
+      {/* Freccia di ritorno */}
+
+      <button
+        onClick={onReturn}
+        style={{
+          position: "fixed",
+          top: "120px",
+          left: "120px",
+          width: "48px",
+          height: "48px",
+          background: "transparent",
+          border: "none",
+          color: "rgba(255,255,255,0.7)",
+          fontSize: "2rem",
+          cursor: "pointer",
+          zIndex: 9999,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          transition: "0.25s"
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = "translateX(-4px)";
+          e.currentTarget.style.color = "white";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = "translateX(0)";
+          e.currentTarget.style.color = "rgba(255,255,255,0.7)";
+        }}
+      >
+        ←
+      </button>
+
       <p
         style={{
           color: "#7f7f7f",
@@ -113,19 +146,6 @@ if (!artwork) {
         }}
       >
         GALLERY
-      </button>
-
-      <button
-        onClick={onReturn}
-        style={{
-          background: "transparent",
-          border: "none",
-          color: "#7f7f7f",
-          letterSpacing: "0.2rem",
-          cursor: "pointer"
-        }}
-      >
-        RETURN TO EXHIBITION
       </button>
     </main>
   );
