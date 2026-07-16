@@ -174,7 +174,7 @@ export default function SculptureScene({
               }
               style={{
                 width: "100%",
-                height: "620px",
+                height: "700px",
                 objectFit: "contain",
                 background: "#000",
                 border:
@@ -184,51 +184,7 @@ export default function SculptureScene({
             />
           )}
 
-          {/* MINIATURE */}
-
-          <div
-            style={{
-              display: "flex",
-              gap: "1rem",
-              marginTop: "1.5rem",
-              marginBottom: "6rem",
-              overflowX: "auto",
-              paddingBottom: "1rem"
-            }}
-          >
-            {images.map((image) => (
-              <div
-                key={image.label}
-                onClick={() =>
-                  setSelectedImage(image)
-                }
-                style={{
-                  minWidth: "90px",
-                  height: "100px",
-                  background: "#0b0b0b",
-                  border:
-                    selectedImage?.label ===
-                    image.label
-                      ? "1px solid rgba(255,255,255,0.5)"
-                      : "1px solid rgba(255,255,255,0.08)",
-                  cursor: "pointer",
-                  flexShrink: 0,
-                  overflow: "hidden"
-                }}
-              >
-                <img
-                  src={image.src}
-                  alt={image.label}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover"
-                  }}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+            </div>
 
         {/* COLONNA DESTRA */}
 
