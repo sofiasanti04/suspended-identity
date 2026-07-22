@@ -1,8 +1,9 @@
 const archiveData = {
-  "SI-LDN-01": {
-    code: "SI-LDN-01",
+  "FA-001": {
+    code: "FA-001",
     title: "Female Adaptation I",
-    city: "London Collection",
+
+    location: "London",
     year: "2026",
 
     materials: "Epoxy Resin · Steel Wire Structure",
@@ -13,31 +14,32 @@ const archiveData = {
     edition: "Unique Piece"
   },
 
-  "SI-LDN-02": {
-  code: "SI-LDN-02",
-  title: "Female Adaptation II",
-  city: "London Collection",
-  year: "2026",
+  "FA-002": {
+    code: "FA-002",
+    title: "Female Adaptation II",
 
-  materials:
-    "Plastoforma water-based resin, leather belt, metallic wire structure, PVA intervention with thermal treatment",
+    location: "London",
+    year: "2026",
 
-  dimensions: "76 × 43 × 41 cm",
+    materials:
+      "Plastoforma water-based resin, leather belt, metallic wire structure, PVA intervention with thermal treatment",
 
-  displaySystem: "Integrated Display System",
+    dimensions: "76 × 43 × 41 cm",
 
-  status: "Available",
-  edition: "Unique Piece"
-},
+    displaySystem: "Integrated Display System",
 
-  "SI-BER-01": {
-    code: "SI-BER-01",
+    status: "Available",
+    edition: "Unique Piece"
+  },
+
+  "FA-003": {
+    code: "FA-003",
     title: "Female Adaptation III",
-    city: "Berlin Collection",
+
+    location: "Berlin",
     year: "2026",
 
-    materials:
-      "Variable materials according to sculpture configuration",
+    materials: "To Be Confirmed",
     dimensions: "To Be Confirmed",
     displaySystem: "Integrated Display System",
 
@@ -45,14 +47,14 @@ const archiveData = {
     edition: "Unique Piece"
   },
 
-  "SI-BER-02": {
-    code: "SI-BER-02",
+  "FA-004": {
+    code: "FA-004",
     title: "Female Adaptation IV",
-    city: "Berlin Collection",
+
+    location: "Berlin",
     year: "2026",
 
-    materials:
-      "Variable materials according to sculpture configuration",
+    materials: "To Be Confirmed",
     dimensions: "To Be Confirmed",
     displaySystem: "Integrated Display System",
 
@@ -60,14 +62,14 @@ const archiveData = {
     edition: "Unique Piece"
   },
 
-  "SI-PAR-01": {
-    code: "SI-PAR-01",
+  "FA-005": {
+    code: "FA-005",
     title: "Female Adaptation V",
-    city: "Paris Collection",
+
+    location: "Paris",
     year: "2026",
 
-    materials:
-      "Variable materials according to sculpture configuration",
+    materials: "To Be Confirmed",
     dimensions: "To Be Confirmed",
     displaySystem: "Integrated Display System",
 
@@ -75,14 +77,14 @@ const archiveData = {
     edition: "Unique Piece"
   },
 
-  "SI-PAR-02": {
-    code: "SI-PAR-02",
+  "FA-006": {
+    code: "FA-006",
     title: "Female Adaptation VI",
-    city: "Paris Collection",
+
+    location: "Paris",
     year: "2026",
 
-    materials:
-      "Variable materials according to sculpture configuration",
+    materials: "To Be Confirmed",
     dimensions: "To Be Confirmed",
     displaySystem: "Integrated Display System",
 
@@ -90,14 +92,14 @@ const archiveData = {
     edition: "Unique Piece"
   },
 
-  "SI-BCN-01": {
-    code: "SI-BCN-01",
+  "FA-007": {
+    code: "FA-007",
     title: "Female Adaptation VII",
-    city: "Barcelona Collection",
+
+    location: "Barcelona",
     year: "2027",
 
-    materials:
-      "Variable materials according to sculpture configuration",
+    materials: "To Be Confirmed",
     dimensions: "To Be Confirmed",
     displaySystem: "Integrated Display System",
 
@@ -105,14 +107,14 @@ const archiveData = {
     edition: "Unique Piece"
   },
 
-  "SI-BCN-02": {
-    code: "SI-BCN-02",
+  "FA-008": {
+    code: "FA-008",
     title: "Female Adaptation VIII",
-    city: "Barcelona Collection",
+
+    location: "Barcelona",
     year: "2027",
 
-    materials:
-      "Variable materials according to sculpture configuration",
+    materials: "To Be Confirmed",
     dimensions: "To Be Confirmed",
     displaySystem: "Integrated Display System",
 
@@ -120,14 +122,14 @@ const archiveData = {
     edition: "Unique Piece"
   },
 
-  "SI-NYC-01": {
-    code: "SI-NYC-01",
+  "FA-009": {
+    code: "FA-009",
     title: "Female Adaptation IX",
-    city: "New York Collection",
+
+    location: "New York",
     year: "2027",
 
-    materials:
-      "Variable materials according to sculpture configuration",
+    materials: "To Be Confirmed",
     dimensions: "To Be Confirmed",
     displaySystem: "Integrated Display System",
 
@@ -135,14 +137,14 @@ const archiveData = {
     edition: "Unique Piece"
   },
 
-  "SI-NYC-02": {
-    code: "SI-NYC-02",
+  "FA-010": {
+    code: "FA-010",
     title: "Female Adaptation X",
-    city: "New York Collection",
+
+    location: "New York",
     year: "2027",
 
-    materials:
-      "Variable materials according to sculpture configuration",
+    materials: "To Be Confirmed",
     dimensions: "To Be Confirmed",
     displaySystem: "Integrated Display System",
 

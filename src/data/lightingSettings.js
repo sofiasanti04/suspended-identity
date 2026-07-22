@@ -1,5 +1,5 @@
 const lightingSettings = {
-  "SI-LDN-01": {
+  "FA-001": {
     intensity: 2.75,
     color: "#e9f1ff",
     angle: 0.25,
@@ -8,7 +8,7 @@ const lightingSettings = {
     position: [0, 4.5, 2]
   },
 
-  "SI-LDN-02": {
+  "FA-002": {
     intensity: 2.75,
     color: "#e9f1ff",
     angle: 0.25,

@@ -16,10 +16,7 @@ import {
 
 
 import { useRef, useState } from "react";
-
-
-import CitySection from "../components/CitySection";
-import CameraMotion from "../components/CameraMotion";
+import ExhibitionPedestal from "../components/ExhibitionPedestal";
 
 
 function HintText() {
@@ -49,13 +46,75 @@ function HintText() {
   );
 }
 
+const PEDESTAL_LAYOUT = [
+  // ==========================
+  // OPERE PRINCIPALI
+  // ==========================
+
+  {
+    code: "FA-001",
+    position: [-2.9, 0, 8.4],
+  },
+
+  {
+    code: "FA-002",
+    position: [3.2, 0, 9],
+  },
+
+  // ==========================
+  // SINISTRA
+  // ==========================
+
+  {
+    position: [-10, 0, 3.8],
+  },
+
+  {
+    position: [-6.8, 0, 0.5],
+  },
+
+  // ==========================
+  // CENTRO
+  // ==========================
+
+  {
+    position: [-0.4, 0, 4.6],
+  },
+
+  {
+    position: [1.3, 0, 0.8],
+  },
+
+  // ==========================
+  // DESTRA
+  // ==========================
+
+  {
+    position: [6.1, 0, 4.6],
+  },
+
+  {
+    position: [9.5, 0, 0.8],
+  },
+
+  // ==========================
+  // FONDO
+  // ==========================
+
+  {
+   position: [-3, 0, -2.8],
+  },
+
+  {
+    position: [4.0, 0, -3.5],
+  },
+];
 
 export default function GalleryScene({
   onBustClick
 }) {
 
 
-  const [selectedBust, setSelectedBust] = useState(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
 
@@ -65,7 +124,7 @@ export default function GalleryScene({
     if (isTransitioning) return;
 
 
-    setSelectedBust(archiveCode);
+  
     setIsTransitioning(true);
 
 
@@ -83,8 +142,8 @@ export default function GalleryScene({
     type: "PCFSoftShadowMap"
   }}
   camera={{
-  position: [-2.2, 1.65, 19],
-  fov: 41
+  position: [0, 1.55, 22],
+  fov: 42
 }}
   gl={{
     antialias: true
@@ -145,24 +204,20 @@ export default function GalleryScene({
       <HintText />
 
 
-      {/* ===================== */}
-      {/* LUCI PER CITTÀ */}
-            {/* ===================== */}
-      {/* LUCI LONDON */}
-      {/* ===================== */}
+    {/* ===================== */}
+{/* LUCI PER CITTÀ */}
+{/* ===================== */}
 
+{/* LONDON */}
 
-      {/* Luce diffusa */}
-      <pointLight
+<pointLight
   position={[-5.5, 5.2, 8]}
   intensity={16}
   distance={13}
   color="#e8efff"
 />
 
-
-      {/* Spotlight principale */}
-      <spotLight
+<spotLight
   position={[-5.5, 8.5, 7]}
   intensity={40}
   angle={0.42}
@@ -172,63 +227,52 @@ export default function GalleryScene({
   castShadow
 />
 
+<directionalLight
+  position={[-8, 5, 2]}
+  intensity={0.08}
+  color="#c8dcff"
+/>
 
-      {/* Rim Light (controluce) */}
-      <directionalLight
-        position={[-8, 5, 2]}
-        intensity={0.08}
-        color="#c8dcff"
-      />
+{/* PARIS */}
 
+<pointLight
+  position={[-3, 4, 0]}
+  intensity={16}
+  distance={15}
+  color="#efe7dc"
+/>
 
-      {/* PARIS */}
+{/* NEW YORK */}
 
+<pointLight
+  position={[0, 3, -7]}
+  intensity={5}
+  distance={10}
+  color="#b8c8ff"
+/>
 
-      <pointLight
-        position={[-3, 4, 0]}
-        intensity={16}
-        distance={15}
-        color="#efe7dc"
-      />
+{/* BARCELONA */}
 
+<pointLight
+  position={[3.5, 3.5, -1]}
+  intensity={8}
+  distance={12}
+  color="#d8d8ff"
+/>
 
-      {/* NEW YORK */}
+{/* BERLIN */}
 
-
-      <pointLight
-        position={[0, 3, -7]}
-        intensity={5}
-        distance={10}
-        color="#b8c8ff"
-      />
-
-
-      {/* BARCELONA */}
-
-
-      <pointLight
-        position={[3.5, 3.5, -1]}
-        intensity={8}
-        distance={12}
-        color="#d8d8ff"
-      />
-
-
-      {/* BERLIN */}
+<pointLight
+  position={[5.5, 5, 3]}
+  intensity={25}
+  distance={18}
+  color="#dbe8ff"
+/>
 
 
-      <pointLight
-        position={[5.5, 5, 3]}
-        intensity={25}
-        distance={18}
-        color="#dbe8ff"
-      />
-
-
-            {/* ===================== */}
+           {/* ===================== */}
 {/* PAVIMENTO */}
 {/* ===================== */}
-
 
 <mesh
   rotation={[-Math.PI / 2, 0, 0]}
@@ -236,74 +280,30 @@ export default function GalleryScene({
 >
   <planeGeometry args={[400, 400]} />
 
-
   <meshStandardMaterial
-  color="#050505"
-  roughness={1}
-  metalness={0}
-  envMapIntensity={0}
-/>
+    color="#050505"
+    roughness={1}
+    metalness={0}
+    envMapIntensity={0}
+  />
 </mesh>
 
-
 {/* ===================== */}
-{/* CITTÀ */}
+{/* EXHIBITION */}
 {/* ===================== */}
 
 
-<CitySection
-  city="LONDON"
-  subtitle="AVAILABLE FROM AUGUST 2026"
-  position={[-5.5, 0, 6]}
-  scale={1.35}
-  archiveCode1="SI-LDN-01"
-  archiveCode2="SI-LDN-02"
-  onBustClick={handleBustClick}
-/>
+{PEDESTAL_LAYOUT.map((pedestal, index) => (
+  <ExhibitionPedestal
+    key={pedestal.code ?? `pedestal-${index}`}
+    code={pedestal.code}
+    position={pedestal.position}
+    onBustClick={
+      pedestal.code ? handleBustClick : undefined
+    }
+  />
+))}
 
-
-      <CitySection
-        city="PARIS"
-        subtitle="AVAILABLE FROM NOVEMBER 2026"
-        position={[-3, 0, 0]}
-        scale={0.8}
-        archiveCode1="SI-PAR-01"
-        archiveCode2="SI-PAR-02"
-        onBustClick={handleBustClick}
-      />
-
-
-      <CitySection
-        city="NEW YORK CITY"
-        subtitle="COMING SOON"
-        position={[0, 0, -7]}
-        scale={0.55}
-        archiveCode1="SI-NYC-01"
-        archiveCode2="SI-NYC-02"
-        onBustClick={handleBustClick}
-      />
-
-
-      <CitySection
-        city="BARCELONA"
-        subtitle="COMING SOON"
-        position={[3.5, 0, -1]}
-        scale={0.7}
-        archiveCode1="SI-BCN-01"
-        archiveCode2="SI-BCN-02"
-        onBustClick={handleBustClick}
-      />
-
-
-      <CitySection
-        city="BERLIN"
-        subtitle="AVAILABLE FROM OCTOBER 2026"
-        position={[5.5, 0, 3]}
-        scale={1}
-        archiveCode1="SI-BER-01"
-        archiveCode2="SI-BER-02"
-        onBustClick={handleBustClick}
-      />
 
 
             {/* ===================== */}
@@ -331,8 +331,7 @@ export default function GalleryScene({
 
 
 <OrbitControls
-  target={[0, 1.9, 0]}
-
+  target={[0, 1.4, 2]}
 
   enablePan={false}
   enableRotate={!isTransitioning}
@@ -347,9 +346,8 @@ enableZoom={!isTransitioning}
   zoomSpeed={0.8}
 
 
-  minDistance={7}
-  maxDistance={34}
-
+  minDistance={6}
+maxDistance={28}
 
   minPolarAngle={0.95}
   maxPolarAngle={1.45}

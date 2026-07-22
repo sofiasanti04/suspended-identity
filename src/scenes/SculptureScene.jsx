@@ -224,7 +224,7 @@ export default function SculptureScene({
               marginBottom: "4rem"
             }}
           >
-            {sculpture.city} · {sculpture.year}
+            {sculpture.location} · {sculpture.year}
           </p>
 
           <Section
