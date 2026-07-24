@@ -30,73 +30,77 @@ export default function ExhibitionPedestal({
   const light = code ? lightingSettings[code] : null;
 
   return (
-    <group position={position}>
+   <group position={position}>
 
-      {/* Piedistallo */}
+  {/* ===================== */}
+  {/* PIEDISTALLO */}
+  {/* ===================== */}
 
-      <mesh
-        position={[0, 0.6, 0]}
-        castShadow
-        receiveShadow
-        onClick={() => onBustClick?.(code)}
-      >
-        <boxGeometry args={[1.2, 1.2, 1.2]} />
+  <mesh
+    position={[0, 0.6, 0]}
+    castShadow
+    receiveShadow
+    onClick={() => onBustClick?.(code)}
+  >
+    <boxGeometry args={[1.2, 1.2, 1.2]} />
 
-        <meshStandardMaterial
-          color="#0b0b0b"
-          roughness={1}
-          metalness={0}
-        />
-      </mesh>
+    <meshStandardMaterial
+      color="#050505"
+      roughness={1}
+      metalness={0}
+    />
+  </mesh>
 
-      {/* Scultura oppure placeholder */}
+  {/* ===================== */}
+  {/* SCULTURA / PLACEHOLDER */}
+  {/* ===================== */}
 
-      {sculpture ? (
-        <group
-          ref={floatRef}
-          position={[0, 1.2, 0]}
-          onClick={() => onBustClick?.(code)}
-        >
-          <SculptureModel
-            model={code}
-            scale={sculpture.scale}
-            rotation={sculpture.rotation}
-            position={sculpture.position}
-          />
-        </group>
-      ) : (
-        <mesh
-          position={[0, 1.78, 0]}
-          castShadow
-          onClick={() => onBustClick?.(code)}
-        >
-          <sphereGeometry args={[0.58, 64, 64]} />
-
-          <meshStandardMaterial
-            color="#d2d2d2"
-            roughness={0.45}
-            metalness={0.28}
-          />
-        </mesh>
-      )}
-
-      {/* Luce dedicata */}
-
-      {light && (
-        <SculptureLight
-          position={[
-            light.position[0],
-            light.position[1],
-            light.position[2]
-          ]}
-          intensity={light.intensity}
-          angle={light.angle}
-          penumbra={light.penumbra}
-          distance={light.distance}
-          color={light.color}
-        />
-      )}
-
+  {sculpture ? (
+    <group
+      ref={floatRef}
+      position={[0, 1.2, 0]}
+      onClick={() => onBustClick?.(code)}
+    >
+      <SculptureModel
+        model={code}
+        scale={sculpture.scale}
+        rotation={sculpture.rotation}
+        position={sculpture.position}
+      />
     </group>
+  ) : (
+    <mesh
+      position={[0, 1.78, 0]}
+      castShadow
+      receiveShadow
+      onClick={() => onBustClick?.(code)}
+    >
+      <sphereGeometry args={[0.58, 64, 64]} />
+
+      <meshStandardMaterial
+        color="#d2d2d2"
+        roughness={0.45}
+        metalness={0.28}
+      />
+    </mesh>
+  )}
+
+  {/* ===================== */}
+  {/* LUCE DEDICATA */}
+  {/* ===================== */}
+
+    {/* {light && (
+  <SculptureLight
+    position={light.position}
+    intensity={light.intensity}
+    color={light.color}
+    angle={light.angle}
+    penumbra={light.penumbra}
+    distance={light.distance}
+  />
+)} */}
+
+</group>
   );
 }
+

@@ -1,20 +1,20 @@
 const lightingSettings = {
   "FA-001": {
-    intensity: 2.75,
-    color: "#e9f1ff",
-    angle: 0.25,
+    intensity: 14,
+    color: "#fff8ef",
+    angle: 0.35,
     penumbra: 1,
-    distance: 14,
-    position: [0, 4.5, 2]
+    distance: 10,
+    position: [0, 7.8, 0]
   },
 
   "FA-002": {
-    intensity: 2.75,
-    color: "#e9f1ff",
-    angle: 0.25,
+    intensity: 14,
+    color: "#fff8ef",
+    angle: 0.35,
     penumbra: 1,
-    distance: 14,
-    position: [0, 4.5, 2]
+    distance: 10,
+    position: [0, 7.8, 0]
   }
 };
 

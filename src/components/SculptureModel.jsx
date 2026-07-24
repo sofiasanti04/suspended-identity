@@ -21,11 +21,11 @@ export default function SculptureModel({
         child.material = child.material.clone();
 
         // Materiale più naturale
-        child.material.roughness = 0.97;
+        child.material.roughness = 0.82;
         child.material.metalness = 0;
 
         // Riflessi molto contenuti
-        child.material.envMapIntensity = 0.08;
+        child.material.envMapIntensity = 0.18;
 
         child.material.flatShading = false;
         child.material.needsUpdate = true;

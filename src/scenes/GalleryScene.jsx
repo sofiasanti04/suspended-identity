@@ -4,7 +4,8 @@ import * as THREE from "three";
 import { Canvas, useFrame } from "@react-three/fiber";
 import {
   OrbitControls,
-  Text
+  Text,
+  Environment
 } from "@react-three/drei";
 
 
@@ -16,8 +17,12 @@ import {
 
 
 import { useRef, useState } from "react";
-import ExhibitionPedestal from "../components/ExhibitionPedestal";
 
+import ExhibitionPedestal from "../components/ExhibitionPedestal";
+import GallerySpotLight from "../components/GallerySpotLight";
+import PedestalFillLight from "../components/PedestalFillLight";
+import GalleryRoomLights from "../components/GalleryRoomLights";
+import GalleryPostProcessing from "../components/GalleryPostProcessing";
 
 function HintText() {
   const textRef = useRef();
@@ -32,17 +37,30 @@ function HintText() {
 
 
   return (
-    <Text
-      ref={textRef}
-      position={[0, 7, 5]}
-      fontSize={0.3}
-      color="#9ca5b1"
-      anchorX="center"
-      anchorY="middle"
-      material-transparent
-    >
-      SELECT A FIGURE TO ENTER THE ARCHIVE
-    </Text>
+    <>
+  <Text
+    ref={textRef}
+    position={[0, 6.5, 5]}
+    fontSize={0.34}
+    color="#cfcfcf"
+    anchorX="center"
+    anchorY="middle"
+    material-transparent
+  >
+    EXPLORE
+  </Text>
+
+  <Text
+    position={[0, 6.1, 5]}
+    fontSize={0.16}
+    color="#7d828a"
+    anchorX="center"
+    anchorY="middle"
+    material-transparent
+  >
+    click and drag
+  </Text>
+</>
   );
 }
 
@@ -66,7 +84,7 @@ const PEDESTAL_LAYOUT = [
   // ==========================
 
   {
-    position: [-10, 0, 3.8],
+    position: [-8.5, 0, 5],
   },
 
   {
@@ -78,7 +96,7 @@ const PEDESTAL_LAYOUT = [
   // ==========================
 
   {
-    position: [-0.4, 0, 4.6],
+    position: [-0.4, 0, 5],
   },
 
   {
@@ -110,6 +128,53 @@ const PEDESTAL_LAYOUT = [
   },
 ];
 
+const LIGHT_LAYOUT = [
+  {
+  code: "FA-001",
+  position: [-2.9, 6.2, 8.5],
+  intensity: 55,
+  enabled: true,
+  angle: 0.28,
+  distance: 18,
+  color: "#fffaf2"
+},
+
+
+  {
+  code: "FA-002",
+  position: [3.2, 6.2, 9],
+  intensity: 55,
+  enabled: true,
+  angle: 0.28,
+  distance: 18,
+  color: "#fffaf2"
+}
+];
+
+const FILL_LIGHT_LAYOUT = [
+  {
+    code: "FA-001",
+    position: [-2.9, 0.35, 8.4],
+    target: [-2.9, 1.8, 8.4],
+    intensity: 4,
+    enabled: true,
+    angle: 0.6,
+    distance: 5,
+    color: "#fff8ef"
+  },
+
+  {
+    code: "FA-002",
+    position: [3.2, 0.35, 9],
+    target: [3.2, 1.8, 9],
+    intensity: 4,
+    enabled: true,
+    angle: 0.6,
+    distance: 5,
+    color: "#fff8ef"
+  }
+];
+
 export default function GalleryScene({
   onBustClick
 }) {
@@ -138,18 +203,19 @@ export default function GalleryScene({
 
   return (
     <Canvas
-  shadows={{
-    type: "PCFSoftShadowMap"
-  }}
+  shadows
   camera={{
-  position: [0, 1.55, 22],
-  fov: 42
-}}
+    position: [0, 1.55, 22],
+    fov: 42
+  }}
   gl={{
     antialias: true
   }}
   dpr={[1, 2]}
   onCreated={({ gl }) => {
+    gl.shadowMap.enabled = true;
+    gl.shadowMap.type = THREE.PCFSoftShadowMap;
+
     gl.outputColorSpace = THREE.SRGBColorSpace;
     gl.toneMapping = THREE.ACESFilmicToneMapping;
     gl.toneMappingExposure = 0.82;
@@ -165,110 +231,48 @@ export default function GalleryScene({
 
 
       {/* ===================== */}
-      {/* LUCE GENERALE */}
-      {/* ===================== */}
-
-
-<ambientLight
-    intensity={0.035}
-    color="#dfe8f7"
-/>
-
-
-<hemisphereLight
-  skyColor="#d7e6ff"
-  groundColor="#171717"
-  intensity={0.02}
- />
-
-
-<directionalLight
-  position={[0, 8, -10]}
-  intensity={0.15}
-  color="#edf4ff"
-/>
-
-
-<directionalLight
-  position={[-8, 5, 6]}
-  intensity={0.05}
-  color="#dce8ff"
-/>
-
-
-      {/* ===================== */}
-      {/* TESTO */}
-      {/* ===================== */}
-
-
-      <HintText />
-
-
-    {/* ===================== */}
-{/* LUCI PER CITTÀ */}
+{/* LUCE GENERALE */}
 {/* ===================== */}
 
-{/* LONDON */}
+<GalleryRoomLights />
 
-<pointLight
-  position={[-5.5, 5.2, 8]}
-  intensity={16}
-  distance={13}
-  color="#e8efff"
-/>
 
-<spotLight
-  position={[-5.5, 8.5, 7]}
-  intensity={40}
-  angle={0.42}
-  penumbra={1}
-  distance={32}
-  color="#fffaf2"
-  castShadow
-/>
+      {/* ===================== */}
+{/* TESTO */}
+{/* ===================== */}
 
-<directionalLight
-  position={[-8, 5, 2]}
-  intensity={0.08}
-  color="#c8dcff"
-/>
+<HintText />
 
-{/* PARIS */}
+{/* ===================== */}
+{/* LUCI ESPOSITIVE */}
+{/* ===================== */}
 
-<pointLight
-  position={[-3, 4, 0]}
-  intensity={16}
-  distance={15}
-  color="#efe7dc"
-/>
 
-{/* NEW YORK */}
+{/* FA-001 */}
 
-<pointLight
-  position={[0, 3, -7]}
-  intensity={5}
-  distance={10}
-  color="#b8c8ff"
-/>
 
-{/* BARCELONA */}
+{LIGHT_LAYOUT.map((light) => (
+  <GallerySpotLight
+    key={light.code}
+    position={light.position}
+    intensity={light.enabled ? light.intensity : 0}
+    angle={light.angle}
+    distance={light.distance}
+    color={light.color}
+  />
+))}
 
-<pointLight
-  position={[3.5, 3.5, -1]}
-  intensity={8}
-  distance={12}
-  color="#d8d8ff"
-/>
-
-{/* BERLIN */}
-
-<pointLight
-  position={[5.5, 5, 3]}
-  intensity={25}
-  distance={18}
-  color="#dbe8ff"
-/>
-
+{FILL_LIGHT_LAYOUT.map((light) => (
+  <PedestalFillLight
+    key={light.code}
+    position={light.position}
+    target={light.target}
+    intensity={light.enabled ? light.intensity : 0}
+    angle={light.angle}
+    distance={light.distance}
+    color={light.color}
+  />
+))}
 
            {/* ===================== */}
 {/* PAVIMENTO */}
@@ -311,20 +315,7 @@ export default function GalleryScene({
       {/* ===================== */}
 
 
-      <EffectComposer>
-  <Bloom
-    intensity={0.08}
-    luminanceThreshold={0.92}
-    luminanceSmoothing={0.9}
-  />
-
-
-  <Vignette
-    eskil={false}
-    offset={0.25}
-    darkness={0.15}
-  />
-</EffectComposer>
+      <GalleryPostProcessing />
 
 
 {/* <CameraMotion /> */}
