@@ -247,6 +247,7 @@ console.log({
 
 
   return (
+
     <Canvas
   shadows
   camera={cameraSettings}
