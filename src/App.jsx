@@ -86,16 +86,49 @@ function App() {
   /* ===================== */
 
   if (scene === "gallery") {
+  if (isMobile && window.innerHeight > window.innerWidth) {
     return (
-      <GalleryScene
-        onBustClick={(bustName) => {
-          setSelectedBust(bustName);
-          setScene("archive");
+      <main
+        style={{
+          width: "100vw",
+          height: "100dvh",
+          background: "#02050c",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          color: "white",
+          overflow: "hidden",
         }}
-      />
+      >
+        <h1
+          style={{
+            fontFamily: "Cormorant Garamond",
+            fontWeight: 400,
+            fontSize: "2.2rem",
+            letterSpacing: "0.12em",
+            marginBottom: "3rem",
+          }}
+        >
+          ROTATE YOUR DEVICE
+        </h1>
+
+        <div className="rotate-phone">
+          📱
+        </div>
+      </main>
     );
   }
 
+  return (
+    <GalleryScene
+      onBustClick={(bustName) => {
+        setSelectedBust(bustName);
+        setScene("archive");
+      }}
+    />
+  );
+}
   /* ===================== */
   /* ARCHIVE */
   /* ===================== */
