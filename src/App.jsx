@@ -5,6 +5,7 @@ import GalleryScene from "./scenes/GalleryScene";
 import ArchiveScene from "./scenes/ArchiveScene";
 import SculptureScene from "./scenes/SculptureScene";
 import GalleryArchiveScene from "./scenes/GalleryArchiveScene";
+import RotatePhone from "./components/RotatePhone";
 
 function App() {
   const [scene, setScene] = useState("landing");
@@ -229,9 +230,7 @@ useEffect(() => {
           ROTATE YOUR DEVICE
         </h1>
 
-        <div className="rotate-phone">
-          📱
-        </div>
+        <RotatePhone />
       </main>
     );
   }
