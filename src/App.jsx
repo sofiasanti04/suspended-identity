@@ -27,7 +27,8 @@ function App() {
   /* ===================== */
   /* MOBILE */
   /* ===================== */
-
+/*
+  
   if (isMobile) {
     return (
       <main
@@ -78,6 +79,7 @@ function App() {
       </main>
     );
   }
+    */
 
   /* ===================== */
   /* GALLERY */
