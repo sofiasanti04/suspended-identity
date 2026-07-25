@@ -5,11 +5,13 @@ import GalleryScene from "./scenes/GalleryScene";
 import ArchiveScene from "./scenes/ArchiveScene";
 import SculptureScene from "./scenes/SculptureScene";
 import GalleryArchiveScene from "./scenes/GalleryArchiveScene";
+import useResponsive from "./hooks/useResponsive";
 
 function App() {
   const [scene, setScene] = useState("landing");
   const [selectedBust, setSelectedBust] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
+  const { isPortrait } = useResponsive();
 
   useEffect(() => {
     const checkMobile = () => {
@@ -86,7 +88,7 @@ function App() {
   /* ===================== */
 
   if (scene === "gallery") {
-  if (isMobile && window.innerHeight > window.innerWidth) {
+  if (isMobile && isPortrait) {
     return (
       <main
         style={{
