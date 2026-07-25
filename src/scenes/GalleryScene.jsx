@@ -199,8 +199,8 @@ let cameraSettings = {
 // 📱 Telefono verticale
 if (isMobile && isPortrait) {
   cameraSettings = {
-    position: [0, 1.55, 14],
-    fov: 58,
+    position: [0, 8, 40],
+    fov: 20,
   };
 }
 
@@ -220,6 +220,13 @@ if (isTablet) {
   };
 }
 
+console.log({
+  isMobile,
+  isTablet,
+  isPortrait,
+  isLandscape,
+  cameraSettings,
+});
 
   const handleBustClick = (archiveCode) => {
 
