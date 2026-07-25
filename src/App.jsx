@@ -13,6 +13,7 @@ function App() {
   const [isPortrait, setIsPortrait] = useState(
   window.matchMedia("(orientation: portrait)").matches
 );
+const [isInstagram, setIsInstagram] = useState(false);
 
 useEffect(() => {
   const media = window.matchMedia("(orientation: portrait)");
@@ -28,7 +29,13 @@ useEffect(() => {
   };
 }, []);
 
-  useEffect(() => {
+useEffect(() => {
+  const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+  setIsInstagram(/Instagram/i.test(ua));
+}, []);
+  
+useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 900);
     };
@@ -104,6 +111,54 @@ useEffect(() => {
 
   if (scene === "gallery") {
   if (isMobile && isPortrait) {
+
+    if (isInstagram) {
+      return (
+        <main
+          style={{
+            width: "100vw",
+            height: "100dvh",
+            background: "#02050c",
+            color: "white",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: "2rem",
+            textAlign: "center",
+            boxSizing: "border-box",
+          }}
+        >
+          <h1
+            style={{
+              fontFamily: "Cormorant Garamond",
+              fontWeight: 400,
+              fontSize: "2.2rem",
+              letterSpacing: "0.12em",
+              marginBottom: "2rem",
+            }}
+          >
+            OPEN IN YOUR BROWSER
+          </h1>
+
+          <p
+            style={{
+              maxWidth: "360px",
+              color: "#bdbdbd",
+              lineHeight: "1.8",
+            }}
+          >
+            Instagram's in-app browser may prevent landscape mode.
+            <br />
+            <br />
+            Tap <strong>⋯</strong> and choose
+            <br />
+            <strong>Open in Browser</strong>.
+          </p>
+        </main>
+      );
+    }
+
     return (
       <main
         style={{
