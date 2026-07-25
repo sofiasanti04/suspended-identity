@@ -162,7 +162,14 @@ useEffect(() => {
           }}
         >
           <span>Instagram</span>
-          <span style={{ fontSize: "1.3rem" }}>⋯</span>
+          <span
+  style={{
+    fontSize: "1.3rem",
+    animation: "pulseDots 1.8s ease-in-out infinite",
+  }}
+>
+  •••
+</span>
         </div>
 
         <div
