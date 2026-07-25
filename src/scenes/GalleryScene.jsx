@@ -18,6 +18,8 @@ import {
 
 import { useRef, useState, useEffect } from "react";
 
+import useResponsive from "../hooks/useResponsive";
+
 import ExhibitionPedestal from "../components/ExhibitionPedestal";
 import GallerySpotLight from "../components/GallerySpotLight";
 import PedestalFillLight from "../components/PedestalFillLight";
@@ -181,28 +183,42 @@ export default function GalleryScene({
 
 
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const {
+  isMobile,
+  isTablet,
+  isDesktop,
+  isPortrait,
+  isLandscape,
+} = useResponsive();
 
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+let cameraSettings = {
+  position: [0, 1.55, 22],
+  fov: 42,
+};
 
-useEffect(() => {
-  const handleResize = () => {
-    setIsMobile(window.innerWidth < 768);
+// 📱 Telefono verticale
+if (isMobile && isPortrait) {
+  cameraSettings = {
+    position: [0, 1.55, 14],
+    fov: 58,
   };
+}
 
-  window.addEventListener("resize", handleResize);
+// 📱 Telefono orizzontale
+if (isMobile && isLandscape) {
+  cameraSettings = {
+    position: [0, 1.55, 17],
+    fov: 48,
+  };
+}
 
-  return () => window.removeEventListener("resize", handleResize);
-}, []);
-
-const cameraSettings = isMobile
-  ? {
-      position: [0, 1.55, 14],
-      fov: 58,
-    }
-  : {
-      position: [0, 1.55, 22],
-      fov: 42,
-    };
+// 📲 Tablet
+if (isTablet) {
+  cameraSettings = {
+    position: [0, 1.55, 19],
+    fov: 45,
+  };
+}
 
 
   const handleBustClick = (archiveCode) => {
