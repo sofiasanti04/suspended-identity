@@ -196,11 +196,10 @@ let cameraSettings = {
   fov: 42,
 };
 
-// 📱 Telefono verticale
 if (isMobile && isPortrait) {
   cameraSettings = {
-    position: [0, 8, 40],
-    fov: 20,
+    position: [0, 1.55, 14],
+    fov: 58,
   };
 }
 
@@ -255,6 +254,11 @@ console.log({
     }}
   >
     <Canvas
+    style={{
+  width: "100vw",
+  height: "100dvh",
+  display: "block"
+}}
       shadows
       camera={cameraSettings}
       gl={{
