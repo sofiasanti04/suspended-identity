@@ -247,23 +247,29 @@ console.log({
 
 
   return (
-
+  <div
+    style={{
+      width: "100vw",
+      height: "100dvh",
+      overflow: "hidden",
+    }}
+  >
     <Canvas
-  shadows
-  camera={cameraSettings}
-  gl={{
-    antialias: true
-  }}
-  dpr={[1, 2]}
-  onCreated={({ gl }) => {
-    gl.shadowMap.enabled = true;
-    gl.shadowMap.type = THREE.PCFSoftShadowMap;
+      shadows
+      camera={cameraSettings}
+      gl={{
+        antialias: true
+      }}
+      dpr={[1, 2]}
+      onCreated={({ gl }) => {
+        gl.shadowMap.enabled = true;
+        gl.shadowMap.type = THREE.PCFSoftShadowMap;
 
-    gl.outputColorSpace = THREE.SRGBColorSpace;
-    gl.toneMapping = THREE.ACESFilmicToneMapping;
-    gl.toneMappingExposure = 0.82;
-  }}
->
+        gl.outputColorSpace = THREE.SRGBColorSpace;
+        gl.toneMapping = THREE.ACESFilmicToneMapping;
+        gl.toneMappingExposure = 0.82;
+      }}
+    >
       {/* ===================== */}
       {/* ATMOSFERA */}
       {/* ===================== */}
@@ -390,6 +396,7 @@ maxDistance={28}
   minAzimuthAngle={-1.2}
   maxAzimuthAngle={1.2}
 />
-    </Canvas>
-  );
+        </Canvas>
+  </div>
+);
 }
