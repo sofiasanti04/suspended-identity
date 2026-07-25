@@ -10,8 +10,32 @@ function App() {
   const [scene, setScene] = useState("landing");
   const [selectedBust, setSelectedBust] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [isPortrait, setIsPortrait] = useState(
+  window.matchMedia("(orientation: portrait)").matches
+);
+const [isInstagram, setIsInstagram] = useState(false);
 
-  useEffect(() => {
+useEffect(() => {
+  const media = window.matchMedia("(orientation: portrait)");
+
+  const handleChange = (e) => {
+    setIsPortrait(e.matches);
+  };
+
+  media.addEventListener("change", handleChange);
+
+  return () => {
+    media.removeEventListener("change", handleChange);
+  };
+}, []);
+
+useEffect(() => {
+  const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+  setIsInstagram(/Instagram/i.test(ua));
+}, []);
+  
+useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 900);
     };
@@ -27,7 +51,8 @@ function App() {
   /* ===================== */
   /* MOBILE */
   /* ===================== */
-
+/*
+  
   if (isMobile) {
     return (
       <main
@@ -78,22 +103,141 @@ function App() {
       </main>
     );
   }
+    */
 
   /* ===================== */
   /* GALLERY */
   /* ===================== */
 
   if (scene === "gallery") {
-    return (
-      <GalleryScene
-        onBustClick={(bustName) => {
-          setSelectedBust(bustName);
-          setScene("archive");
+  if (isMobile && isPortrait) {
+
+    if (isInstagram) {
+      return (
+    <main
+      style={{
+        width: "100vw",
+        height: "100dvh",
+        background: "#02050c",
+        color: "white",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: "2rem",
+        textAlign: "center",
+        boxSizing: "border-box",
+      }}
+    >
+      <h1
+        style={{
+          fontFamily: "Cormorant Garamond",
+          fontWeight: 400,
+          fontSize: "2.3rem",
+          letterSpacing: "0.15em",
+          marginBottom: "3rem",
         }}
-      />
+      >
+        OPEN IN YOUR BROWSER
+      </h1>
+
+      <div
+        style={{
+          width: "180px",
+          border: "1px solid rgba(255,255,255,.18)",
+          borderRadius: "22px",
+          padding: "18px",
+          marginBottom: "3rem",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginBottom: "1.2rem",
+            color: "#d6d6d6",
+            fontSize: ".95rem",
+            letterSpacing: ".08em",
+          }}
+        >
+          <span>Instagram</span>
+          <span style={{ fontSize: "1.3rem" }}>⋯</span>
+        </div>
+
+        <div
+          style={{
+            borderTop: "1px solid rgba(255,255,255,.12)",
+            paddingTop: "1rem",
+            color: "white",
+            fontSize: ".95rem",
+            letterSpacing: ".06em",
+          }}
+        >
+          Open in Browser
+        </div>
+      </div>
+
+      <p
+        style={{
+          maxWidth: "320px",
+          color: "#9b9b9b",
+          lineHeight: "1.9",
+          fontSize: ".95rem",
+        }}
+      >
+        Instagram's built-in browser does not fully support this virtual exhibition.
+        <br />
+        <br />
+        Tap <strong style={{ color: "white" }}>⋯</strong> and select
+        <br />
+        <strong style={{ color: "white" }}>Open in Browser</strong>.
+      </p>
+    </main>
+  );
+}
+    return (
+      <main
+        style={{
+          width: "100vw",
+          height: "100dvh",
+          background: "#02050c",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          color: "white",
+          overflow: "hidden",
+        }}
+      >
+        <h1
+          style={{
+            fontFamily: "Cormorant Garamond",
+            fontWeight: 400,
+            fontSize: "2.2rem",
+            letterSpacing: "0.12em",
+            marginBottom: "3rem",
+          }}
+        >
+          ROTATE YOUR DEVICE
+        </h1>
+
+        <div className="rotate-phone">
+          📱
+        </div>
+      </main>
     );
   }
 
+  return (
+    <GalleryScene
+      onBustClick={(bustName) => {
+        setSelectedBust(bustName);
+        setScene("archive");
+      }}
+    />
+  );
+}
   /* ===================== */
   /* ARCHIVE */
   /* ===================== */
