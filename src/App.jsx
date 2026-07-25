@@ -5,13 +5,28 @@ import GalleryScene from "./scenes/GalleryScene";
 import ArchiveScene from "./scenes/ArchiveScene";
 import SculptureScene from "./scenes/SculptureScene";
 import GalleryArchiveScene from "./scenes/GalleryArchiveScene";
-import useResponsive from "./hooks/useResponsive";
 
 function App() {
   const [scene, setScene] = useState("landing");
   const [selectedBust, setSelectedBust] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
-  const { isPortrait } = useResponsive();
+  const [isPortrait, setIsPortrait] = useState(
+  window.matchMedia("(orientation: portrait)").matches
+);
+
+useEffect(() => {
+  const media = window.matchMedia("(orientation: portrait)");
+
+  const handleChange = (e) => {
+    setIsPortrait(e.matches);
+  };
+
+  media.addEventListener("change", handleChange);
+
+  return () => {
+    media.removeEventListener("change", handleChange);
+  };
+}, []);
 
   useEffect(() => {
     const checkMobile = () => {
