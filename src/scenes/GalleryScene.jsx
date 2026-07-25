@@ -16,7 +16,7 @@ import {
 } from "@react-three/postprocessing";
 
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 import ExhibitionPedestal from "../components/ExhibitionPedestal";
 import GallerySpotLight from "../components/GallerySpotLight";
@@ -182,6 +182,28 @@ export default function GalleryScene({
 
   const [isTransitioning, setIsTransitioning] = useState(false);
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+useEffect(() => {
+  const handleResize = () => {
+    setIsMobile(window.innerWidth < 768);
+  };
+
+  window.addEventListener("resize", handleResize);
+
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
+
+const cameraSettings = isMobile
+  ? {
+      position: [0, 1.55, 14],
+      fov: 58,
+    }
+  : {
+      position: [0, 1.55, 22],
+      fov: 42,
+    };
+
 
   const handleBustClick = (archiveCode) => {
 
@@ -204,10 +226,7 @@ export default function GalleryScene({
   return (
     <Canvas
   shadows
-  camera={{
-    position: [0, 1.55, 22],
-    fov: 42
-  }}
+  camera={cameraSettings}
   gl={{
     antialias: true
   }}
