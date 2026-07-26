@@ -33,28 +33,28 @@ const isMobileLandscape = isMobile && isLandscape;
     );
   }
 
-  return (
-    <main
-      style={{
-        width: "100vw",
-        height: "100vh",
-        background: "#02050c",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        color: "white",
-        textAlign: "center"
-      }}
-    >
+ return (
+  <main
+    style={{
+      width: "100vw",
+      height: "100vh",
+      background: "#02050c",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      color: "white",
+      textAlign: "center"
+    }}
+  >
       {/* Freccia di ritorno */}
 
       <button
         onClick={onReturn}
         style={{
           position: "fixed",
-          top: "120px",
-          left: "120px",
+          top: isMobileLandscape ? "40px" : "120px",
+          left: isMobileLandscape ? "40px" : "120px",
           width: "48px",
           height: "48px",
           background: "transparent",
@@ -94,7 +94,7 @@ const isMobileLandscape = isMobile && isLandscape;
       <h1
         style={{
           fontFamily: "Cormorant Garamond",
-          fontSize: isMobileLandscape ? "3rem" : "4rem",
+          fontSize: isMobileLandscape ? "3.4rem" : "4rem",
           fontWeight: 400,
           letterSpacing: "0.2rem",
           marginBottom: "2rem"
