@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import archiveData from "../data/archiveData";
 import useResponsive from "../hooks/useResponsive";
+import LandscapeSculptureLayout from "../components/sculpture/LandscapeSculptureLayout";
 
 const sculptureImages = import.meta.glob(
   "../assets/sculptures/*/*.{jpg,jpeg,png}",
@@ -140,6 +141,15 @@ const isMobileLandscape = isMobile && isLandscape;
         handleKeyDown
       );
   }, [fullscreenIndex]);
+    if (isMobileLandscape) {
+    return (
+      <LandscapeSculptureLayout
+        sculpture={sculpture}
+        selectedImage={selectedImage}
+        onReturn={onReturn}
+      />
+    );
+  }
 
   return (
     <main
