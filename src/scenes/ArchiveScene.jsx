@@ -35,18 +35,19 @@ const isMobileLandscape = isMobile && isLandscape;
 
  return (
   <main
-    style={{
-      width: "100vw",
-      height: "100vh",
-      background: "#02050c",
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
-      color: "white",
-      textAlign: "center"
-    }}
-  >
+  style={{
+    width: "100vw",
+    height: "100vh",
+    background: "#02050c",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: isMobileLandscape ? "flex-start" : "center",
+    alignItems: "center",
+    paddingTop: isMobileLandscape ? "60px" : "0",
+    color: "white",
+    textAlign: "center"
+  }}
+>
       {/* Freccia di ritorno */}
 
       <button
@@ -98,7 +99,7 @@ const isMobileLandscape = isMobile && isLandscape;
           fontSize: isMobileLandscape ? "3.4rem" : "4rem",
           fontWeight: 400,
           letterSpacing: "0.2rem",
-          marginBottom: isMobileLandscape ? "0.8rem" : "2rem",
+          marginBottom: isMobileLandscape ? "0.2rem" : "2rem",
         }}
       >
         {artwork.code}
@@ -118,7 +119,7 @@ const isMobileLandscape = isMobile && isLandscape;
         style={{
           color: "#8f8f8f",
           letterSpacing: "0.25rem",
-          marginBottom: isMobileLandscape ? "1.5rem" : "4rem",
+          marginBottom: isMobileLandscape ? "0.6rem" : "4rem",
         }}
       >
         {artwork.year}
@@ -129,7 +130,7 @@ const isMobileLandscape = isMobile && isLandscape;
         style={{
           width: isMobileLandscape ? "260px" : "320px",
           padding: isMobileLandscape ? "0.85rem" : "1rem",
-          marginBottom: "1.5rem",
+          marginBottom: isMobileLandscape ? "0.6rem" : "1.5rem",
           background: "transparent",
           border: "1px solid rgba(255,255,255,0.25)",
           color: "white",
@@ -145,7 +146,7 @@ const isMobileLandscape = isMobile && isLandscape;
         style={{
           width: isMobileLandscape ? "260px" : "320px",
           padding: isMobileLandscape ? "0.85rem" : "1rem",
-          marginBottom: "5rem",
+          marginBottom: isMobileLandscape ? "1rem" : "5rem",
           background: "transparent",
           border: "1px solid rgba(255,255,255,0.25)",
           color: "white",
