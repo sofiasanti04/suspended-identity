@@ -42,7 +42,7 @@ function HintText() {
     <>
   <Text
     ref={textRef}
-    position={[0, isMobile ? 5.9 : 6.5, 5]}
+    position={[0, 6.5, 5]}
     fontSize={0.34}
     color="#cfcfcf"
     anchorX="center"
@@ -53,7 +53,7 @@ function HintText() {
   </Text>
 
   <Text
-    position={[0, isMobile ? 5.5 : 6.1, 5]}
+    position={[0, 6.1, 5]}
     fontSize={0.16}
     color="#7d828a"
     anchorX="center"
