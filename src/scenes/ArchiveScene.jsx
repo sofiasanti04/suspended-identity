@@ -38,6 +38,9 @@ const isMobileLandscape = isMobile && isLandscape;
   style={{
     width: "100vw",
     height: "100vh",
+    overflowY: isMobileLandscape ? "auto" : "hidden",
+    WebkitOverflowScrolling: "touch",
+    paddingBottom: isMobileLandscape ? "40px" : "0",
     background: "#02050c",
     display: "flex",
     flexDirection: "column",
