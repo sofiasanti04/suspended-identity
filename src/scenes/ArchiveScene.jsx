@@ -1,4 +1,5 @@
 import archiveData from "../data/archiveData";
+import useResponsive from "../hooks/useResponsive";
 
 export default function ArchiveScene({
   selectedBust,
@@ -7,6 +8,12 @@ export default function ArchiveScene({
   onOpenGallery
 }) {
   const artwork = archiveData[selectedBust];
+  const {
+  isMobile,
+  isLandscape,
+} = useResponsive();
+
+const isMobileLandscape = isMobile && isLandscape;
 
   if (!artwork) {
     return (
@@ -87,7 +94,7 @@ export default function ArchiveScene({
       <h1
         style={{
           fontFamily: "Cormorant Garamond",
-          fontSize: "4rem",
+          fontSize: isMobileLandscape ? "3.4rem" : "4rem",
           fontWeight: 400,
           letterSpacing: "0.2rem",
           marginBottom: "2rem"
