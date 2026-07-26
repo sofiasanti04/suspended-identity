@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import archiveData from "../data/archiveData";
 import useResponsive from "../hooks/useResponsive";
+import DesktopSculptureLayout from "../components/sculpture/DesktopSculptureLayout";
 import LandscapeSculptureLayout from "../components/sculpture/LandscapeSculptureLayout";
 
 const sculptureImages = import.meta.glob(
@@ -22,7 +23,7 @@ export default function SculptureScene({
   isLandscape,
 } = useResponsive();
 
-const isMobileLandscape = true;
+const isMobileLandscape = false;
 
   const imageLabels = {
     front: "FRONT",
@@ -142,14 +143,48 @@ const isMobileLandscape = true;
       );
   }, [fullscreenIndex]);
     if (isMobileLandscape) {
-    return (
-      <LandscapeSculptureLayout
-        sculpture={sculpture}
-        selectedImage={selectedImage}
-        onReturn={onReturn}
-      />
-    );
+  return (
+    <LandscapeSculptureLayout
+  sculpture={sculpture}
+  selectedImage={selectedImage}
+  images={images}
+  fullscreenIndex={fullscreenIndex}
+  setFullscreenIndex={setFullscreenIndex}
+  previousImage={previousImage}
+  nextImage={nextImage}
+  onReturn={onReturn}
+  onAcquire={() =>
+    window.location.href =
+      `mailto:sofiasantiphoto@gmail.com?subject=Acquisition Request — ${sculpture.code}`
   }
+  onRequestInfo={() =>
+    window.location.href =
+      `mailto:sofiasantiphoto@gmail.com?subject=Information Request — ${sculpture.code}`
+  }
+/>
+  );
+}
+return (
+  <DesktopSculptureLayout
+  sculpture={sculpture}
+  selectedImage={selectedImage}
+  setSelectedImage={setSelectedImage}
+  images={images}
+  fullscreenIndex={fullscreenIndex}
+  setFullscreenIndex={setFullscreenIndex}
+  previousImage={previousImage}
+  nextImage={nextImage}
+  onReturn={onReturn}
+  onAcquire={() =>
+    window.location.href =
+      `mailto:sofiasantiphoto@gmail.com?subject=Acquisition Request — ${sculpture.code}`
+  }
+  onRequestInfo={() =>
+    window.location.href =
+      `mailto:sofiasantiphoto@gmail.com?subject=Information Request — ${sculpture.code}`
+  }
+/>
+);
 
   return (
     <main
@@ -168,20 +203,26 @@ const isMobileLandscape = true;
       }}
     >
       <div
-        style={{
-          display: "flex",
-          flexDirection: isMobile ? "column" : "row",
-          gap: isMobileLandscape ? "2rem" : "5rem",
-          alignItems: "flex-start"
-        }}
-      >
+  style={{
+    display: "flex",
+    flexDirection: isMobile ? "column" : "row",
+    alignItems: "flex-start",
+    justifyContent: "center",
+    gap: isMobileLandscape ? "2rem" : "3rem",
+    maxWidth: "1450px",
+    margin: "0 auto",
+  }}
+>
         {/* COLONNA SINISTRA */}
 
         <div
-          style={{
-            flex: 1
-          }}
-        >
+  style={{
+    width: "700px",
+    flexShrink: 0,
+    display: "flex",
+    justifyContent: "flex-end",
+  }}
+>
           {selectedImage && (
             <img
               src={selectedImage.src}

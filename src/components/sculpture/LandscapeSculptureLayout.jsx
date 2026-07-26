@@ -3,7 +3,14 @@ import { useState } from "react";
 export default function LandscapeSculptureLayout({
   sculpture,
   selectedImage,
+  images,
+  fullscreenIndex,
+  setFullscreenIndex,
+  previousImage,
+  nextImage,
   onReturn,
+  onAcquire,
+  onRequestInfo,
 }) {
 const [showInfo, setShowInfo] = useState(false);
   return (
@@ -49,14 +56,22 @@ const [showInfo, setShowInfo] = useState(false);
 
         {selectedImage && (
           <img
-            src={selectedImage.src}
-            alt={selectedImage.label}
-            style={{
-              width: "100%",
-              height: "80vh",
-              objectFit: "contain",
-            }}
-          />
+  src={selectedImage.src}
+  alt={selectedImage.label}
+  onClick={() =>
+    setFullscreenIndex(
+      images.findIndex(
+        (img) => img.label === selectedImage.label
+      )
+    )
+  }
+  style={{
+    width: "100%",
+    height: "80vh",
+    objectFit: "contain",
+    cursor: "zoom-in",
+  }}
+/>
         )}
       </section>
 
@@ -64,11 +79,13 @@ const [showInfo, setShowInfo] = useState(false);
 
       <section
         style={{
-          width: "360px",
-          paddingLeft: "2rem",
-          overflowY: "auto",
-          boxSizing: "border-box",
-        }}
+  width: "360px",
+  height: "100%",
+  paddingLeft: "2rem",
+  paddingBottom: "3rem",
+  overflowY: "auto",
+  boxSizing: "border-box",
+}}
       >
         <h1
           style={{
@@ -115,6 +132,7 @@ const [showInfo, setShowInfo] = useState(false);
     </button>
 
     <button
+      onClick={onAcquire}
       style={{
         background: "transparent",
         color: "white",
@@ -130,6 +148,7 @@ const [showInfo, setShowInfo] = useState(false);
     </button>
 
     <button
+      onClick={onRequestInfo}
       style={{
         background: "transparent",
         color: "white",
@@ -203,6 +222,81 @@ const [showInfo, setShowInfo] = useState(false);
   </div>
 )}
       </section>
+      {fullscreenIndex !== null && (
+  <div
+    onClick={() => setFullscreenIndex(null)}
+    style={{
+      position: "fixed",
+      top: 0,
+      left: 0,
+      width: "100vw",
+      height: "100vh",
+      background: "rgba(0,0,0,0.96)",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      zIndex: 9999,
+    }}
+  >
+    <button
+      onClick={(e) => {
+        e.stopPropagation();
+        previousImage();
+      }}
+      style={{
+        position: "absolute",
+        left: "40px",
+        fontSize: "4rem",
+        background: "transparent",
+        border: "none",
+        color: "white",
+        cursor: "pointer",
+      }}
+    >
+      ‹
+    </button>
+
+    <img
+      src={images[fullscreenIndex]?.src}
+      alt={images[fullscreenIndex]?.label}
+      onClick={(e) => e.stopPropagation()}
+      style={{
+        maxWidth: "92vw",
+        maxHeight: "92vh",
+        objectFit: "contain",
+      }}
+    />
+
+    <button
+      onClick={(e) => {
+        e.stopPropagation();
+        nextImage();
+      }}
+      style={{
+        position: "absolute",
+        right: "40px",
+        fontSize: "4rem",
+        background: "transparent",
+        border: "none",
+        color: "white",
+        cursor: "pointer",
+      }}
+    >
+      ›
+    </button>
+
+    <div
+      style={{
+        position: "absolute",
+        bottom: "40px",
+        color: "#aaa",
+        letterSpacing: "0.2rem",
+      }}
+    >
+      {images[fullscreenIndex]?.label} · {fullscreenIndex + 1} / {images.length}
+    </div>
+  </div>
+)}
     </main>
   );
 }
