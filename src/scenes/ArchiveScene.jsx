@@ -41,11 +41,15 @@ const isMobileLandscape = isMobile && isLandscape;
     background: "#02050c",
     display: "flex",
     flexDirection: "column",
-    justifyContent: isMobileLandscape ? "flex-start" : "center",
+    justifyContent: "center",
     alignItems: "center",
-    paddingTop: isMobileLandscape ? "60px" : "0",
     color: "white",
-    textAlign: "center"
+    textAlign: "center",
+    ...(isMobileLandscape && {
+      justifyContent: "flex-start",
+      paddingTop: "20px",
+      gap: "8px",
+    }),
   }}
 >
       {/* Freccia di ritorno */}
@@ -87,7 +91,7 @@ const isMobileLandscape = isMobile && isLandscape;
           color: "#7f7f7f",
           letterSpacing: "0.5rem",
           fontSize: "0.8rem",
-          marginBottom: "1rem"
+          marginBottom: isMobileLandscape ? "0.2rem" : "1rem",
         }}
       >
         ARCHIVE ENTRY
@@ -96,10 +100,10 @@ const isMobileLandscape = isMobile && isLandscape;
       <h1
         style={{
           fontFamily: "Cormorant Garamond",
-          fontSize: isMobileLandscape ? "3.4rem" : "4rem",
+          fontSize: isMobileLandscape ? "1rem" : "4rem",
           fontWeight: 400,
           letterSpacing: "0.2rem",
-          marginBottom: isMobileLandscape ? "0.2rem" : "2rem",
+          marginBottom: isMobileLandscape ? "0rem" : "2rem",
         }}
       >
         {artwork.code}
@@ -109,7 +113,7 @@ const isMobileLandscape = isMobile && isLandscape;
         style={{
           color: "#b8b8b8",
           letterSpacing: "0.25rem",
-          marginBottom: "0.5rem"
+          marginBottom: isMobileLandscape ? "0rem" : "0.5rem",
         }}
       >
         {artwork.city}
@@ -119,7 +123,7 @@ const isMobileLandscape = isMobile && isLandscape;
         style={{
           color: "#8f8f8f",
           letterSpacing: "0.25rem",
-          marginBottom: isMobileLandscape ? "0.6rem" : "4rem",
+          marginBottom: isMobileLandscape ? "0.2rem" : "4rem",
         }}
       >
         {artwork.year}
@@ -146,7 +150,7 @@ const isMobileLandscape = isMobile && isLandscape;
         style={{
           width: isMobileLandscape ? "260px" : "320px",
           padding: isMobileLandscape ? "0.85rem" : "1rem",
-          marginBottom: isMobileLandscape ? "1rem" : "5rem",
+          marginBottom: isMobileLandscape ? "0rem" : "5rem",
           background: "transparent",
           border: "1px solid rgba(255,255,255,0.25)",
           color: "white",
