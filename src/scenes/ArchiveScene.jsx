@@ -142,8 +142,8 @@ const isMobileLandscape = isMobile && isLandscape;
       <button
         onClick={onOpenGallery}
         style={{
-          width: "320px",
-          padding: "1rem",
+          width: isMobileLandscape ? "260px" : "320px",
+          padding: isMobileLandscape ? "0.85rem" : "1rem",
           marginBottom: "5rem",
           background: "transparent",
           border: "1px solid rgba(255,255,255,0.25)",
