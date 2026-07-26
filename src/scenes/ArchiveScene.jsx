@@ -94,7 +94,7 @@ const isMobileLandscape = isMobile && isLandscape;
       <h1
         style={{
           fontFamily: "Cormorant Garamond",
-          fontSize: isMobileLandscape ? "3.4rem" : "4rem",
+          fontSize: isMobileLandscape ? "3rem" : "4rem",
           fontWeight: 400,
           letterSpacing: "0.2rem",
           marginBottom: "2rem"
