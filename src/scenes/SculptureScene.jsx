@@ -21,9 +21,8 @@ export default function SculptureScene({
   const {
   isMobile,
   isLandscape,
+  isMobileLandscape,
 } = useResponsive();
-
-const isMobileLandscape = false;
 
   const imageLabels = {
     front: "FRONT",
