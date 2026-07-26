@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import archiveData from "../data/archiveData";
+import useResponsive from "../hooks/useResponsive";
 
 const sculptureImages = import.meta.glob(
   "../assets/sculptures/*/*.{jpg,jpeg,png}",
@@ -14,6 +15,13 @@ export default function SculptureScene({
   onReturn
 }) {
   const sculpture = archiveData[selectedBust];
+  
+  const {
+  isMobile,
+  isLandscape,
+} = useResponsive();
+
+const isMobileLandscape = isMobile && isLandscape;
 
   const imageLabels = {
     front: "FRONT",
@@ -140,7 +148,11 @@ export default function SculptureScene({
         minHeight: "100vh",
         background: "#02050c",
         color: "white",
-        padding: "5rem",
+        padding: isMobileLandscape
+  ? "1.5rem"
+  : isMobile
+  ? "2rem"
+  : "5rem",
         boxSizing: "border-box",
         overflowY: "auto"
       }}
@@ -148,7 +160,8 @@ export default function SculptureScene({
       <div
         style={{
           display: "flex",
-          gap: "5rem",
+          flexDirection: isMobile ? "column" : "row",
+          gap: isMobileLandscape ? "2rem" : "5rem",
           alignItems: "flex-start"
         }}
       >
@@ -174,7 +187,11 @@ export default function SculptureScene({
               }
               style={{
                 width: "100%",
-                height: "700px",
+                height: isMobileLandscape
+  ? "320px"
+  : isMobile
+  ? "420px"
+  : "700px",
                 objectFit: "contain",
                 background: "#000",
                 border:
