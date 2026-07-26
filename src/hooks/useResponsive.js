@@ -26,6 +26,8 @@ export default function useResponsive() {
 
     isMobile: width < 768,
 
+    isMobileLandscape: width < 768 && width >= height,
+
     isTablet: width >= 768 && width < 1024,
 
     isDesktop: width >= 1024,
