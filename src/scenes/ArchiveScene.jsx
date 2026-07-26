@@ -82,6 +82,7 @@ const isMobileLandscape = isMobile && isLandscape;
 
       <p
         style={{
+          display: isMobileLandscape ? "none" : "block",
           color: "#7f7f7f",
           letterSpacing: "0.5rem",
           fontSize: "0.8rem",
@@ -97,7 +98,7 @@ const isMobileLandscape = isMobile && isLandscape;
           fontSize: isMobileLandscape ? "3.4rem" : "4rem",
           fontWeight: 400,
           letterSpacing: "0.2rem",
-          marginBottom: "2rem"
+          marginBottom: isMobileLandscape ? "0.8rem" : "2rem",
         }}
       >
         {artwork.code}
@@ -117,7 +118,7 @@ const isMobileLandscape = isMobile && isLandscape;
         style={{
           color: "#8f8f8f",
           letterSpacing: "0.25rem",
-          marginBottom: "4rem"
+          marginBottom: isMobileLandscape ? "1.5rem" : "4rem",
         }}
       >
         {artwork.year}
@@ -126,8 +127,8 @@ const isMobileLandscape = isMobile && isLandscape;
       <button
         onClick={onOpenSculpture}
         style={{
-          width: "320px",
-          padding: "1rem",
+          width: isMobileLandscape ? "260px" : "320px",
+          padding: isMobileLandscape ? "0.85rem" : "1rem",
           marginBottom: "1.5rem",
           background: "transparent",
           border: "1px solid rgba(255,255,255,0.25)",
