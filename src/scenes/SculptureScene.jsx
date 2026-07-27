@@ -19,6 +19,8 @@ export default function SculptureScene({
   const sculpture = archiveData[selectedBust];
   
   const {
+  width,
+  height,
   isMobile,
   isLandscape,
   isMobileLandscape,
@@ -141,6 +143,24 @@ export default function SculptureScene({
         handleKeyDown
       );
   }, [fullscreenIndex]);
+  return (
+  <div
+    style={{
+      background: "#000",
+      color: "#0f0",
+      padding: "20px",
+      fontSize: "20px",
+      minHeight: "100vh",
+      fontFamily: "monospace",
+    }}
+  >
+    <p>width: {width}</p>
+    <p>height: {height}</p>
+    <p>isMobile: {String(isMobile)}</p>
+    <p>isLandscape: {String(isLandscape)}</p>
+    <p>isMobileLandscape: {String(isMobileLandscape)}</p>
+  </div>
+);
     if (isMobile && isLandscape) {
   return (
     <LandscapeSculptureLayout
