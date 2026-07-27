@@ -130,12 +130,9 @@ const [fullscreen, setFullscreen] = useState(false);
 const [showInfo, setShowInfo] = useState(false);
 const {
   isMobile,
-  isLandscape,
 } = useResponsive();
 
   const photographsList = photographs[selectedBust] || [];
-
-console.log(selectedBust);
 
 const currentPhoto = photographsList[currentImage];
 
@@ -188,7 +185,159 @@ if (isMobile) {
         color: "white",
       }}
     >
-      MOBILE LAYOUT
+      <div
+        style={{
+          padding: "90px 24px 40px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "2rem",
+        }}
+      >
+        <button
+          onClick={onReturn}
+          style={{
+            alignSelf: "flex-start",
+            background: "transparent",
+            border: "none",
+            color: "rgba(255,255,255,.7)",
+            fontSize: "2rem",
+            cursor: "pointer",
+          }}
+        >
+          ←
+        </button>
+
+        <img
+          src={currentPhoto.image}
+          alt={currentPhoto.title}
+          style={{
+            width: "100%",
+            maxWidth: "420px",
+            objectFit: "contain",
+          }}
+        />
+        <h2
+  style={{
+    margin: 0,
+    textAlign: "center",
+    fontFamily: "Cormorant Garamond",
+    fontSize: "2rem",
+    fontWeight: 400,
+  }}
+>
+  {currentPhoto.title}
+</h2>
+
+<div
+  style={{
+    width: "100%",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  }}
+>
+  <button
+    onClick={previousImage}
+    style={buttonStyle}
+  >
+    ◀
+  </button>
+
+  <span>
+    {currentImage + 1} / {photographsList.length}
+  </span>
+
+  <button
+    onClick={nextImage}
+    style={buttonStyle}
+  >
+    ▶
+  </button>
+</div>
+<button
+  style={{
+    ...buttonStyle,
+    width: "100%",
+  }}
+  onClick={() => setShowInfo(!showInfo)}
+>
+  INFO ABOUT THIS PRINT
+</button>
+{showInfo && (
+  <div
+    style={{
+      width: "100%",
+      border: "1px solid rgba(255,255,255,.15)",
+      padding: "1.5rem",
+      boxSizing: "border-box",
+      fontSize: ".95rem",
+      lineHeight: 1.8,
+    }}
+  >
+    <p style={{ margin: 0, opacity: .6 }}>
+      Year
+    </p>
+
+    <p style={{ marginTop: ".25rem" }}>
+      {currentPhoto.year}
+    </p>
+
+    <p style={{ marginTop: ".25rem" }}>
+      {currentPhoto.location}
+    </p>
+
+    <p style={{ marginTop: "1.5rem", opacity: .6 }}>
+      Medium
+    </p>
+
+    <p style={{ marginTop: ".25rem" }}>
+      {currentPhoto.medium}
+    </p>
+
+    <p style={{ marginTop: "1.5rem", opacity: .6 }}>
+      Available Sizes
+    </p>
+
+    {currentPhoto.sizes.map((size) => (
+      <p
+        key={size}
+        style={{ margin: "0.2rem 0" }}
+      >
+        {size}
+      </p>
+    ))}
+
+    <p style={{ marginTop: "1.5rem", opacity: .6 }}>
+      Limited Edition
+    </p>
+
+    <p style={{ marginTop: ".25rem" }}>
+      {currentPhoto.edition} Prints Total
+    </p>
+
+    <p style={{ marginTop: "1.5rem", opacity: .6 }}>
+      Availability
+    </p>
+
+    <p style={{ marginTop: ".25rem" }}>
+      {currentPhoto.available} Available
+    </p>
+
+    <p style={{ marginTop: "1.5rem", opacity: .6 }}>
+      Certificate
+    </p>
+
+    <p style={{ marginTop: ".25rem" }}>
+      Signed and Numbered
+    </p>
+
+    <p style={{ margin: 0 }}>
+      Certificate of Authenticity Included
+    </p>
+  </div>
+)}
+      </div>
     </main>
   );
 }
@@ -407,7 +556,10 @@ return (
 )}
 
     <button
-  style={buttonStyle}
+  style={{
+  ...buttonStyle,
+  width: "100%",
+}}
   onClick={() =>
     (window.location.href =
       `mailto:sofiasantiphoto@gmail.com?subject=Acquire Print - ${encodeURIComponent(currentPhoto.title)}`)
@@ -417,7 +569,10 @@ return (
 </button>
 
     <button
-      style={buttonStyle}
+      style={{
+  ...buttonStyle,
+  width: "100%",
+}}
       onClick={() =>
         (window.location.href =
           "mailto:sofiasantiphoto@gmail.com?subject=Photography Information")
