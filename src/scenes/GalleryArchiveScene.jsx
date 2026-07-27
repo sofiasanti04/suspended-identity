@@ -368,6 +368,62 @@ if (isMobile) {
   REQUEST INFORMATION
 </button>
       </div>
+      {fullscreen && (
+        <div
+          onClick={() => setFullscreen(false)}
+          style={{
+            position: "fixed",
+            inset: 0,
+            background: "rgba(0,0,0,.96)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 9999,
+          }}
+        >
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              previousImage();
+            }}
+            style={arrowLeft}
+          >
+            ‹
+          </button>
+
+          <img
+            src={images[currentImage]}
+            alt=""
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              maxWidth: "92vw",
+              maxHeight: "92vh",
+              objectFit: "contain",
+            }}
+          />
+
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              nextImage();
+            }}
+            style={arrowRight}
+          >
+            ›
+          </button>
+
+          <div
+            style={{
+              position: "absolute",
+              bottom: "40px",
+              color: "#aaa",
+              letterSpacing: ".2rem",
+            }}
+          >
+            {currentImage + 1} / {images.length}
+          </div>
+        </div>
+      )}
     </main>
   );
 }
@@ -611,11 +667,7 @@ return (
       REQUEST INFORMATION
     </button>
   </div>
-</div>
-
-      </div>
-
-      {fullscreen && (
+  {fullscreen && (
         <div
           onClick={() => setFullscreen(false)}
           style={{
@@ -670,11 +722,12 @@ return (
             {currentImage + 1} / {images.length}
           </div>
         </div>
-      )}
+            )}
+</div>
+</div>
     </main>
   );
 }
-
 const buttonStyle = {
   padding: "1rem 2rem",
   background: "transparent",
