@@ -32,7 +32,7 @@ return () => {
 
     isMobile: width < 900,
 
-    isMobileLandscape: width < 768 && width >= height,
+    isMobileLandscape: width < 900 && width >= height,
 
     isTablet: width >= 768 && width < 1024,
 
