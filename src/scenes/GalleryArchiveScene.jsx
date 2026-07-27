@@ -183,6 +183,8 @@ if (isMobile) {
         minHeight: "100vh",
         background: "#02050c",
         color: "white",
+        overflowY: "auto",
+        WebkitOverflowScrolling: "touch",
       }}
     >
       <div
