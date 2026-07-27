@@ -141,7 +141,7 @@ export default function SculptureScene({
         handleKeyDown
       );
   }, [fullscreenIndex]);
-    if (isMobileLandscape) {
+    if (isMobile && isLandscape) {
   return (
     <LandscapeSculptureLayout
   sculpture={sculpture}
@@ -238,10 +238,10 @@ return (
               style={{
                 width: "100%",
                 height: isMobileLandscape
-  ? "320px"
-  : isMobile
-  ? "420px"
-  : "700px",
+                ? "320px"
+                : isMobile
+                ? "420px"
+                : "700px",
                 objectFit: "contain",
                 background: "#000",
                 border:
