@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import useResponsive from "../hooks/useResponsive";
 
 import gallery01 from "../assets/gallery/FA-001/fa001_gallery_01.avif";
 import gallery02 from "../assets/gallery/FA-001/fa001_gallery_02.jpg";
@@ -127,6 +128,10 @@ export default function GalleryArchiveScene({
   const [currentImage, setCurrentImage] = useState(0);
 const [fullscreen, setFullscreen] = useState(false);
 const [showInfo, setShowInfo] = useState(false);
+const {
+  isMobile,
+  isLandscape,
+} = useResponsive();
 
   const photographsList = photographs[selectedBust] || [];
 
@@ -173,8 +178,23 @@ const currentPhoto = photographsList[currentImage];
       window.removeEventListener("keydown", handleKey);
   }, [fullscreen, images.length]);
 
+if (isMobile) {
   return (
     <main
+      style={{
+        width: "100vw",
+        minHeight: "100vh",
+        background: "#02050c",
+        color: "white",
+      }}
+    >
+      MOBILE LAYOUT
+    </main>
+  );
+}
+
+return (
+  <main
       style={{
         width: "100vw",
         minHeight: "100vh",
