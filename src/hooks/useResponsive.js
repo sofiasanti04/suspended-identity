@@ -14,8 +14,14 @@ export default function useResponsive() {
     };
 
     window.addEventListener("resize", handleResize);
+window.addEventListener("orientationchange", handleResize);
 
-    return () => window.removeEventListener("resize", handleResize);
+handleResize();
+
+return () => {
+  window.removeEventListener("resize", handleResize);
+  window.removeEventListener("orientationchange", handleResize);
+};
   }, []);
 
   const { width, height } = viewport;
