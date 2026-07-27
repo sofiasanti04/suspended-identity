@@ -214,10 +214,12 @@ if (isMobile) {
         <img
           src={currentPhoto.image}
           alt={currentPhoto.title}
+          onClick={() => setFullscreen(true)}
           style={{
             width: "100%",
             maxWidth: "420px",
             objectFit: "contain",
+            cursor: "zoom-in",
           }}
         />
         <h2
@@ -340,6 +342,31 @@ if (isMobile) {
     </p>
   </div>
 )}
+<button
+  style={{
+    ...buttonStyle,
+    width: "100%",
+  }}
+  onClick={() =>
+    (window.location.href =
+      `mailto:sofiasantiphoto@gmail.com?subject=Acquire Print - ${encodeURIComponent(currentPhoto.title)}`)
+  }
+>
+  ACQUIRE PRINT
+</button>
+
+<button
+  style={{
+    ...buttonStyle,
+    width: "100%",
+  }}
+  onClick={() =>
+    (window.location.href =
+      "mailto:sofiasantiphoto@gmail.com?subject=Photography Information")
+  }
+>
+  REQUEST INFORMATION
+</button>
       </div>
     </main>
   );
