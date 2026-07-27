@@ -286,18 +286,116 @@ useEffect(() => {
   }
 
   /* ===================== */
-  /* PROJECT STATEMENT */
-  /* ===================== */
+/* PROJECT STATEMENT */
+/* ===================== */
 
-  if (scene === "statement") {
+if (scene === "statement") {
+
+  if (isMobile) {
     return (
       <main
+        style={{
+          width: "100vw",
+          height: "100dvh",
+          background: "#02050c",
+          color: "white",
+          padding: "2.5rem 1.6rem 4rem",
+          boxSizing: "border-box",
+          overflowY: "auto",
+          overflowX: "hidden",
+          WebkitOverflowScrolling: "touch",
+          lineHeight: "1.9",
+        }}
+      >
+<h1
+  style={{
+    fontFamily: "Cormorant Garamond",
+    fontWeight: 400,
+    fontSize: "3.2rem",
+    textAlign: "center",
+    lineHeight: "1",
+    margin: "0 0 1rem",
+  }}
+>
+  FEMALE
+  <br />
+  ADAPTATION
+</h1>
+
+<p
+  style={{
+    color: "#8f8f8f",
+    letterSpacing: "0.12rem",
+    fontSize: ".82rem",
+    textAlign: "center",
+    marginBottom: "3rem",
+  }}
+>
+  The first investigation within Suspended Identity
+</p>
+
+<div
+  style={{
+    maxWidth: "650px",
+    margin: "0 auto",
+    fontSize: "1.05rem",
+  }}
+>
+
+  <p>
+  <i>Female Adaptation</i> explores the gradual loss of individual identity through sculpture and photography, focusing on the female experience within a society shaped by constantly shifting aesthetic, ideological and behavioural models.
+</p>
+
+<p>
+  The project emerged from the observation that, rather than shaping the systems we create around human complexity and diversity, individuals increasingly find themselves adapting to structures that demand uniformity and constant transformation, creating a growing distance between who we are and who we feel we must become in order to be accepted.
+</p>
+
+<p>
+  The sculptural works materialize this tension through wearable busts derived from the same mold yet individually transformed. Functioning as cultural masks rather than protective shells, their surfaces appear solid yet fragile, marked by fractures, irregularities and transparencies through which traces of an authentic identity remain visible.
+</p>
+
+<p>
+  Photography explores the emotional consequences of this adaptation. Bodies are placed within carefully selected environments where familiarity and estrangement, presence and absence, coexist in quiet tension.
+</p>
+
+<p>
+  Together, sculpture and photography explore the fragile balance between individuality and conformity, revealing the tension between the identity we possess and the identity we are encouraged to perform.
+</p>
+
+<p>
+  At its core, <i>Female Adaptation</i> is not a critique of the individual, but of the social mechanisms that transform uniqueness into deviation and conformity into virtue, encouraging forms of self-erasure in exchange for acceptance and belonging.
+</p>
+
+<button
+  onClick={() => setScene("landing")}
+  style={{
+    marginTop: "2.5rem",
+    marginBottom: "2rem",
+    width: "100%",
+    padding: "1rem",
+    background: "transparent",
+    border: "1px solid rgba(255,255,255,.25)",
+    color: "white",
+    letterSpacing: ".15rem",
+    cursor: "pointer",
+  }}
+>
+  RETURN TO ENTRANCE
+</button>
+
+</div>
+      </main>
+    );
+  }
+
+  return (
+    <main
         style={{
           width: "100vw",
           minHeight: "100vh",
           background: "#02050c",
           color: "white",
-          padding: "8rem 20vw",
+          padding: "5.5rem 20vw 8rem",
           boxSizing: "border-box",
           overflowY: "auto",
           lineHeight: "1.9",
@@ -321,37 +419,37 @@ useEffect(() => {
             marginBottom: "5rem",
           }}
         >
-          Chapter I of Suspended Identity
+          The first investigation within Suspended Identity
         </p>
 
         <p>
-          <i>Female Adaptation</i> combines sculpture and photography to explore the relationship between identity and social conformity, focusing in particular on the female experience within contemporary image culture.
-        </p>
+  <i>Female Adaptation</i> explores the gradual loss of individual identity through sculpture and photography, focusing on the female experience within a society shaped by constantly shifting aesthetic, ideological and behavioural models.
+</p>
 
-        <p>
-          The project emerged from the observation that, rather than shaping the systems we create around human complexity and diversity, individuals increasingly find themselves adapting to structures that demand uniformity, performance and constant transformation, creating a growing distance between who we are and who we feel we must become in order to be accepted.
-        </p>
+<p>
+  The project emerged from the observation that, rather than shaping the systems we create around human complexity and diversity, individuals increasingly find themselves adapting to structures that demand uniformity and constant transformation, creating a growing distance between who we are and who we feel we must become in order to be accepted.
+</p>
 
-        <p>
-          The sculptural works materialize this tension through wearable busts that function less as protective shells and more as cultural masks. Their surfaces appear solid yet fragile, marked by fractures, irregularities and transparencies through which traces of an authentic identity remain visible.
-        </p>
+<p>
+  The sculptural works materialize this tension through wearable busts derived from the same mold yet individually transformed. Functioning as cultural masks rather than protective shells, their surfaces appear solid yet fragile, marked by fractures, irregularities and transparencies through which traces of an authentic identity remain visible.
+</p>
 
-        <p>
-          Photography explores the emotional consequences of this adaptation. Bodies are placed within environments that generate a subtle tension between familiarity and estrangement, presence and absence, belonging and disconnection.
-        </p>
+<p>
+  Photography explores the emotional consequences of this adaptation. Bodies are placed within carefully selected environments where familiarity and estrangement, presence and absence, coexist in quiet tension.
+</p>
 
-        <p>
-          The project unfolds across a series of cities that act as chapters of the same investigation. Each city introduces new sculptures, new bodies and new environments while remaining part of a broader reflection on identity, conformity and resistance.
-        </p>
+<p>
+  Together, sculpture and photography explore the fragile balance between individuality and conformity, revealing the tension between the identity we possess and the identity we are encouraged to perform.
+</p>
 
-        <p>
-          At its core, <i>Female Adaptation</i> is not a critique of the individual, but of the social mechanisms that transform uniqueness into deviation and conformity into virtue, encouraging forms of self-erasure in exchange for acceptance and belonging.
-        </p>
+<p>
+  At its core, <i>Female Adaptation</i> is not a critique of the individual, but of the social mechanisms that transform uniqueness into deviation and conformity into virtue, encouraging forms of self-erasure in exchange for acceptance and belonging.
+</p>
 
         <button
           onClick={() => setScene("landing")}
           style={{
-            marginTop: "5rem",
+            marginTop: "3rem",
             padding: "1rem 2rem",
             background: "transparent",
             border: "1px solid rgba(255,255,255,0.25)",
