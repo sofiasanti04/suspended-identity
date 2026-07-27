@@ -179,13 +179,14 @@ if (isMobile) {
   return (
     <main
       style={{
-        width: "100vw",
-        minHeight: "100vh",
-        background: "#02050c",
-        color: "white",
-        overflowY: "auto",
-        WebkitOverflowScrolling: "touch",
-      }}
+  position: "fixed",
+  inset: 0,
+  overflowY: "auto",
+  WebkitOverflowScrolling: "touch",
+
+  background: "#02050c",
+  color: "white",
+}}
     >
       <div
         style={{
