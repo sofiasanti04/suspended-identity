@@ -234,7 +234,8 @@ const [showInfo, setShowInfo] = useState(false);
       background: "rgba(0,0,0,0.96)",
       display: "flex",
       justifyContent: "center",
-      alignItems: "center",
+      alignItems: "flex-start",
+      paddingTop: "40px",
       zIndex: 9999,
     }}
   >
@@ -261,8 +262,8 @@ const [showInfo, setShowInfo] = useState(false);
       alt={images[fullscreenIndex]?.label}
       onClick={(e) => e.stopPropagation()}
       style={{
-        maxWidth: "92vw",
-        maxHeight: "92vh",
+        maxWidth: "84vw",
+        maxHeight: "76vh",
         objectFit: "contain",
       }}
     />
@@ -288,7 +289,7 @@ const [showInfo, setShowInfo] = useState(false);
     <div
       style={{
         position: "absolute",
-        bottom: "40px",
+        bottom: "60px",
         color: "#aaa",
         letterSpacing: "0.2rem",
       }}
