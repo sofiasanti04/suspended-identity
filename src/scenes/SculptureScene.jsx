@@ -403,7 +403,8 @@ return (
               "rgba(0,0,0,0.96)",
             display: "flex",
             justifyContent: "center",
-            alignItems: "center",
+            alignItems: "flex-start",
+            paddingTop: "60px",
             zIndex: 9999
           }}
         >
@@ -428,8 +429,8 @@ return (
               e.stopPropagation()
             }
             style={{
-              maxWidth: "92vw",
-              maxHeight: "92vh",
+              maxWidth: "86vw",
+              maxHeight: "80vh",
               objectFit: "contain"
             }}
           />
@@ -447,7 +448,7 @@ return (
           <div
             style={{
               position: "absolute",
-              bottom: "40px",
+              bottom: "70px",
               color: "#aaa",
               letterSpacing: "0.2rem"
             }}
