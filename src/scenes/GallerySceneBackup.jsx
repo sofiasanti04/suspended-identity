@@ -178,15 +178,11 @@ const FILL_LIGHT_LAYOUT = [
 ];
 
 export default function GalleryScene({
-  onBustClick,
-  onOpenCustomBusts,
-  onOpenAbout,
-  onOpenPrivacyPolicy,
+  onBustClick
 }) {
 
 
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const {
   isMobile,
   isTablet,
@@ -257,161 +253,6 @@ console.log({
       overflow: "hidden",
     }}
   >
-
-    {/* ===================== */}
-    {/* MENU */}
-    {/* ===================== */}
-
-    <div
-      style={{
-        position: "fixed",
-        top: "28px",
-        right: "28px",
-        zIndex: 1000,
-      }}
-    >
-      <button
-        type="button"
-        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-        aria-expanded={isMenuOpen}
-        onClick={() => setIsMenuOpen((open) => !open)}
-        style={{
-          width: "46px",
-          height: "46px",
-          padding: 0,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          background: "rgba(2,5,12,0.55)",
-          border: "1px solid rgba(255,255,255,0.22)",
-          borderRadius: "50%",
-          color: "rgba(255,255,255,0.9)",
-          cursor: "pointer",
-          backdropFilter: "blur(10px)",
-          WebkitBackdropFilter: "blur(10px)",
-        }}
-      >
-        <span
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "5px",
-            width: "16px",
-          }}
-        >
-          <span style={{ display: "block", width: "100%", height: "1px", background: "currentColor" }} />
-          <span style={{ display: "block", width: "100%", height: "1px", background: "currentColor" }} />
-          <span style={{ display: "block", width: "100%", height: "1px", background: "currentColor" }} />
-        </span>
-      </button>
-
-      <div
-        style={{
-          position: "absolute",
-          top: "58px",
-          right: 0,
-          width: isMobile ? "min(290px, calc(100vw - 40px))" : "310px",
-          padding: "30px 28px 28px",
-          boxSizing: "border-box",
-          background: "rgba(2,5,12,0.96)",
-          border: "1px solid rgba(255,255,255,0.16)",
-          boxShadow: "0 24px 70px rgba(0,0,0,0.45)",
-          backdropFilter: "blur(18px)",
-          WebkitBackdropFilter: "blur(18px)",
-          opacity: isMenuOpen ? 1 : 0,
-          visibility: isMenuOpen ? "visible" : "hidden",
-          transform: isMenuOpen ? "translateY(0)" : "translateY(-10px)",
-          pointerEvents: isMenuOpen ? "auto" : "none",
-          transition: "opacity 0.28s ease, transform 0.28s ease, visibility 0.28s ease",
-        }}
-      >
-        <div
-          style={{
-            color: "rgba(255,255,255,0.5)",
-            fontSize: "0.65rem",
-            letterSpacing: "0.32rem",
-            marginBottom: "24px",
-          }}
-        >
-          MENU
-        </div>
-
-        <nav aria-label="Gallery menu" style={{ display: "flex", flexDirection: "column" }}>
-          {["CUSTOM BUSTS", "ABOUT", "INSTAGRAM"].map((item) => (
-            <button
-              key={item}
-              type="button"
-              onClick={
-              item === "CUSTOM BUSTS"
-              ? onOpenCustomBusts
-              : item === "ABOUT"
-              ? onOpenAbout
-              : item === "INSTAGRAM"
-              ? () =>
-              window.open(
-             "https://www.instagram.com/suspendedidentity/",
-             "_blank",
-             "noopener,noreferrer"
-             )
-            : undefined
-            }
-              style={{
-                padding: "12px 0",
-                textAlign: "left",
-                background: "transparent",
-                border: "none",
-                color: "rgba(255,255,255,0.9)",
-                fontFamily: "inherit",
-                fontSize: "0.76rem",
-                letterSpacing: "0.17rem",
-                cursor: "pointer",
-              }}
-            >
-              {item}
-            </button>
-          ))}
-
-          <div
-            aria-hidden="true"
-            style={{
-              height: "1px",
-              width: "100%",
-              margin: "18px 0 12px",
-              background: "rgba(255,255,255,0.14)",
-            }}
-          />
-
-          {["PRIVACY POLICY", "TERMS & CONDITIONS", "COPYRIGHT"].map((item) => (
-  <button
-    key={item}
-    type="button"
-    onClick={
-      item === "PRIVACY POLICY"
-        ? () => {
-            setIsMenuOpen(false);
-            onOpenPrivacyPolicy();
-          }
-        : undefined
-    }
-    style={{
-      padding: "10px 0",
-      textAlign: "left",
-      background: "transparent",
-      border: "none",
-      color: "rgba(255,255,255,0.62)",
-      fontFamily: "inherit",
-      fontSize: "0.68rem",
-      letterSpacing: "0.13rem",
-      cursor: "pointer",
-    }}
-  >
-    {item}
-  </button>
-))}
-        </nav>
-      </div>
-    </div>
-
     <Canvas
     style={{
   width: "100vw",

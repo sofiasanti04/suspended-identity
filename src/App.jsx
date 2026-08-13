@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import "./style.css";
 
 import GalleryScene from "./scenes/GalleryScene";
+import CustomBustsScene from "./scenes/CustomBustsScene";
+import AboutScene from "./scenes/AboutScene";
+import PrivacyPolicyScene from "./scenes/PrivacyPolicyScene";
 import ArchiveScene from "./scenes/ArchiveScene";
 import SculptureScene from "./scenes/SculptureScene";
 import GalleryArchiveScene from "./scenes/GalleryArchiveScene";
@@ -241,9 +244,37 @@ useEffect(() => {
         setSelectedBust(bustName);
         setScene("archive");
       }}
+      onOpenCustomBusts={() => setScene("custom-busts")}
+      onOpenAbout={() => setScene("about")}
+      onOpenPrivacyPolicy={() => setScene("privacy-policy")}
     />
   );
 }
+
+if (scene === "custom-busts") {
+  return (
+    <CustomBustsScene
+      onReturn={() => setScene("gallery")}
+    />
+  );
+}
+
+if (scene === "about") {
+  return (
+    <AboutScene
+      onReturn={() => setScene("gallery")}
+    />
+  );
+}
+
+if (scene === "privacy-policy") {
+  return (
+    <PrivacyPolicyScene
+      onReturn={() => setScene("gallery")}
+    />
+  );
+}
+
   /* ===================== */
   /* ARCHIVE */
   /* ===================== */
