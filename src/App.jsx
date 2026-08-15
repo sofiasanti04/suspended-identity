@@ -5,6 +5,8 @@ import GalleryScene from "./scenes/GalleryScene";
 import CustomBustsScene from "./scenes/CustomBustsScene";
 import AboutScene from "./scenes/AboutScene";
 import PrivacyPolicyScene from "./scenes/PrivacyPolicyScene";
+import TermsConditionsScene from "./scenes/TermsConditionsScene";
+import CopyrightScene from "./scenes/CopyrightScene";
 import ArchiveScene from "./scenes/ArchiveScene";
 import SculptureScene from "./scenes/SculptureScene";
 import GalleryArchiveScene from "./scenes/GalleryArchiveScene";
@@ -247,6 +249,8 @@ useEffect(() => {
       onOpenCustomBusts={() => setScene("custom-busts")}
       onOpenAbout={() => setScene("about")}
       onOpenPrivacyPolicy={() => setScene("privacy-policy")}
+      onOpenTermsConditions={() => setScene("terms-conditions")}
+      onOpenCopyright={() => setScene("copyright")}
     />
   );
 }
@@ -270,6 +274,22 @@ if (scene === "about") {
 if (scene === "privacy-policy") {
   return (
     <PrivacyPolicyScene
+      onReturn={() => setScene("gallery")}
+    />
+  );
+}
+
+if (scene === "terms-conditions") {
+  return (
+    <TermsConditionsScene
+      onReturn={() => setScene("gallery")}
+    />
+  );
+}
+
+if (scene === "copyright") {
+  return (
+    <CopyrightScene
       onReturn={() => setScene("gallery")}
     />
   );

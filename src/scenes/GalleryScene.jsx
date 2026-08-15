@@ -182,6 +182,8 @@ export default function GalleryScene({
   onOpenCustomBusts,
   onOpenAbout,
   onOpenPrivacyPolicy,
+  onOpenTermsConditions,
+  onOpenCopyright,
 }) {
 
 
@@ -265,8 +267,8 @@ console.log({
     <div
       style={{
         position: "fixed",
-        top: "28px",
-        right: "28px",
+        top: isMobile ? "20px" : "80px",
+        right: isMobile ? "20px" : "80px",
         zIndex: 1000,
       }}
     >
@@ -312,6 +314,8 @@ console.log({
           right: 0,
           width: isMobile ? "min(290px, calc(100vw - 40px))" : "310px",
           padding: "30px 28px 28px",
+          maxHeight: isMobile ? "calc(100dvh - 100px)" : "none",
+          overflowY: isMobile ? "auto" : "visible",
           boxSizing: "border-box",
           background: "rgba(2,5,12,0.96)",
           border: "1px solid rgba(255,255,255,0.16)",
@@ -386,13 +390,23 @@ console.log({
     key={item}
     type="button"
     onClick={
-      item === "PRIVACY POLICY"
-        ? () => {
-            setIsMenuOpen(false);
-            onOpenPrivacyPolicy();
-          }
-        : undefined
-    }
+  item === "PRIVACY POLICY"
+    ? () => {
+        setIsMenuOpen(false);
+        onOpenPrivacyPolicy();
+      }
+    : item === "TERMS & CONDITIONS"
+    ? () => {
+        setIsMenuOpen(false);
+        onOpenTermsConditions();
+      }
+    : item === "COPYRIGHT"
+    ? () => {
+        setIsMenuOpen(false);
+        onOpenCopyright();
+      }
+    : undefined
+}
     style={{
       padding: "10px 0",
       textAlign: "left",
