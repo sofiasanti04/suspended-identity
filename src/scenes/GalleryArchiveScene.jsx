@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import useResponsive from "../hooks/useResponsive";
 
 import gallery01 from "../assets/gallery/FA-001/fa001_gallery_01.avif";
-import gallery02 from "../assets/gallery/FA-001/fa001_gallery_02.jpg";
-import gallery03 from "../assets/gallery/FA-001/fa001_gallery_03.jpg";
-import gallery04 from "../assets/gallery/FA-001/fa001_gallery_04.jpg";
-import gallery05 from "../assets/gallery/FA-001/fa001_gallery_05.jpg";
+import gallery02 from "../assets/gallery/FA-001/fa001_gallery_02.avif";
+import gallery03 from "../assets/gallery/FA-001/fa001_gallery_03.avif";
+import gallery04 from "../assets/gallery/FA-001/fa001_gallery_04.avif";
+import gallery05 from "../assets/gallery/FA-001/fa001_gallery_05.avif";
 
 import gallery201 from "../assets/gallery/FA-002/fa002_gallery_01.avif";
 import gallery202 from "../assets/gallery/FA-002/fa002_gallery_02.avif";
