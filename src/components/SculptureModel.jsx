@@ -5,9 +5,14 @@ export default function SculptureModel({
   model,
   ...props
 }) {
-  const { scene } = useGLTF(
-  `/models/${model}.glb`
-);
+  const modelPath =
+  model === "FA-001"
+    ? "/models/FA-001.glb"
+    : model === "FA-002"
+    ? "/models/FA-002.glb"
+    : `/models/${model}.glb`;
+    
+const { scene } = useGLTF(modelPath);
 
   const clonedScene = useMemo(() => {
     const clone = scene.clone(true);
