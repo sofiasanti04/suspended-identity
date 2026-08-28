@@ -33,13 +33,22 @@ export default function SculptureScene({
     "side-2": "SIDE II",
     back: "BACK",
 
+
+
+
     "pedestal-1": "PEDESTAL I",
     "pedestal-2": "PEDESTAL II",
 
-    "belt-detail-1": "BELT DETAIL I",
-    "belt-detail-2": "BELT DETAIL II",
 
-    detail: "HEAD DETAIL",
+
+
+    "belt-detail-1": "DETAIL I",
+    "belt-detail-2": "DETAIL II",
+
+
+
+
+    detail: "DETAIL",
     "side-detail-1": "BODY DETAIL I",
     "side-detail-2": "BODY DETAIL II"
   };
@@ -59,27 +68,28 @@ export default function SculptureScene({
     "BODY DETAIL II": 11
   };
 
-  const images = Object.entries(sculptureImages)
-    .filter(([path]) =>
-      path.includes(`/sculptures/${selectedBust}/`)
-    )
-    .map(([path, src]) => {
-      const filename = path
-        .split("/")
-        .pop()
-        .replace(/\.(jpg|jpeg|png)$/i, "");
 
-      return {
-        label:
-          imageLabels[filename] ||
-          filename.toUpperCase(),
-        src
-      };
-    })
-    .sort(
-      (a, b) =>
-        order[a.label] - order[b.label]
-    );
+  const images = Object.entries(sculptureImages)
+  .filter(([path]) =>
+    path.includes(`/sculptures/${selectedBust}/`)
+  )
+  .map(([path, src]) => {
+    const filename = path
+      .split("/")
+      .pop()
+      .replace(/\.(jpg|jpeg|png)$/i, "");
+
+    return {
+      label:
+        imageLabels[filename] ||
+        filename.toUpperCase(),
+      src
+    };
+  })
+  .sort(
+    (a, b) =>
+      order[a.label] - order[b.label]
+  );
 
   const [selectedImage, setSelectedImage] =
     useState(null);
@@ -453,13 +463,7 @@ return (
               letterSpacing: "0.2rem"
             }}
           >
-            {
-              images[fullscreenIndex]
-                ?.label
-            }{" "}
-            ·{" "}
-            {fullscreenIndex + 1} /{" "}
-            {images.length}
+            {fullscreenIndex + 1} / {images.length}
           </div>
         </div>
       )}

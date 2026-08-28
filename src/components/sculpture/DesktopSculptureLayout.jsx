@@ -251,7 +251,7 @@ marginTop: "120px",
         letterSpacing: "0.2rem",
       }}
     >
-      {images[fullscreenIndex]?.label} · {fullscreenIndex + 1} / {images.length}
+      {fullscreenIndex + 1} / {images.length}
     </div>
   </div>
 )}

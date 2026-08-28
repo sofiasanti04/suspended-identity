@@ -41,9 +41,9 @@ const { scene } = useGLTF(modelPath);
   }, [scene]);
 
   return (
-    <primitive
-      object={clonedScene}
-      {...props}
-    />
-  );
+  <primitive
+    object={clonedScene}
+    {...props}
+  />
+);
 }

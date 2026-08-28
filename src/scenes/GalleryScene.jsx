@@ -68,7 +68,7 @@ function HintText() {
 
 const PEDESTAL_LAYOUT = [
   // ==========================
-  // OPERE PRINCIPALI
+  // DAVANTI
   // ==========================
 
   {
@@ -90,20 +90,23 @@ const PEDESTAL_LAYOUT = [
   },
 
   {
-    position: [-6.8, 0, 0.5],
-  },
+  code: "FA-004",
+  position: [-6.8, 0, 0.5],
+},
 
   // ==========================
   // CENTRO
   // ==========================
 
   {
-    position: [-0.4, 0, 5],
-  },
+  code: "FA-005",
+  position: [-0.4, 0, 5],
+},
 
   {
-    position: [1.3, 0, 0.8],
-  },
+  code: "FA-003",
+  position: [1.3, 0, 0.8],
+},
 
   // ==========================
   // DESTRA
@@ -150,13 +153,44 @@ const LIGHT_LAYOUT = [
   angle: 0.28,
   distance: 18,
   color: "#fffaf2"
-}
+},
+  
+{
+    code: "FA-003",
+    position: [1.3, 6.2, 0.8],
+    intensity: 32,
+    enabled: true,
+    angle: 0.28,
+    distance: 18,
+    color: "#fffaf2"
+  },
+
+  {
+  code: "FA-004",
+  position: [-6.8, 6.8, 0.5],
+  intensity: 20,
+  enabled: true,
+  angle: 0.28,
+  distance: 18,
+  color: "#fffaf2"
+},
+
+  {
+  code: "FA-005",
+  position: [-0.3, 6.3, 5],
+  intensity: 30,
+  enabled: true,
+  angle: 0.28,
+  distance: 18,
+  color: "#fffaf2"
+},
+
 ];
 
 const FILL_LIGHT_LAYOUT = [
   {
     code: "FA-001",
-    position: [-2.9, 0.35, 8.4],
+    position: [-3.0, 2.5, 11],
     target: [-2.9, 1.8, 8.4],
     intensity: 4,
     enabled: true,
@@ -166,15 +200,83 @@ const FILL_LIGHT_LAYOUT = [
   },
 
   {
+  code: "FA-001",
+  position: [2.0, 1.3, 11],
+  target: [-2.9, 1.2, 8.4],
+  intensity: 2.0,
+  enabled: true,
+  angle: 0.7,
+  distance: 5,
+  color: "#fff8ef"
+},
+
+  {
     code: "FA-002",
-    position: [3.2, 0.35, 9],
+    position: [3.4, 1, 12],
     target: [3.2, 1.8, 9],
     intensity: 4,
     enabled: true,
     angle: 0.6,
     distance: 5,
     color: "#fff8ef"
-  }
+  },
+
+  {
+  code: "FA-002",
+  position: [3.5, 4.2, 11],
+  target: [3.2, 1.3, 9],
+  intensity: 7,
+  enabled: true,
+  angle: 0.8,
+  distance: 5,
+  color: "#fff8ef"
+},
+
+  {
+    code: "FA-003",
+    position: [1.3, 0.35, 0.8],
+    target: [1.3, 1.8, 0.8],
+    intensity: 4,
+    enabled: true,
+    angle: 0.6,
+    distance: 5,
+    color: "#fff8ef"
+  },
+
+  
+  {
+  code: "FA-003",
+  position: [1.3, 3.0, 2.8],
+  target: [1.3, 1.5, 0.8],
+  intensity: 5,
+  enabled: true,
+  angle: 0.7,
+  distance: 5,
+  color: "#fff8ef"
+},
+
+{
+  code: "FA-004",
+  position: [-6.8, 3.5, 5],
+  target: [-7.0, 3.2, 2.0],
+  intensity: 20,
+  enabled: true,
+  angle: 0.3,
+  distance: 8,
+  color: "#fff8ef"
+},
+
+{
+  code: "FA-005",
+  position: [-0.3, 3.5, 8],
+  target: [-0.1, 1.25, -2.2],
+  intensity: 14,
+  enabled: true,
+  angle: 0.8,
+  distance: 8,
+  color: "#fff8ef"
+},
+
 ];
 
 export default function GalleryScene({

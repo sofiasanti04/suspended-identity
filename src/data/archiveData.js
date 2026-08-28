@@ -3,11 +3,11 @@ const archiveData = {
     code: "FA-001",
     title: "Female Adaptation I",
 
-    location: "London",
-    year: "2026",
+ 
+    year: "2025-2026",
 
-    materials: "Epoxy Resin · Steel Wire Structure",
-    dimensions: "117 × 42 × 20 cm",
+    materials: "Epoxy Resin · Iron Wire",
+    dimensions: "≈ 117 × 42 × 20 cm",
     displaySystem: "Wall Suspended Display",
 
     status: "Available",
@@ -18,64 +18,69 @@ const archiveData = {
     code: "FA-002",
     title: "Female Adaptation II",
 
-    location: "London",
-    year: "2026",
+  
+    year: "2025-2026",
 
     materials:
-      "Plastoforma water-based resin, leather belt, metallic wire structure, PVA intervention with thermal treatment",
+      "Plastoforma water-based resin · leather belt · Iron Wire · PVA intervention with thermal treatment",
 
-    dimensions: "76 × 43 × 41 cm",
+    dimensions: "≈ 76 × 43 × 41 cm",
 
-    displaySystem: "Integrated Display System",
-
+    displaySystem: "Integrated Pedestal Display",
     status: "Available",
     edition: "Unique Piece"
   },
 
   "FA-003": {
-    code: "FA-003",
-    title: "Female Adaptation III",
+  code: "FA-003",
+  title: "Female Adaptation III",
 
-    location: "Berlin",
-    year: "2026",
 
-    materials: "To Be Confirmed",
-    dimensions: "To Be Confirmed",
-    displaySystem: "Integrated Display System",
+  year: "2025–2026",
 
-    status: "Coming Soon",
-    edition: "Unique Piece"
-  },
+  materials: "Epoxy Resin · Iron Wire",
+
+  dimensions: "≈ 90 × 45 × 13 cm",
+
+  displaySystem: "Wall-Suspended Display",
+
+  status: "Available",
+  edition: "Unique Piece"
+},
 
   "FA-004": {
-    code: "FA-004",
-    title: "Female Adaptation IV",
+  code: "FA-004",
+  title: "Female Adaptation IV",
 
-    location: "Berlin",
-    year: "2026",
+  
+  year: "2025–2026",
 
-    materials: "To Be Confirmed",
-    dimensions: "To Be Confirmed",
-    displaySystem: "Integrated Display System",
+  materials: "Epoxy Resin · Plastoforma Water-Based Resin · Iron Wire · Resin-Coated Packaging Film",
 
-    status: "Coming Soon",
-    edition: "Unique Piece"
-  },
+  dimensions: "≈ 86 × 37 × 36 cm",
+
+  displaySystem: "Integrated Pedestal Display",
+
+  status: "Available",
+  edition: "Unique Piece"
+},
 
   "FA-005": {
-    code: "FA-005",
-    title: "Female Adaptation V",
+  code: "FA-005",
+  title: "Female Adaptation V",
 
-    location: "Paris",
-    year: "2026",
 
-    materials: "To Be Confirmed",
-    dimensions: "To Be Confirmed",
-    displaySystem: "Integrated Display System",
+  year: "2025–2026",
 
-    status: "Coming Soon",
-    edition: "Unique Piece"
-  },
+  materials: "Epoxy Resin · Iron Wire",
+
+  dimensions: "≈ 72 × 26 × 23 cm",
+
+  displaySystem: "Wall Suspended Display",
+
+  status: "Available",
+  edition: "Unique Piece"
+},
 
   "FA-006": {
     code: "FA-006",
