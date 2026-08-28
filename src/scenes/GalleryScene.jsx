@@ -5,9 +5,9 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import {
   OrbitControls,
   Text,
-  Environment
+  Environment,
+  useProgress
 } from "@react-three/drei";
-
 
 import {
   EffectComposer,
@@ -279,6 +279,70 @@ const FILL_LIGHT_LAYOUT = [
 
 ];
 
+function GalleryLoadingOverlay() {
+  const { active, progress } = useProgress();
+
+  if (!active) return null;
+
+  return (
+    <div
+      style={{
+        position: "fixed",
+        inset: 0,
+        zIndex: 2000,
+        background: "#030405",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        color: "rgba(255,255,255,0.85)",
+        fontFamily: "inherit",
+        pointerEvents: "none",
+        transition: "opacity 0.6s ease",
+      }}
+    >
+      <div
+        style={{
+          fontSize: "0.72rem",
+          letterSpacing: "0.28rem",
+          marginBottom: "18px",
+        }}
+      >
+        ENTERING EXHIBITION
+      </div>
+
+      <div
+        style={{
+          width: "120px",
+          height: "1px",
+          background: "rgba(255,255,255,0.15)",
+          overflow: "hidden",
+        }}
+      >
+        <div
+          style={{
+            width: `${progress}%`,
+            height: "100%",
+            background: "rgba(255,255,255,0.7)",
+            transition: "width 0.25s ease",
+          }}
+        />
+      </div>
+
+      <div
+        style={{
+          marginTop: "12px",
+          fontSize: "0.58rem",
+          letterSpacing: "0.15rem",
+          color: "rgba(255,255,255,0.38)",
+        }}
+      >
+        {Math.round(progress)}%
+      </div>
+    </div>
+  );
+}
+
 export default function GalleryScene({
   onBustClick,
   onOpenCustomBusts,
@@ -354,7 +418,10 @@ console.log({
 
 
   return (
-  <div
+  <>
+    <GalleryLoadingOverlay />
+
+    <div
     style={{
       width: "100vw",
       height: "100dvh",
@@ -542,7 +609,7 @@ console.log({
       dpr={[1, 2]}
       onCreated={({ gl }) => {
         gl.shadowMap.enabled = true;
-        gl.shadowMap.type = THREE.PCFSoftShadowMap;
+        gl.shadowMap.type = THREE.PCFShadowMap;
 
         gl.outputColorSpace = THREE.SRGBColorSpace;
         gl.toneMapping = THREE.ACESFilmicToneMapping;
@@ -579,9 +646,9 @@ console.log({
 {/* FA-001 */}
 
 
-{LIGHT_LAYOUT.map((light) => (
+{LIGHT_LAYOUT.map((light, index) => (
   <GallerySpotLight
-    key={light.code}
+    key={`${light.code}-spot-${index}`}
     position={light.position}
     intensity={light.enabled ? light.intensity : 0}
     angle={light.angle}
@@ -590,9 +657,9 @@ console.log({
   />
 ))}
 
-{FILL_LIGHT_LAYOUT.map((light) => (
+{FILL_LIGHT_LAYOUT.map((light, index) => (
   <PedestalFillLight
-    key={light.code}
+    key={`${light.code}-fill-${index}`}
     position={light.position}
     target={light.target}
     intensity={light.enabled ? light.intensity : 0}
@@ -676,6 +743,7 @@ maxDistance={28}
   maxAzimuthAngle={1.2}
 />
         </Canvas>
-  </div>
+      </div>
+  </>
 );
 }
