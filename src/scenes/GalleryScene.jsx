@@ -355,6 +355,15 @@ export default function GalleryScene({
 
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const SCULPTURE_LOAD_ORDER = [
+  "FA-001",
+  "FA-002",
+  "FA-003",
+  "FA-004",
+  "FA-005",
+];
+
+const [loadedSculptures, setLoadedSculptures] = useState([]);
   const {
   isMobile,
   isTablet,
@@ -362,6 +371,29 @@ export default function GalleryScene({
   isPortrait,
   isLandscape,
 } = useResponsive();
+
+useEffect(() => {
+  let cancelled = false;
+
+  const loadSculpturesSequentially = async () => {
+    for (const code of SCULPTURE_LOAD_ORDER) {
+      if (cancelled) return;
+
+      setLoadedSculptures((current) => {
+        if (current.includes(code)) return current;
+        return [...current, code];
+      });
+
+      await new Promise((resolve) => setTimeout(resolve, 1200));
+    }
+  };
+
+  loadSculpturesSequentially();
+
+  return () => {
+    cancelled = true;
+  };
+}, []);
 
 let cameraSettings = {
   position: [0, 1.55, 22],
@@ -692,16 +724,23 @@ console.log({
 {/* ===================== */}
 
 
-{PEDESTAL_LAYOUT.map((pedestal, index) => (
-  <ExhibitionPedestal
-    key={pedestal.code ?? `pedestal-${index}`}
-    code={pedestal.code}
-    position={pedestal.position}
-    onBustClick={
-      pedestal.code ? handleBustClick : undefined
-    }
-  />
-))}
+{PEDESTAL_LAYOUT.map((pedestal, index) => {
+  const shouldLoad =
+    !pedestal.code || loadedSculptures.includes(pedestal.code);
+
+  return (
+    <ExhibitionPedestal
+      key={pedestal.code ?? `pedestal-${index}`}
+      code={shouldLoad ? pedestal.code : undefined}
+      position={pedestal.position}
+      onBustClick={
+        shouldLoad && pedestal.code
+          ? handleBustClick
+          : undefined
+      }
+    />
+  );
+})}
 
 
 
