@@ -433,6 +433,7 @@ return (
               images[fullscreenIndex]?.src
             }
             alt={
+              
               images[fullscreenIndex]?.label
             }
             onClick={(e) =>

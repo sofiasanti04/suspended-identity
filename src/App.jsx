@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import "./style.css";
 
 import GalleryScene from "./scenes/GalleryScene";
+import ExhibitionLoading from "./components/ExhibitionLoading";
+import ExhibitionPreloader from "./components/ExhibitionPreloader";
 import CustomBustsScene from "./scenes/CustomBustsScene";
 import AboutScene from "./scenes/AboutScene";
 import PrivacyPolicyScene from "./scenes/PrivacyPolicyScene";
@@ -110,6 +112,22 @@ useEffect(() => {
     );
   }
     */
+
+/* ===================== */
+/* GALLERY LOADING */
+/* ===================== */
+
+if (scene === "gallery-loading") {
+  return (
+    <>
+      <ExhibitionPreloader />
+
+      <ExhibitionLoading
+        onLoaded={() => setScene("gallery")}
+      />
+    </>
+  );
+}
 
   /* ===================== */
   /* GALLERY */
@@ -538,11 +556,11 @@ if (scene === "statement") {
       </button>
 
       <button
-        className="enter-button"
-        onClick={() => setScene("gallery")}
-      >
-        ENTER THE EXHIBITION
-      </button>
+  className="enter-button"
+  onClick={() => setScene("gallery-loading")}
+>
+  ENTER THE EXHIBITION
+</button>
     </main>
   );
 }
