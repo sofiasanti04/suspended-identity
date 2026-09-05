@@ -13,6 +13,20 @@ import gallery203 from "../assets/gallery/FA-002/fa002_gallery_03.avif";
 import gallery204 from "../assets/gallery/FA-002/fa002_gallery_04.avif";
 import gallery205 from "../assets/gallery/FA-002/fa002_gallery_05.avif";
 
+import gallery301 from "../assets/gallery/FA-003/fa003_gallery_01.avif";
+import gallery302 from "../assets/gallery/FA-003/fa003_gallery_02.avif";
+import gallery303 from "../assets/gallery/FA-003/fa003_gallery_03.avif";
+import gallery304 from "../assets/gallery/FA-003/fa003_gallery_04.avif";
+
+import gallery401 from "../assets/gallery/FA-004/fa004_gallery_01.avif";
+import gallery402 from "../assets/gallery/FA-004/fa004_gallery_02.avif";
+import gallery403 from "../assets/gallery/FA-004/fa004_gallery_03.avif";
+
+import gallery501 from "../assets/gallery/FA-005/fa005_gallery_01.avif";
+import gallery502 from "../assets/gallery/FA-005/fa005_gallery_02.avif";
+import gallery503 from "../assets/gallery/FA-005/fa005_gallery_03.avif";
+import gallery504 from "../assets/gallery/FA-005/fa005_gallery_04.avif";
+
 const photographs = {
   "FA-001": [
     {
@@ -118,6 +132,126 @@ const photographs = {
   available: 5,
 },
 ],
+
+  "FA-003": [
+    {
+      image: gallery301,
+      title: "FEMALE ADAPTATION 11",
+      year: 2026,
+      medium: "Archival Pigment Print",
+      sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+      edition: 5,
+      available: 5,
+    },
+
+    {
+      image: gallery302,
+      title: "FEMALE ADAPTATION 12",
+      year: 2026,
+      medium: "Archival Pigment Print",
+      sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+      edition: 5,
+      available: 5,
+    },
+
+    {
+      image: gallery303,
+      title: "FEMALE ADAPTATION 13",
+      year: 2026,
+      medium: "Archival Pigment Print",
+      sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+      edition: 5,
+      available: 5,
+    },
+
+    {
+      image: gallery304,
+      title: "FEMALE ADAPTATION 14",
+      year: 2026,
+      medium: "Archival Pigment Print",
+      sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+      edition: 5,
+      available: 5,
+    },
+  ],
+
+    "FA-004": [
+
+    {
+      image: gallery401,
+      title: "FEMALE ADAPTATION 16",
+      year: 2026,
+      medium: "Archival Pigment Print",
+      sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+      edition: 5,
+      available: 5,
+    },
+
+    {
+      image: gallery402,
+      title: "FEMALE ADAPTATION 17",
+      year: 2026,
+      medium: "Archival Pigment Print",
+      sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+      edition: 5,
+      available: 5,
+    },
+
+    {
+      image: gallery403,
+      title: "FEMALE ADAPTATION 18",
+      year: 2026,
+      medium: "Archival Pigment Print",
+      sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+      edition: 5,
+      available: 5,
+    },
+
+  ],
+
+    "FA-005": [
+
+    {
+      image: gallery501,
+      title: "FEMALE ADAPTATION 19",
+      year: 2026,
+      medium: "Archival Pigment Print",
+      sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+      edition: 5,
+      available: 5,
+    },
+
+    {
+      image: gallery502,
+      title: "FEMALE ADAPTATION 20",
+      year: 2026,
+      medium: "Archival Pigment Print",
+      sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+      edition: 5,
+      available: 5,
+    },
+
+    {
+      image: gallery503,
+      title: "FEMALE ADAPTATION 21",
+      year: 2026,
+      medium: "Archival Pigment Print",
+      sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+      edition: 5,
+      available: 5,
+    },
+
+    {
+      image: gallery504,
+      title: "FEMALE ADAPTATION 22",
+      year: 2026,
+      medium: "Archival Pigment Print",
+      sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+      edition: 5,
+      available: 5,
+    },
+
+  ],
 
 };
 
