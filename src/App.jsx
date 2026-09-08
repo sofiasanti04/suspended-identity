@@ -464,7 +464,7 @@ if (scene === "statement") {
           minHeight: "100vh",
           background: "#02050c",
           color: "white",
-          padding: "5.5rem 20vw 8rem",
+          padding: "3.5rem 20vw 4rem",
           boxSizing: "border-box",
           overflowY: "auto",
           lineHeight: "1.9",
