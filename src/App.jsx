@@ -500,7 +500,7 @@ if (scene === "statement") {
 </p>
 
 <p>
-  The sculptural works materialize this tension through wearable busts derived from the same mold yet individually transformed. Functioning as cultural masks rather than protective shells, their surfaces appear solid yet fragile, marked by fractures, irregularities and transparencies through which traces of an authentic identity remain visible.
+  The sculptural works materialize this tension through wearable busts derived from the same mold yet individually transformed. Their form draws from classical sculpture, particularly the Greek tradition of idealising the human figure. This reflects an interest in the way we create images of what we imagine ourselves to be, and then begin to measure ourselves against those ideals. Within the female experience, this relationship between the real body and the imagined ideal becomes particularly relevant, as the female body is continually shaped by changing cultural expectations. Functioning as cultural masks rather than protective shells, their surfaces appear solid yet fragile, marked by fractures, irregularities and transparencies through which traces of an authentic identity remain visible.
 </p>
 
 <p>
