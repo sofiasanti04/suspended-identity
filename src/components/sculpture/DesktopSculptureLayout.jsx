@@ -136,12 +136,14 @@ marginTop: "120px",
   INFO ABOUT THIS SCULPTURE
 </button>
 
-<button
-  onClick={onAcquire}
-  style={buttonStyle}
->
-  ACQUIRE SCULPTURE
-</button>
+{onAcquire && (
+  <button
+    onClick={onAcquire}
+    style={buttonStyle}
+  >
+    ACQUIRE SCULPTURE
+  </button>
+)}
 
 <button
   onClick={onRequestInfo}

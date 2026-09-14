@@ -4,6 +4,8 @@ import useResponsive from "../hooks/useResponsive";
 import DesktopSculptureLayout from "../components/sculpture/DesktopSculptureLayout";
 import LandscapeSculptureLayout from "../components/sculpture/LandscapeSculptureLayout";
 
+const SALES_ENABLED = false;
+
 const sculptureImages = import.meta.glob(
   "../assets/sculptures/*/*.{jpg,jpeg,png}",
   {
@@ -187,10 +189,7 @@ return (
   previousImage={previousImage}
   nextImage={nextImage}
   onReturn={onReturn}
-  onAcquire={() =>
-    window.location.href =
-      `mailto:sofiasantiphoto@gmail.com?subject=Acquisition Request — ${sculpture.code}`
-  }
+ onAcquire={undefined}
   onRequestInfo={() =>
     window.location.href =
       `mailto:sofiasantiphoto@gmail.com?subject=Information Request — ${sculpture.code}`
@@ -332,19 +331,21 @@ return (
             value={sculpture.status}
           />
 
-          <button
-            onClick={() =>
-              window.location.href =
-                `mailto:sofiasantiphoto@gmail.com?subject=Acquisition Request — ${sculpture.code}`
-            }
-            style={{
-              ...buttonStyle,
-              border:
-                "1px solid rgba(255,255,255,0.45)"
-            }}
-          >
-            ACQUIRE SCULPTURE
-          </button>
+          {SALES_ENABLED && (
+  <button
+    onClick={() =>
+      window.location.href =
+        `mailto:sofiasantiphoto@gmail.com?subject=Acquisition Request — ${sculpture.code}`
+    }
+    style={{
+      ...buttonStyle,
+      border:
+        "1px solid rgba(255,255,255,0.45)"
+    }}
+  >
+    ACQUIRE SCULPTURE
+  </button>
+)}
 
           <button
             onClick={() =>
