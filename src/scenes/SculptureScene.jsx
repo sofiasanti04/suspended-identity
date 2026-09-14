@@ -4,7 +4,7 @@ import useResponsive from "../hooks/useResponsive";
 import DesktopSculptureLayout from "../components/sculpture/DesktopSculptureLayout";
 import LandscapeSculptureLayout from "../components/sculpture/LandscapeSculptureLayout";
 
-const SALES_ENABLED = false;
+const SALES_ENABLED = true;
 
 const sculptureImages = import.meta.glob(
   "../assets/sculptures/*/*.{jpg,jpeg,png}",
@@ -167,7 +167,10 @@ export default function SculptureScene({
   previousImage={previousImage}
   nextImage={nextImage}
   onReturn={onReturn}
-  onAcquire={undefined}
+  onAcquire={() =>
+  window.location.href =
+    `mailto:sofiasantiphoto@gmail.com?subject=Acquisition Request — ${sculpture.code}`
+}
   onRequestInfo={() =>
     window.location.href =
       `mailto:sofiasantiphoto@gmail.com?subject=Information Request — ${sculpture.code}`
@@ -186,7 +189,10 @@ return (
   previousImage={previousImage}
   nextImage={nextImage}
   onReturn={onReturn}
- onAcquire={undefined}
+ onAcquire={() =>
+  window.location.href =
+    `mailto:sofiasantiphoto@gmail.com?subject=Acquisition Request — ${sculpture.code}`
+}
   onRequestInfo={() =>
     window.location.href =
       `mailto:sofiasantiphoto@gmail.com?subject=Information Request — ${sculpture.code}`

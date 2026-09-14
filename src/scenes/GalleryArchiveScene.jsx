@@ -27,7 +27,7 @@ import gallery502 from "../assets/gallery/FA-005/fa005_gallery_02.avif";
 import gallery503 from "../assets/gallery/FA-005/fa005_gallery_03.avif";
 import gallery504 from "../assets/gallery/FA-005/fa005_gallery_04.avif";
 
-const SALES_ENABLED = false;
+const SALES_ENABLED = true;
 
 const photographs = {
   "FA-001": [
