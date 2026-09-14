@@ -478,18 +478,20 @@ if (isMobile) {
     </p>
   </div>
 )}
-<button
-  style={{
-    ...buttonStyle,
-    width: "100%",
-  }}
-  onClick={() =>
-    (window.location.href =
-      `mailto:sofiasantiphoto@gmail.com?subject=Acquire Print - ${encodeURIComponent(currentPhoto.title)}`)
-  }
->
-  ACQUIRE PRINT
-</button>
+{SALES_ENABLED && (
+  <button
+    style={{
+      ...buttonStyle,
+      width: "100%",
+    }}
+    onClick={() =>
+      (window.location.href =
+        `mailto:sofiasantiphoto@gmail.com?subject=Acquire Print - ${encodeURIComponent(currentPhoto.title)}`)
+    }
+  >
+    ACQUIRE PRINT
+  </button>
+)}
 
 <button
   style={{
