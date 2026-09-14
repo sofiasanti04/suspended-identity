@@ -27,8 +27,6 @@ import gallery502 from "../assets/gallery/FA-005/fa005_gallery_02.avif";
 import gallery503 from "../assets/gallery/FA-005/fa005_gallery_03.avif";
 import gallery504 from "../assets/gallery/FA-005/fa005_gallery_04.avif";
 
-const SALES_ENABLED = true;
-
 const photographs = {
   "FA-001": [
     {
@@ -478,20 +476,18 @@ if (isMobile) {
     </p>
   </div>
 )}
-{SALES_ENABLED && (
-  <button
-    style={{
-      ...buttonStyle,
-      width: "100%",
-    }}
-    onClick={() =>
-      (window.location.href =
-        `mailto:sofiasantiphoto@gmail.com?subject=Acquire Print - ${encodeURIComponent(currentPhoto.title)}`)
-    }
-  >
-    ACQUIRE PRINT
-  </button>
-)}
+<button
+  style={{
+    ...buttonStyle,
+    width: "100%",
+  }}
+  onClick={() =>
+    (window.location.href =
+      `mailto:sofiasantiphoto@gmail.com?subject=Acquire Print - ${encodeURIComponent(currentPhoto.title)}`)
+  }
+>
+  ACQUIRE PRINT
+</button>
 
 <button
   style={{
@@ -779,20 +775,18 @@ return (
   </div>
 )}
 
-    {SALES_ENABLED && (
-  <button
-    style={{
-      ...buttonStyle,
-      width: "100%",
-    }}
-    onClick={() =>
-      (window.location.href =
-        `mailto:sofiasantiphoto@gmail.com?subject=Acquire Print - ${encodeURIComponent(currentPhoto.title)}`)
-    }
-  >
-    ACQUIRE PRINT
-  </button>
-)}
+    <button
+  style={{
+  ...buttonStyle,
+  width: "100%",
+}}
+  onClick={() =>
+    (window.location.href =
+      `mailto:sofiasantiphoto@gmail.com?subject=Acquire Print - ${encodeURIComponent(currentPhoto.title)}`)
+  }
+>
+  ACQUIRE PRINT
+</button>
 
     <button
       style={{

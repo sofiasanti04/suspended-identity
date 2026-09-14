@@ -4,8 +4,6 @@ import useResponsive from "../hooks/useResponsive";
 import DesktopSculptureLayout from "../components/sculpture/DesktopSculptureLayout";
 import LandscapeSculptureLayout from "../components/sculpture/LandscapeSculptureLayout";
 
-const SALES_ENABLED = true;
-
 const sculptureImages = import.meta.glob(
   "../assets/sculptures/*/*.{jpg,jpeg,png}",
   {
@@ -168,9 +166,9 @@ export default function SculptureScene({
   nextImage={nextImage}
   onReturn={onReturn}
   onAcquire={() =>
-  window.location.href =
-    `mailto:sofiasantiphoto@gmail.com?subject=Acquisition Request — ${sculpture.code}`
-}
+    window.location.href =
+      `mailto:sofiasantiphoto@gmail.com?subject=Acquisition Request — ${sculpture.code}`
+  }
   onRequestInfo={() =>
     window.location.href =
       `mailto:sofiasantiphoto@gmail.com?subject=Information Request — ${sculpture.code}`
@@ -189,10 +187,10 @@ return (
   previousImage={previousImage}
   nextImage={nextImage}
   onReturn={onReturn}
- onAcquire={() =>
-  window.location.href =
-    `mailto:sofiasantiphoto@gmail.com?subject=Acquisition Request — ${sculpture.code}`
-}
+  onAcquire={() =>
+    window.location.href =
+      `mailto:sofiasantiphoto@gmail.com?subject=Acquisition Request — ${sculpture.code}`
+  }
   onRequestInfo={() =>
     window.location.href =
       `mailto:sofiasantiphoto@gmail.com?subject=Information Request — ${sculpture.code}`
@@ -334,21 +332,19 @@ return (
             value={sculpture.status}
           />
 
-          {SALES_ENABLED && (
-  <button
-    onClick={() =>
-      window.location.href =
-        `mailto:sofiasantiphoto@gmail.com?subject=Acquisition Request — ${sculpture.code}`
-    }
-    style={{
-      ...buttonStyle,
-      border:
-        "1px solid rgba(255,255,255,0.45)"
-    }}
-  >
-    ACQUIRE SCULPTURE
-  </button>
-)}
+          <button
+            onClick={() =>
+              window.location.href =
+                `mailto:sofiasantiphoto@gmail.com?subject=Acquisition Request — ${sculpture.code}`
+            }
+            style={{
+              ...buttonStyle,
+              border:
+                "1px solid rgba(255,255,255,0.45)"
+            }}
+          >
+            ACQUIRE SCULPTURE
+          </button>
 
           <button
             onClick={() =>
@@ -539,3 +535,4 @@ const arrowStyleRight = {
   color: "white",
   cursor: "pointer"
 };
+

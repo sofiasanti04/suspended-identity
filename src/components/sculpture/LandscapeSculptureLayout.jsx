@@ -131,23 +131,21 @@ const [showInfo, setShowInfo] = useState(false);
       INFO ABOUT THIS SCULPTURE
     </button>
 
-    {onAcquire && (
-  <button
-    onClick={onAcquire}
-    style={{
-      background: "transparent",
-      color: "white",
-      border: "1px solid rgba(255,255,255,.35)",
-      padding: "14px",
-      cursor: "pointer",
-      letterSpacing: ".08em",
-      fontSize: ".78rem",
-      textTransform: "uppercase",
-    }}
-  >
-    ACQUIRE SCULPTURE
-  </button>
-)}
+    <button
+      onClick={onAcquire}
+      style={{
+        background: "transparent",
+        color: "white",
+        border: "1px solid rgba(255,255,255,.35)",
+        padding: "14px",
+        cursor: "pointer",
+        letterSpacing: ".08em",
+        fontSize: ".78rem",
+        textTransform: "uppercase",
+      }}
+    >
+      ACQUIRE SCULPTURE
+    </button>
 
     <button
       onClick={onRequestInfo}
@@ -303,3 +301,4 @@ const [showInfo, setShowInfo] = useState(false);
     </main>
   );
 }
+
