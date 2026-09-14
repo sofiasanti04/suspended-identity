@@ -167,10 +167,7 @@ export default function SculptureScene({
   previousImage={previousImage}
   nextImage={nextImage}
   onReturn={onReturn}
-  onAcquire={() =>
-    window.location.href =
-      `mailto:sofiasantiphoto@gmail.com?subject=Acquisition Request — ${sculpture.code}`
-  }
+  onAcquire={undefined}
   onRequestInfo={() =>
     window.location.href =
       `mailto:sofiasantiphoto@gmail.com?subject=Information Request — ${sculpture.code}`
