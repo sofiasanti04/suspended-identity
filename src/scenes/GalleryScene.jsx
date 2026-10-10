@@ -43,7 +43,8 @@ function HintText() {
   <Text
     ref={textRef}
     position={[0, 6.5, 5]}
-    fontSize={0.34}
+    fontSize={0.35}
+    font="/fonts/CormorantGaramond-Regular.ttf"
     color="#cfcfcf"
     anchorX="center"
     anchorY="middle"
@@ -54,7 +55,8 @@ function HintText() {
 
   <Text
     position={[0, 6.1, 5]}
-    fontSize={0.16}
+    fontSize={0.25}
+    font="/fonts/CormorantGaramond-Regular.ttf"
     color="#7d828a"
     anchorX="center"
     anchorY="middle"
@@ -86,6 +88,7 @@ const PEDESTAL_LAYOUT = [
   // ==========================
 
   {
+    code: "FA-006" ,
     position: [-8.5, 0, 5],
   },
 
@@ -111,22 +114,26 @@ const PEDESTAL_LAYOUT = [
   // ==========================
   // DESTRA
   // ==========================
+  
+{
+  code: "FA-007",
+  position: [6.1, 0, 4.6],
+},
 
-  {
-    position: [6.1, 0, 4.6],
-  },
+
 
   {
     position: [9.5, 0, 0.8],
   },
 
   // ==========================
-  // FONDO
-  // ==========================
+// FONDO
+// ==========================
 
-  {
-   position: [-3, 0, -2.8],
-  },
+{
+  code: "FA-008",
+  position: [-3, 0, -2.8],
+},
 
   {
     position: [4.0, 0, -3.5],
@@ -184,6 +191,39 @@ const LIGHT_LAYOUT = [
   distance: 18,
   color: "#fffaf2"
 },
+
+
+{
+  code: "FA-006",
+  position: [-8.3, 6.7, 5],
+  intensity: 30,
+  enabled: true,
+  angle: 0.28,
+  distance: 15,
+  color: "#fffaf2"
+},
+
+
+{
+  code: "FA-007",
+  position: [6.0, 6.2, 4.6],
+  intensity: 25,
+  enabled: true,
+  angle: 0.28,
+  distance: 30,
+  color: "#fffaf2"
+},
+
+
+  {
+    code: "FA-008",
+    position: [-3, 6.5, -2.7],
+    intensity: 25,
+    enabled: true,
+    angle: 0.28,
+    distance: 18,
+    color: "#fffaf2"
+  },
 
 ];
 
@@ -277,6 +317,42 @@ const FILL_LIGHT_LAYOUT = [
   color: "#fff8ef"
 },
 
+
+{
+  code: "FA-006",
+  position: [-8.0, 1.4, 8.2],
+  target: [-8.5, 1.5, 5],
+  intensity: 7,
+  enabled: true,
+  angle: 0.6,
+  distance: 27,
+  color: "#fff8ef"
+},
+
+
+{
+  code: "FA-007",
+  position: [6.1, 2.8, 8.0],
+  target: [6.1, 2.0, 4.6],
+  intensity: 25,
+  enabled: true,
+  angle: 0.38,
+  distance: 10,
+  color: "#fff8ef"
+},
+
+
+{
+  code: "FA-008",
+  position: [-3, 4.5, -1.5],
+  target: [-3, 1.5, -2.8],
+  intensity: 3,
+  enabled: true,
+  angle: 0.6,
+  distance: 8,
+  color: "#fff8ef"
+},
+  
 ];
 
 function GalleryLoadingOverlay() {
@@ -361,6 +437,9 @@ export default function GalleryScene({
   "FA-003",
   "FA-004",
   "FA-005",
+  "FA-006",
+  "FA-007",
+  "FA-008",
 ];
 
 const [loadedSculptures, setLoadedSculptures] = useState([]);

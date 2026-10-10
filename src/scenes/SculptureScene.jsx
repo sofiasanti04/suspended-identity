@@ -5,7 +5,7 @@ import DesktopSculptureLayout from "../components/sculpture/DesktopSculptureLayo
 import LandscapeSculptureLayout from "../components/sculpture/LandscapeSculptureLayout";
 
 const sculptureImages = import.meta.glob(
-  "../assets/sculptures/*/*.{jpg,jpeg,png}",
+  "../assets/sculptures/*/*.{jpg,jpeg,png,avif}",
   {
     eager: true,
     import: "default"
@@ -26,12 +26,14 @@ export default function SculptureScene({
   isMobileLandscape,
 } = useResponsive();
 
-  const imageLabels = {
-    front: "FRONT",
-    "three-quarters": "THREE QUARTERS",
-    "side-1": "SIDE I",
-    "side-2": "SIDE II",
-    back: "BACK",
+ const imageLabels = {
+  front: "FRONT",
+  "three-quarters": "THREE QUARTERS",
+  "three-quarters-1": "THREE-QUARTERS-1",
+  "three-quarters-2": "THREE-QUARTERS-2",
+  "side-1": "SIDE I",
+  "side-2": "SIDE II",
+  back: "BACK",
 
 
 
@@ -54,20 +56,22 @@ export default function SculptureScene({
   };
 
   const order = {
-    FRONT: 0,
-    "THREE QUARTERS": 1,
-    "SIDE I": 2,
-    "SIDE II": 3,
-    BACK: 4,
-    "PEDESTAL I": 5,
-    "PEDESTAL II": 6,
-    "BELT DETAIL I": 7,
-    "BELT DETAIL II": 8,
-    "HEAD DETAIL": 9,
-    "BODY DETAIL I": 10,
-    "BODY DETAIL II": 11
-  };
-
+  FRONT: 0,
+  "THREE-QUARTERS-1": 1,
+  "THREE-QUARTERS-2": 2,
+  "THREE QUARTERS": 3,
+  "SIDE I": 4,
+  "SIDE II": 5,
+  BACK: 6,
+  DETAIL: 7,
+  "PEDESTAL I": 8,
+  "PEDESTAL II": 9,
+  "BELT DETAIL I": 10,
+  "BELT DETAIL II": 11,
+  "HEAD DETAIL": 12,
+  "BODY DETAIL I": 13,
+  "BODY DETAIL II": 14
+};
 
   const images = Object.entries(sculptureImages)
   .filter(([path]) =>
@@ -77,7 +81,7 @@ export default function SculptureScene({
     const filename = path
       .split("/")
       .pop()
-      .replace(/\.(jpg|jpeg|png)$/i, "");
+      .replace(/\.(jpg|jpeg|png|avif)$/i, "");
 
     return {
       label:

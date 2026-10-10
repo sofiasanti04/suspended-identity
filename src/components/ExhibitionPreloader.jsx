@@ -7,6 +7,9 @@ const MODELS = [
   "/models/FA-003.glb",
   "/models/FA-004.glb",
   "/models/FA-005.glb",
+  "/models/FA-006.glb",
+  "/models/FA-007.glb",
+  "/models/FA-008.glb",
 ];
 
 export default function ExhibitionPreloader() {

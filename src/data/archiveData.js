@@ -86,14 +86,13 @@ const archiveData = {
     code: "FA-006",
     title: "Female Adaptation VI",
 
-    location: "Paris",
-    year: "2026",
+    year: "2025-2026",
 
-    materials: "To Be Confirmed",
-    dimensions: "To Be Confirmed",
-    displaySystem: "Integrated Display System",
+    materials: "Epoxy Resin · Water-Based Resin (Plastoforma) · Iron Wire",
+    dimensions: "≈ 30 × 75 × 14 cm",
+    displaySystem: "Integrated Pedestal Display",
 
-    status: "Coming Soon",
+    status: "Available",
     edition: "Unique Piece"
   },
 
@@ -101,32 +100,30 @@ const archiveData = {
     code: "FA-007",
     title: "Female Adaptation VII",
 
-    location: "Barcelona",
-    year: "2027",
+    year: "2025-2026",
 
-    materials: "To Be Confirmed",
-    dimensions: "To Be Confirmed",
-    displaySystem: "Integrated Display System",
+    materials: "Epoxy Resin",
+    dimensions: "≈ 56 × 45 × 16 cm",
+    displaySystem: "Wall Suspended Display",
 
-    status: "Coming Soon",
+
+    status: "Available",
     edition: "Unique Piece"
   },
 
-  "FA-008": {
+     "FA-008": {
     code: "FA-008",
     title: "Female Adaptation VIII",
 
-    location: "Barcelona",
-    year: "2027",
+    year: "2025-2026",
+    materials: "Water-Based Resin (Plastoforma) · Leather Strap Treated with Glue and Heat · Water-Based Resin Base (Plastoforma) Treated with Glue and Heat",
+    dimensions: "≈ 74 × 40 × 40 cm",
+    displaySystem: "Integrated Pedestal Display",
 
-    materials: "To Be Confirmed",
-    dimensions: "To Be Confirmed",
-    displaySystem: "Integrated Display System",
-
-    status: "Coming Soon",
+    status: "Available",
     edition: "Unique Piece"
   },
-
+  
   "FA-009": {
     code: "FA-009",
     title: "Female Adaptation IX",
