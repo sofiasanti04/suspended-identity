@@ -91,11 +91,10 @@ export default function AboutScene({
           </p>
 
           <p>
-            In 2023, she attended the London Institute of Photography where
-            she developed and presented a research exploring the relationship
-            between the body, movement and physical space. In 2024, she
-            continued her studies at the International Center of Photography
-            in New York.
+            She developed her practice at the London Institute of Photography, 
+            where she presented research exploring the relationship 
+            between the body, movement and physical space, and at the 
+            International Center of Photography in New York.
           </p>
 
           <p>

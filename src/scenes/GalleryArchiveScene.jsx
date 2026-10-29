@@ -54,8 +54,8 @@ const photographs = {
   year: 2026,
   medium: "Archival Pigment Print",
   sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-  edition: 5,
-  available: 5,
+  edition: 3,
+  available: 3,
 },
 
     {
@@ -64,8 +64,8 @@ const photographs = {
       year: 2026,
       medium: "Archival Pigment Print",
       sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-      edition: 5,
-      available: 5,
+      edition: 3,
+      available: 3,
     },
 
     {
@@ -74,8 +74,8 @@ const photographs = {
       year: 2026,
       medium: "Archival Pigment Print",
       sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-      edition: 5,
-      available: 5,
+      edition: 3,
+      available: 3,
     },
 
     {
@@ -84,8 +84,8 @@ const photographs = {
       year: 2026,
       medium: "Archival Pigment Print",
       sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-      edition: 5,
-      available: 5,
+      edition: 3,
+      available: 3,
     },
 
     {
@@ -94,8 +94,8 @@ const photographs = {
       year: 2026,
       medium: "Archival Pigment Print",
       sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-      edition: 5,
-      available: 5,
+      edition: 3,
+      available: 3,
     },
   ],
 
@@ -107,8 +107,8 @@ const photographs = {
   year: 2026,
   medium: "Archival Pigment Print",
   sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-  edition: 5,
-  available: 5,
+  edition: 3,
+  available: 3,
 },
 
 {
@@ -117,8 +117,8 @@ const photographs = {
   year: 2026,
   medium: "Archival Pigment Print",
   sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-  edition: 5,
-  available: 5,
+  edition: 3,
+  available: 3,
 },
 
 {
@@ -127,8 +127,8 @@ const photographs = {
   year: 2026,
   medium: "Archival Pigment Print",
   sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-  edition: 5,
-  available: 5,
+  edition: 3,
+  available: 3,
 },
 
 {
@@ -137,8 +137,8 @@ const photographs = {
   year: 2026,
   medium: "Archival Pigment Print",
   sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-  edition: 5,
-  available: 5,
+  edition: 3,
+  available: 3,
 },
 
 {
@@ -147,8 +147,8 @@ const photographs = {
   year: 2026,
   medium: "Archival Pigment Print",
   sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-  edition: 5,
-  available: 5,
+  edition: 3,
+  available: 3,
 },
 ],
 
@@ -159,8 +159,8 @@ const photographs = {
       year: 2026,
       medium: "Archival Pigment Print",
       sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-      edition: 5,
-      available: 5,
+      edition: 3,
+      available: 3,
     },
 
     {
@@ -169,8 +169,8 @@ const photographs = {
       year: 2026,
       medium: "Archival Pigment Print",
       sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-      edition: 5,
-      available: 5,
+      edition: 3,
+      available: 3,
     },
 
     {
@@ -179,8 +179,8 @@ const photographs = {
       year: 2026,
       medium: "Archival Pigment Print",
       sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-      edition: 5,
-      available: 5,
+      edition: 3,
+      available: 3,
     },
 
     {
@@ -189,8 +189,8 @@ const photographs = {
       year: 2026,
       medium: "Archival Pigment Print",
       sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-      edition: 5,
-      available: 5,
+      edition: 3,
+      available: 3,
     },
   ],
 
@@ -202,8 +202,8 @@ const photographs = {
       year: 2026,
       medium: "Archival Pigment Print",
       sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-      edition: 5,
-      available: 5,
+      edition: 3,
+      available: 3,
     },
 
     {
@@ -212,8 +212,8 @@ const photographs = {
       year: 2026,
       medium: "Archival Pigment Print",
       sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-      edition: 5,
-      available: 5,
+      edition: 3,
+      available: 3,
     },
 
     {
@@ -222,8 +222,8 @@ const photographs = {
       year: 2026,
       medium: "Archival Pigment Print",
       sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-      edition: 5,
-      available: 5,
+      edition: 3,
+      available: 3,
     },
 
   ],
@@ -236,8 +236,8 @@ const photographs = {
       year: 2026,
       medium: "Archival Pigment Print",
       sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-      edition: 5,
-      available: 5,
+      edition: 3,
+      available: 3,
     },
 
     {
@@ -246,8 +246,8 @@ const photographs = {
       year: 2026,
       medium: "Archival Pigment Print",
       sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-      edition: 5,
-      available: 5,
+      edition: 3,
+      available: 3,
     },
 
     {
@@ -256,8 +256,8 @@ const photographs = {
       year: 2026,
       medium: "Archival Pigment Print",
       sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-      edition: 5,
-      available: 5,
+      edition: 3,
+      available: 3,
     },
 
     {
@@ -266,8 +266,8 @@ const photographs = {
       year: 2026,
       medium: "Archival Pigment Print",
       sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-      edition: 5,
-      available: 5,
+      edition: 3,
+      available: 3,
     },
 
   ],
@@ -279,8 +279,8 @@ const photographs = {
     year: 2026,
     medium: "Archival Pigment Print",
     sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-    edition: 5,
-    available: 5,
+    edition: 3,
+    available: 3,
   },
   {
     image: gallery602,
@@ -288,8 +288,8 @@ const photographs = {
     year: 2026,
     medium: "Archival Pigment Print",
     sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-    edition: 5,
-    available: 5,
+    edition: 3,
+    available: 3,
   },
   {
     image: gallery603,
@@ -297,8 +297,8 @@ const photographs = {
     year: 2026,
     medium: "Archival Pigment Print",
     sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-    edition: 5,
-    available: 5,
+    edition: 3,
+    available: 3,
   },
   {
     image: gallery604,
@@ -306,8 +306,8 @@ const photographs = {
     year: 2026,
     medium: "Archival Pigment Print",
     sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-    edition: 5,
-    available: 5,
+    edition: 3,
+    available: 3,
   },
   {
     image: gallery605,
@@ -315,8 +315,8 @@ const photographs = {
     year: 2026,
     medium: "Archival Pigment Print",
     sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-    edition: 5,
-    available: 5,
+    edition: 3,
+    available: 3,
   },
   {
     image: gallery606,
@@ -324,8 +324,8 @@ const photographs = {
     year: 2026,
     medium: "Archival Pigment Print",
     sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-    edition: 5,
-    available: 5,
+    edition: 3,
+    available: 3,
   },
 ],
 
@@ -337,8 +337,8 @@ const photographs = {
     year: 2026,
     medium: "Archival Pigment Print",
     sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-    edition: 5,
-    available: 5,
+    edition: 3,
+    available: 3,
   },
   {
     image: gallery702,
@@ -346,8 +346,8 @@ const photographs = {
     year: 2026,
     medium: "Archival Pigment Print",
     sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-    edition: 5,
-    available: 5,
+    edition: 3,
+    available: 3,
   },
   {
     image: gallery703,
@@ -355,8 +355,8 @@ const photographs = {
     year: 2026,
     medium: "Archival Pigment Print",
     sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-    edition: 5,
-    available: 5,
+    edition: 3,
+    available: 3,
   },
   {
     image: gallery704,
@@ -364,8 +364,8 @@ const photographs = {
     year: 2026,
     medium: "Archival Pigment Print",
     sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-    edition: 5,
-    available: 5,
+    edition: 3,
+    available: 3,
   },
   {
     image: gallery705,
@@ -373,8 +373,8 @@ const photographs = {
     year: 2026,
     medium: "Archival Pigment Print",
     sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-    edition: 5,
-    available: 5,
+    edition: 3,
+    available: 3,
   },
 ],
 
@@ -386,8 +386,8 @@ const photographs = {
     year: 2026,
     medium: "Archival Pigment Print",
     sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-    edition: 5,
-    available: 5,
+    edition: 3,
+    available: 3,
   },
   {
     image: gallery802,
@@ -395,8 +395,8 @@ const photographs = {
     year: 2026,
     medium: "Archival Pigment Print",
     sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-    edition: 5,
-    available: 5,
+    edition: 3,
+    available: 3,
   },
   {
     image: gallery803,
@@ -404,8 +404,8 @@ const photographs = {
     year: 2026,
     medium: "Archival Pigment Print",
     sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-    edition: 5,
-    available: 5,
+    edition: 3,
+    available: 3,
   },
   {
     image: gallery804,
@@ -413,8 +413,8 @@ const photographs = {
     year: 2026,
     medium: "Archival Pigment Print",
     sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-    edition: 5,
-    available: 5,
+    edition: 3,
+    available: 3,
   },
   {
     image: gallery805,
@@ -422,8 +422,8 @@ const photographs = {
     year: 2026,
     medium: "Archival Pigment Print",
     sizes: ["40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-    edition: 5,
-    available: 5,
+    edition: 3,
+    available: 3,
   },
 ],
 
