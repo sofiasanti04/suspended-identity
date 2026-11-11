@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import { useGLTF } from "@react-three/drei";
 
 const MODELS = [
-  "/models/FA-001.glb",
+  "/models/FA-001-AVIF.glb",
   "/models/FA-002.glb",
   "/models/FA-003.glb",
-  "/models/FA-004.glb",
+  "/models/FA-004-AVIF.glb",
   "/models/FA-005.glb",
   "/models/FA-006.glb",
   "/models/FA-007-AVIF.glb",

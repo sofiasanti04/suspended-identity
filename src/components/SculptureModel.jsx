@@ -7,9 +7,11 @@ export default function SculptureModel({
 }) {
 const modelPath =
   model === "FA-001"
-    ? "/models/FA-001.glb"
+    ? "/models/FA-001-AVIF.glb"
     : model === "FA-002"
     ? "/models/FA-002.glb"
+    : model === "FA-004"
+    ? "/models/FA-004-AVIF.glb"
     : model === "FA-007"
     ? "/models/FA-007-AVIF.glb"
     : `/models/${model}.glb`;
