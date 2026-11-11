@@ -84,7 +84,7 @@ export default function AboutScene({
         >
 
           <p>
-            Sofia Santi (b. 2004) is an Italian photographer and visual
+            Sofia Santi is an Italian photographer and visual
             artist working across photography and sculpture. Her practice
             explores the body, identity and the relationship between the
             individual and society.

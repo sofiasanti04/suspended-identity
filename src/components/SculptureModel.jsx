@@ -5,11 +5,13 @@ export default function SculptureModel({
   model,
   ...props
 }) {
-  const modelPath =
+const modelPath =
   model === "FA-001"
     ? "/models/FA-001.glb"
     : model === "FA-002"
     ? "/models/FA-002.glb"
+    : model === "FA-007"
+    ? "/models/FA-007-AVIF.glb"
     : `/models/${model}.glb`;
     
 const { scene } = useGLTF(modelPath);

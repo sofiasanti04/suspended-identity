@@ -40,7 +40,7 @@ const sculptureSettings = {
   "FA-007": {
     scale: 2.4,
     rotation: [0, Math.PI - Math.PI / 6, 0],
-    position: [0.6, 1.3, -1.5]
+    position: [0.6, 1.5, -1.5]
   },
 
 
