@@ -12,16 +12,32 @@ import CopyrightScene from "./scenes/CopyrightScene";
 import ArchiveScene from "./scenes/ArchiveScene";
 import SculptureScene from "./scenes/SculptureScene";
 import GalleryArchiveScene from "./scenes/GalleryArchiveScene";
+import FavoritesScene from "./scenes/FavoritesScene";
 import RotatePhone from "./components/RotatePhone";
 
 function App() {
   const [scene, setScene] = useState("landing");
   const [selectedBust, setSelectedBust] = useState(null);
+  const [favorites, setFavorites] = useState(() => {
+  try {
+    return JSON.parse(localStorage.getItem("suspended-favorites")) || [];
+  } catch {
+    return [];
+  }
+});
+const [initialPhotoIndex, setInitialPhotoIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [isPortrait, setIsPortrait] = useState(
   window.matchMedia("(orientation: portrait)").matches
 );
 const [isInstagram, setIsInstagram] = useState(false);
+
+useEffect(() => {
+  localStorage.setItem(
+    "suspended-favorites",
+    JSON.stringify(favorites)
+  );
+}, [favorites]);
 
 useEffect(() => {
   const media = window.matchMedia("(orientation: portrait)");
@@ -42,6 +58,54 @@ useEffect(() => {
 
   setIsInstagram(/Instagram/i.test(ua));
 }, []);
+
+const toggleFavorite = (item) => {
+  setFavorites((current) => {
+    const exists = current.some(
+      (saved) =>
+        saved.type === item.type &&
+        saved.code === item.code &&
+        (saved.index ?? null) === (item.index ?? null)
+    );
+
+    if (exists) {
+      return current.filter(
+        (saved) =>
+          !(
+            saved.type === item.type &&
+            saved.code === item.code &&
+            (saved.index ?? null) === (item.index ?? null)
+          )
+      );
+    }
+
+    return [...current, item];
+  });
+};
+
+const removeFavorite = (item) => {
+  setFavorites((current) =>
+    current.filter(
+      (saved) =>
+        !(
+          saved.type === item.type &&
+          saved.code === item.code &&
+          (saved.index ?? null) === (item.index ?? null)
+        )
+    )
+  );
+};
+
+const openFavorite = (item) => {
+  setSelectedBust(item.code);
+
+  if (item.type === "photo") {
+    setInitialPhotoIndex(item.index);
+    setScene("galleryArchive");
+  } else {
+    setScene("sculpture");
+  }
+};
   
 useEffect(() => {
     const checkMobile = () => {
@@ -260,16 +324,18 @@ if (scene === "gallery-loading") {
 
   return (
     <GalleryScene
-      onBustClick={(bustName) => {
-        setSelectedBust(bustName);
-        setScene("archive");
-      }}
-      onOpenCustomBusts={() => setScene("custom-busts")}
-      onOpenAbout={() => setScene("about")}
-      onOpenPrivacyPolicy={() => setScene("privacy-policy")}
-      onOpenTermsConditions={() => setScene("terms-conditions")}
-      onOpenCopyright={() => setScene("copyright")}
-    />
+  onBustClick={(bustName) => {
+    setSelectedBust(bustName);
+    setScene("archive");
+  }}
+  onOpenCustomBusts={() => setScene("custom-busts")}
+  onOpenAbout={() => setScene("about")}
+  onOpenPrivacyPolicy={() => setScene("privacy-policy")}
+  onOpenTermsConditions={() => setScene("terms-conditions")}
+  onOpenCopyright={() => setScene("copyright")}
+  onOpenFavorites={() => setScene("favorites")}
+  favoritesCount={favorites.length}
+/>
   );
 }
 
@@ -313,6 +379,21 @@ if (scene === "copyright") {
   );
 }
 
+/* ===================== */
+/* FAVOURITES */
+/* ===================== */
+
+if (scene === "favorites") {
+  return (
+    <FavoritesScene
+      favorites={favorites}
+      onReturn={() => setScene("gallery")}
+      onOpenArtwork={openFavorite}
+      onRemoveFavorite={removeFavorite}
+    />
+  );
+}
+
   /* ===================== */
   /* ARCHIVE */
   /* ===================== */
@@ -337,6 +418,8 @@ if (scene === "copyright") {
       <SculptureScene
         selectedBust={selectedBust}
         onReturn={() => setScene("archive")}
+        favorites={favorites}
+        onToggleFavorite={toggleFavorite}
       />
     );
   }
@@ -346,13 +429,16 @@ if (scene === "copyright") {
   /* ===================== */
 
   if (scene === "galleryArchive") {
-    return (
-      <GalleryArchiveScene
-        selectedBust={selectedBust}
-        onReturn={() => setScene("archive")}
-      />
-    );
-  }
+  return (
+    <GalleryArchiveScene
+      selectedBust={selectedBust}
+      initialImageIndex={initialPhotoIndex}
+      onReturn={() => setScene("archive")}
+      favorites={favorites}
+      onToggleFavorite={toggleFavorite}
+    />
+  );
+}
 
   /* ===================== */
 /* PROJECT STATEMENT */

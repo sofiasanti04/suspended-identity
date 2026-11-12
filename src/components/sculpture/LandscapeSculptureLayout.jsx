@@ -2,6 +2,8 @@ import { useState } from "react";
 
 export default function LandscapeSculptureLayout({
   sculpture,
+  favorites = [],
+  onToggleFavorite,
   selectedImage,
   images,
   fullscreenIndex,
@@ -52,6 +54,38 @@ const [showInfo, setShowInfo] = useState(false);
           }}
         >
           ←
+        </button>
+
+                <button
+          onClick={() =>
+            onToggleFavorite({
+              type: "sculpture",
+              code: sculpture.code,
+              title: sculpture.code,
+            })
+          }
+          style={{
+            position: "absolute",
+            top: 0,
+            right: 0,
+            width: "42px",
+            height: "42px",
+            background: "transparent",
+            border: "1px solid rgba(255,255,255,.25)",
+            borderRadius: "50%",
+            color: "white",
+            fontSize: "22px",
+            cursor: "pointer",
+            zIndex: 1000,
+          }}
+        >
+          {favorites.some(
+            (item) =>
+              item.type === "sculpture" &&
+              item.code === sculpture.code
+          )
+            ? "♥"
+            : "♡"}
         </button>
 
         {selectedImage && (

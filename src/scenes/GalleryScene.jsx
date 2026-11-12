@@ -426,6 +426,8 @@ export default function GalleryScene({
   onOpenPrivacyPolicy,
   onOpenTermsConditions,
   onOpenCopyright,
+  onOpenFavorites,
+  favoritesCount = 0,
 }) {
 
 
@@ -539,6 +541,52 @@ console.log({
       overflow: "hidden",
     }}
   >
+
+    {(
+  <button
+    type="button"
+    aria-label={`Open favorites (${favoritesCount})`}
+    onClick={onOpenFavorites}
+    style={{
+      position: "fixed",
+      zIndex: 1001,
+      top: isMobile ? "20px" : "80px",
+      right: isMobile ? "76px" : "136px",
+      width: "46px",
+      height: "46px",
+      padding: 0,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      background: "rgba(2,5,12,0.55)",
+      border: "1px solid rgba(255,255,255,0.22)",
+      borderRadius: "50%",
+      color: "rgba(255,255,255,0.9)",
+      cursor: "pointer",
+      backdropFilter: "blur(10px)",
+      WebkitBackdropFilter: "blur(10px)",
+      fontSize: "23px",
+      fontWeight: 300,
+    }}
+  >
+    <span>
+      {favoritesCount > 0 ? "♥" : "♡"}
+    </span>
+    {favoritesCount > 0 && (
+      <span
+        style={{
+          position: "absolute",
+          top: "2px",
+          right: "2px",
+          fontSize: "9px",
+          color: "#fff",
+        }}
+      >
+        {favoritesCount}
+      </span>
+    )}
+  </button>
+)}
 
     {/* ===================== */}
     {/* MENU */}

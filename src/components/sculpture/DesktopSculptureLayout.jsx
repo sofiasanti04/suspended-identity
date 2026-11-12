@@ -1,6 +1,8 @@
 import { useState } from "react";
 export default function DesktopSculptureLayout({
   sculpture,
+  favorites = [],
+  onToggleFavorite,
   selectedImage,
   setSelectedImage,
   images,
@@ -63,6 +65,38 @@ marginTop: "120px",
   }}
 >
   ←
+</button>
+
+<button
+  onClick={() =>
+    onToggleFavorite({
+      type: "sculpture",
+      code: sculpture.code,
+      title: sculpture.code,
+    })
+  }
+  style={{
+    position: "fixed",
+    top: "120px",
+    right: "120px",
+    width: "42px",
+    height: "42px",
+    background: "transparent",
+    border: "1px solid rgba(255,255,255,.25)",
+    borderRadius: "50%",
+    color: "white",
+    fontSize: "22px",
+    cursor: "pointer",
+    zIndex: 1000,
+  }}
+>
+  {favorites.some(
+    (item) =>
+      item.type === "sculpture" &&
+      item.code === sculpture.code
+  )
+    ? "♥"
+    : "♡"}
 </button>
 
         {/* IMMAGINE */}

@@ -14,7 +14,9 @@ const sculptureImages = import.meta.glob(
 
 export default function SculptureScene({
   selectedBust,
-  onReturn
+  onReturn,
+  favorites = [],
+  onToggleFavorite
 }) {
   const sculpture = archiveData[selectedBust];
   
@@ -162,6 +164,8 @@ export default function SculptureScene({
   return (
     <LandscapeSculptureLayout
   sculpture={sculpture}
+  favorites={favorites}
+  onToggleFavorite={onToggleFavorite}
   selectedImage={selectedImage}
   images={images}
   fullscreenIndex={fullscreenIndex}
@@ -183,6 +187,8 @@ export default function SculptureScene({
 return (
   <DesktopSculptureLayout
   sculpture={sculpture}
+  favorites={favorites}
+  onToggleFavorite={onToggleFavorite}
   selectedImage={selectedImage}
   setSelectedImage={setSelectedImage}
   images={images}

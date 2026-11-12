@@ -433,8 +433,12 @@ const photographs = {
 export default function GalleryArchiveScene({
   selectedBust,
   onReturn,
+  initialImageIndex = 0,
+  favorites = [],
+  onToggleFavorite,
 }) {
-  const [currentImage, setCurrentImage] = useState(0);
+
+const [currentImage, setCurrentImage] = useState(initialImageIndex);
 const [fullscreen, setFullscreen] = useState(false);
 const [showInfo, setShowInfo] = useState(false);
 const {
@@ -448,8 +452,8 @@ const currentPhoto = photographsList[currentImage];
   const images = photographsList.map((photo) => photo.image);
 
   useEffect(() => {
-    setCurrentImage(0);
-  }, [selectedBust]);
+  setCurrentImage(initialImageIndex);
+}, [selectedBust, initialImageIndex]);
 
   const previousImage = () => {
   setShowInfo(false);
@@ -499,6 +503,7 @@ if (isMobile) {
     >
       <div
         style={{
+          position: "relative",
           padding: "90px 24px 40px",
           display: "flex",
           flexDirection: "column",
@@ -519,6 +524,40 @@ if (isMobile) {
         >
           ←
         </button>
+
+<button
+  onClick={() =>
+    onToggleFavorite({
+      type: "photo",
+      code: selectedBust,
+      index: currentImage,
+      title: currentPhoto.title,
+    })
+  }
+  style={{
+    position: "absolute",
+    top: "20px",
+    right: "24px",
+    width: "42px",
+    height: "42px",
+    background: "transparent",
+    border: "1px solid rgba(255,255,255,.25)",
+    borderRadius: "50%",
+    color: "white",
+    fontSize: "22px",
+    cursor: "pointer",
+    zIndex: 1000,
+  }}
+>
+  {favorites.some(
+    (item) =>
+      item.type === "photo" &&
+      item.code === selectedBust &&
+      item.index === currentImage
+  )
+    ? "♥"
+    : "♡"}
+</button>
 
         <img
           src={currentPhoto.image}
@@ -766,6 +805,40 @@ return (
       >
         ←
       </button>
+
+<button
+  onClick={() =>
+    onToggleFavorite({
+      type: "photo",
+      code: selectedBust,
+      index: currentImage,
+      title: currentPhoto.title,
+    })
+  }
+  style={{
+    position: "fixed",
+    top: "120px",
+    right: "120px",
+    width: "42px",
+    height: "42px",
+    background: "transparent",
+    border: "1px solid rgba(255,255,255,.25)",
+    borderRadius: "50%",
+    color: "white",
+    fontSize: "22px",
+    cursor: "pointer",
+    zIndex: 1000,
+  }}
+>
+  {favorites.some(
+    (item) =>
+      item.type === "photo" &&
+      item.code === selectedBust &&
+      item.index === currentImage
+  )
+    ? "♥"
+    : "♡"}
+</button>
 
       <div
   style={{
