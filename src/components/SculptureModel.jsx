@@ -18,6 +18,8 @@ const modelPath =
     ? "/models/FA-006-AVIF.glb"
     : model === "FA-007"
     ? "/models/FA-007-AVIF.glb"
+    : model === "FA-008"
+    ? "/models/FA-008-AVIF.glb"
     : `/models/${model}.glb`;
     
 const { scene } = useGLTF(modelPath);
