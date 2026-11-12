@@ -8,14 +8,18 @@ function FavoritesScene({
   onRemoveFavorite,
 }) {
   return (
-    <main
-      style={{
-        minHeight: "100vh",
-        boxSizing: "border-box",
-        background: "#02050c",
-        color: "#e8e4dc",
-        padding: "clamp(28px, 6vw, 80px)",
-        fontFamily: "Inter, sans-serif",
+   <main
+  style={{
+    minHeight: "100vh",
+    height: "100dvh",
+    overflowY: "auto",
+    overflowX: "hidden",
+    WebkitOverflowScrolling: "touch",
+    boxSizing: "border-box",
+    background: "#02050c",
+    color: "#e8e4dc",
+    padding: "clamp(28px, 6vw, 80px)",
+    fontFamily: "Inter, sans-serif",
       }}
     >
       <button
