@@ -12,6 +12,8 @@ const modelPath =
     ? "/models/FA-002.glb"
     : model === "FA-004"
     ? "/models/FA-004-AVIF.glb"
+    : model === "FA-005"
+    ? "/models/FA-005-AVIF.glb"
     : model === "FA-007"
     ? "/models/FA-007-AVIF.glb"
     : `/models/${model}.glb`;
