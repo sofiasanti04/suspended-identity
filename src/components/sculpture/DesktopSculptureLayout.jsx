@@ -174,7 +174,7 @@ marginTop: "120px",
   onClick={onAcquire}
   style={buttonStyle}
 >
-  ACQUIRE SCULPTURE
+INQUIRE ABOUT ACQUISITION
 </button>
 
 <button

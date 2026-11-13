@@ -178,7 +178,7 @@ const [showInfo, setShowInfo] = useState(false);
         textTransform: "uppercase",
       }}
     >
-      ACQUIRE SCULPTURE
+      INQUIRE ABOUT ACQUISITION
     </button>
 
     <button
