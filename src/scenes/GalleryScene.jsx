@@ -428,6 +428,8 @@ export default function GalleryScene({
   onOpenCopyright,
   onOpenFavorites,
   favoritesCount = 0,
+  onOpenCart,
+  cartCount = 0,
 }) {
 
 
@@ -542,51 +544,105 @@ console.log({
     }}
   >
 
-    {(
-  <button
-    type="button"
-    aria-label={`Open favorites (${favoritesCount})`}
-    onClick={onOpenFavorites}
-    style={{
-      position: "fixed",
-      zIndex: 1001,
-      top: isMobile ? "20px" : "80px",
-      right: isMobile ? "76px" : "136px",
-      width: "46px",
-      height: "46px",
-      padding: 0,
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      background: "rgba(2,5,12,0.55)",
-      border: "1px solid rgba(255,255,255,0.22)",
-      borderRadius: "50%",
-      color: "rgba(255,255,255,0.9)",
-      cursor: "pointer",
-      backdropFilter: "blur(10px)",
-      WebkitBackdropFilter: "blur(10px)",
-      fontSize: "23px",
-      fontWeight: 300,
-    }}
-  >
-    <span>
-      {favoritesCount > 0 ? "♥" : "♡"}
-    </span>
-    {favoritesCount > 0 && (
-      <span
+    
+      {/* CART BUTTON */}
+      <button
+        type="button"
+        aria-label={`Open cart (${cartCount})`}
+        onClick={onOpenCart}
         style={{
-          position: "absolute",
-          top: "2px",
-          right: "2px",
-          fontSize: "9px",
-          color: "#fff",
+          position: "fixed",
+          zIndex: 1001,
+          top: isMobile ? "20px" : "80px",
+          right: isMobile ? "132px" : "192px",
+          width: "46px",
+          height: "46px",
+          padding: 0,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          background: "rgba(2,5,12,0.55)",
+          border: "1px solid rgba(255,255,255,0.22)",
+          borderRadius: "50%",
+          color: "rgba(255,255,255,0.9)",
+          cursor: "pointer",
+          backdropFilter: "blur(10px)",
+          WebkitBackdropFilter: "blur(10px)",
+          fontSize: "22px",
+          fontWeight: 300,
         }}
       >
-        {favoritesCount}
-      </span>
-    )}
-  </button>
-)}
+<svg
+  width="21"
+  height="21"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  strokeWidth="1.3"
+  strokeLinecap="round"
+  strokeLinejoin="round"
+>
+  <path d="M5 8h14l1 13H4L5 8Z" />
+  <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+</svg>        {cartCount > 0 && (
+          <span
+            style={{
+              position: "absolute",
+              top: "2px",
+              right: "2px",
+              fontSize: "9px",
+              color: "#fff",
+            }}
+          >
+            {cartCount}
+          </span>
+        )}
+      </button>
+
+      {/* FAVORITES BUTTON */}
+      <button
+        type="button"
+        aria-label={`Open favorites (${favoritesCount})`}
+        onClick={onOpenFavorites}
+        style={{
+          position: "fixed",
+          zIndex: 1001,
+          top: isMobile ? "20px" : "80px",
+          right: isMobile ? "76px" : "136px",
+          width: "46px",
+          height: "46px",
+          padding: 0,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          background: "rgba(2,5,12,0.55)",
+          border: "1px solid rgba(255,255,255,0.22)",
+          borderRadius: "50%",
+          color: "rgba(255,255,255,0.9)",
+          cursor: "pointer",
+          backdropFilter: "blur(10px)",
+          WebkitBackdropFilter: "blur(10px)",
+          fontSize: "23px",
+          fontWeight: 300,
+        }}
+      >
+        <span>
+          {favoritesCount > 0 ? "♥" : "♡"}
+        </span>
+        {favoritesCount > 0 && (
+          <span
+            style={{
+              position: "absolute",
+              top: "2px",
+              right: "2px",
+              fontSize: "9px",
+              color: "#fff",
+            }}
+          >
+            {favoritesCount}
+          </span>
+        )}
+      </button>
 
     {/* ===================== */}
     {/* MENU */}

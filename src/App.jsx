@@ -13,6 +13,7 @@ import ArchiveScene from "./scenes/ArchiveScene";
 import SculptureScene from "./scenes/SculptureScene";
 import GalleryArchiveScene from "./scenes/GalleryArchiveScene";
 import FavoritesScene from "./scenes/FavoritesScene";
+import CartScene from "./scenes/CartScene";
 import RotatePhone from "./components/RotatePhone";
 
 function App() {
@@ -26,6 +27,13 @@ function App() {
   }
 });
 const [initialPhotoIndex, setInitialPhotoIndex] = useState(0);
+const [cart, setCart] = useState(() => {
+  try {
+    return JSON.parse(localStorage.getItem("suspended-cart")) || [];
+  } catch {
+    return [];
+  }
+});
   const [isMobile, setIsMobile] = useState(false);
   const [isPortrait, setIsPortrait] = useState(
   window.matchMedia("(orientation: portrait)").matches
@@ -38,6 +46,13 @@ useEffect(() => {
     JSON.stringify(favorites)
   );
 }, [favorites]);
+
+useEffect(() => {
+  localStorage.setItem(
+    "suspended-cart",
+    JSON.stringify(cart)
+  );
+}, [cart]);
 
 useEffect(() => {
   const media = window.matchMedia("(orientation: portrait)");
@@ -93,6 +108,22 @@ const removeFavorite = (item) => {
           (saved.index ?? null) === (item.index ?? null)
         )
     )
+  );
+};
+
+const addToCart = (item) => {
+  setCart((current) => [
+    ...current,
+    {
+      ...item,
+      id: `${item.code}-${item.index}-${Date.now()}`,
+    },
+  ]);
+};
+
+const removeFromCart = (itemId) => {
+  setCart((current) =>
+    current.filter((item) => item.id !== itemId)
   );
 };
 
@@ -335,6 +366,8 @@ if (scene === "gallery-loading") {
   onOpenCopyright={() => setScene("copyright")}
   onOpenFavorites={() => setScene("favorites")}
   favoritesCount={favorites.length}
+  onOpenCart={() => setScene("cart")}
+  cartCount={cart.length}
 />
   );
 }
@@ -375,6 +408,20 @@ if (scene === "copyright") {
   return (
     <CopyrightScene
       onReturn={() => setScene("gallery")}
+    />
+  );
+}
+
+/* ===================== */
+/* CART */
+/* ===================== */
+
+if (scene === "cart") {
+  return (
+    <CartScene
+      cart={cart}
+      onReturn={() => setScene("gallery")}
+      onRemoveItem={removeFromCart}
     />
   );
 }
@@ -436,6 +483,8 @@ if (scene === "favorites") {
       onReturn={() => setScene("archive")}
       favorites={favorites}
       onToggleFavorite={toggleFavorite}
+      addToCart={addToCart}
+      onOpenCart={() => setScene("cart")}
     />
   );
 }

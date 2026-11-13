@@ -53,7 +53,12 @@ const photographs = {
   title: "FEMALE ADAPTATION 01",
   year: 2026,
   medium: "Archival Pigment Print",
-  sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+  sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],
   edition: 3,
   available: 3,
 },
@@ -63,7 +68,12 @@ const photographs = {
       title: "FEMALE ADAPTATION 02",
       year: 2026,
       medium: "Archival Pigment Print",
-      sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+      sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],
       edition: 3,
       available: 3,
     },
@@ -73,7 +83,12 @@ const photographs = {
       title: "FEMALE ADAPTATION 03",
       year: 2026,
       medium: "Archival Pigment Print",
-      sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+      sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],
       edition: 3,
       available: 3,
     },
@@ -83,7 +98,12 @@ const photographs = {
       title: "FEMALE ADAPTATION 04",
       year: 2026,
       medium: "Archival Pigment Print",
-      sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+      sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],
       edition: 3,
       available: 3,
     },
@@ -93,7 +113,12 @@ const photographs = {
       title: "FEMALE ADAPTATION 05",
       year: 2026,
       medium: "Archival Pigment Print",
-      sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+      sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],
       edition: 3,
       available: 3,
     },
@@ -106,7 +131,12 @@ const photographs = {
   title: "FEMALE ADAPTATION 06",
   year: 2026,
   medium: "Archival Pigment Print",
-  sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+  sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],
   edition: 3,
   available: 3,
 },
@@ -116,7 +146,12 @@ const photographs = {
   title: "FEMALE ADAPTATION 07",
   year: 2026,
   medium: "Archival Pigment Print",
-  sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+  sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],
   edition: 3,
   available: 3,
 },
@@ -126,7 +161,12 @@ const photographs = {
   title: "FEMALE ADAPTATION 08",
   year: 2026,
   medium: "Archival Pigment Print",
-  sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+  sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],
   edition: 3,
   available: 3,
 },
@@ -136,7 +176,12 @@ const photographs = {
   title: "FEMALE ADAPTATION 09",
   year: 2026,
   medium: "Archival Pigment Print",
-  sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+  sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],
   edition: 3,
   available: 3,
 },
@@ -146,7 +191,12 @@ const photographs = {
   title: "FEMALE ADAPTATION 10",
   year: 2026,
   medium: "Archival Pigment Print",
-  sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+  sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],
   edition: 3,
   available: 3,
 },
@@ -158,7 +208,12 @@ const photographs = {
       title: "FEMALE ADAPTATION 11",
       year: 2026,
       medium: "Archival Pigment Print",
-      sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+      sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],
       edition: 3,
       available: 3,
     },
@@ -168,7 +223,12 @@ const photographs = {
       title: "FEMALE ADAPTATION 12",
       year: 2026,
       medium: "Archival Pigment Print",
-      sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+      sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],
       edition: 3,
       available: 3,
     },
@@ -178,7 +238,12 @@ const photographs = {
       title: "FEMALE ADAPTATION 13",
       year: 2026,
       medium: "Archival Pigment Print",
-      sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+      sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],
       edition: 3,
       available: 3,
     },
@@ -188,7 +253,12 @@ const photographs = {
       title: "FEMALE ADAPTATION 14",
       year: 2026,
       medium: "Archival Pigment Print",
-      sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+      sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],
       edition: 3,
       available: 3,
     },
@@ -201,7 +271,12 @@ const photographs = {
       title: "FEMALE ADAPTATION 16",
       year: 2026,
       medium: "Archival Pigment Print",
-      sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+      sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],
       edition: 3,
       available: 3,
     },
@@ -211,7 +286,12 @@ const photographs = {
       title: "FEMALE ADAPTATION 17",
       year: 2026,
       medium: "Archival Pigment Print",
-      sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+      sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],
       edition: 3,
       available: 3,
     },
@@ -221,7 +301,12 @@ const photographs = {
       title: "FEMALE ADAPTATION 18",
       year: 2026,
       medium: "Archival Pigment Print",
-      sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+      sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],
       edition: 3,
       available: 3,
     },
@@ -235,7 +320,12 @@ const photographs = {
       title: "FEMALE ADAPTATION 19",
       year: 2026,
       medium: "Archival Pigment Print",
-      sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+      sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],
       edition: 3,
       available: 3,
     },
@@ -245,7 +335,12 @@ const photographs = {
       title: "FEMALE ADAPTATION 20",
       year: 2026,
       medium: "Archival Pigment Print",
-      sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+     sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],
       edition: 3,
       available: 3,
     },
@@ -255,7 +350,12 @@ const photographs = {
       title: "FEMALE ADAPTATION 21",
       year: 2026,
       medium: "Archival Pigment Print",
-      sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+      sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],
       edition: 3,
       available: 3,
     },
@@ -265,7 +365,12 @@ const photographs = {
       title: "FEMALE ADAPTATION 22",
       year: 2026,
       medium: "Archival Pigment Print",
-      sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+     sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],
       edition: 3,
       available: 3,
     },
@@ -278,7 +383,12 @@ const photographs = {
     title: "FEMALE ADAPTATION 23",
     year: 2026,
     medium: "Archival Pigment Print",
-    sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+    sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],
     edition: 3,
     available: 3,
   },
@@ -287,7 +397,12 @@ const photographs = {
     title: "FEMALE ADAPTATION 24",
     year: 2026,
     medium: "Archival Pigment Print",
-    sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
+    sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],
     edition: 3,
     available: 3,
   },
@@ -296,8 +411,12 @@ const photographs = {
     title: "FEMALE ADAPTATION 25",
     year: 2026,
     medium: "Archival Pigment Print",
-    sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-    edition: 3,
+sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],    edition: 3,
     available: 3,
   },
   {
@@ -305,8 +424,12 @@ const photographs = {
     title: "FEMALE ADAPTATION 26",
     year: 2026,
     medium: "Archival Pigment Print",
-    sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-    edition: 3,
+sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],    edition: 3,
     available: 3,
   },
   {
@@ -314,8 +437,12 @@ const photographs = {
     title: "FEMALE ADAPTATION 27",
     year: 2026,
     medium: "Archival Pigment Print",
-    sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-    edition: 3,
+sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],    edition: 3,
     available: 3,
   },
   {
@@ -323,8 +450,12 @@ const photographs = {
     title: "FEMALE ADAPTATION 28",
     year: 2026,
     medium: "Archival Pigment Print",
-    sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-    edition: 3,
+sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],    edition: 3,
     available: 3,
   },
 ],
@@ -336,8 +467,12 @@ const photographs = {
     title: "FEMALE ADAPTATION 29",
     year: 2026,
     medium: "Archival Pigment Print",
-    sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-    edition: 3,
+sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],    edition: 3,
     available: 3,
   },
   {
@@ -345,8 +480,12 @@ const photographs = {
     title: "FEMALE ADAPTATION 30",
     year: 2026,
     medium: "Archival Pigment Print",
-    sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-    edition: 3,
+sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],    edition: 3,
     available: 3,
   },
   {
@@ -354,8 +493,12 @@ const photographs = {
     title: "FEMALE ADAPTATION 31",
     year: 2026,
     medium: "Archival Pigment Print",
-    sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-    edition: 3,
+sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],    edition: 3,
     available: 3,
   },
   {
@@ -363,8 +506,12 @@ const photographs = {
     title: "FEMALE ADAPTATION 32",
     year: 2026,
     medium: "Archival Pigment Print",
-    sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-    edition: 3,
+sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],    edition: 3,
     available: 3,
   },
   {
@@ -372,8 +519,12 @@ const photographs = {
     title: "FEMALE ADAPTATION 33",
     year: 2026,
     medium: "Archival Pigment Print",
-    sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-    edition: 3,
+sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],    edition: 3,
     available: 3,
   },
 ],
@@ -385,8 +536,12 @@ const photographs = {
     title: "FEMALE ADAPTATION 34",
     year: 2026,
     medium: "Archival Pigment Print",
-    sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-    edition: 3,
+sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],    edition: 3,
     available: 3,
   },
   {
@@ -394,8 +549,12 @@ const photographs = {
     title: "FEMALE ADAPTATION 35",
     year: 2026,
     medium: "Archival Pigment Print",
-    sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-    edition: 3,
+sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],    edition: 3,
     available: 3,
   },
   {
@@ -403,8 +562,12 @@ const photographs = {
     title: "FEMALE ADAPTATION 36",
     year: 2026,
     medium: "Archival Pigment Print",
-    sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-    edition: 3,
+sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],    edition: 3,
     available: 3,
   },
   {
@@ -412,8 +575,12 @@ const photographs = {
     title: "FEMALE ADAPTATION 37",
     year: 2026,
     medium: "Archival Pigment Print",
-    sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-    edition: 3,
+sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],    edition: 3,
     available: 3,
   },
   {
@@ -421,8 +588,12 @@ const photographs = {
     title: "FEMALE ADAPTATION 38",
     year: 2026,
     medium: "Archival Pigment Print",
-    sizes: ["30 × 45 cm", "40 × 60 cm", "70 × 100 cm", "100 × 150 cm"],
-    edition: 3,
+sizes: [
+  { label: "30 × 45 cm", price: 85 },
+  { label: "40 × 60 cm", price: 130 },
+  { label: "70 × 100 cm", price: 240 },
+  { label: "100 × 150 cm", price: 390 },
+],    edition: 3,
     available: 3,
   },
 ],
@@ -436,6 +607,8 @@ export default function GalleryArchiveScene({
   initialImageIndex = 0,
   favorites = [],
   onToggleFavorite,
+  addToCart,
+  onOpenCart,
 }) {
 
 const [currentImage, setCurrentImage] = useState(initialImageIndex);
@@ -448,6 +621,8 @@ const {
   const photographsList = photographs[selectedBust] || [];
 
 const currentPhoto = photographsList[currentImage];
+const [selectedSize, setSelectedSize] = useState(0);
+const [addedToCart, setAddedToCart] = useState(false);
 
   const images = photographsList.map((photo) => photo.image);
 
@@ -559,6 +734,41 @@ if (isMobile) {
     : "♡"}
 </button>
 
+<button
+  onClick={onOpenCart}
+  aria-label="Open cart"
+  style={{
+    position: "absolute",
+    top: "20px",
+    right: "76px",
+    width: "42px",
+    height: "42px",
+    background: "transparent",
+    border: "1px solid rgba(255,255,255,.25)",
+    borderRadius: "50%",
+    color: "white",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    cursor: "pointer",
+    zIndex: 1000,
+  }}
+>
+  <svg
+    width="21"
+    height="21"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.3"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M5 8h14l1 13H4L5 8Z" />
+    <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+  </svg>
+</button>
+
         <img
           src={currentPhoto.image}
           alt={currentPhoto.title}
@@ -652,14 +862,31 @@ if (isMobile) {
       Available Sizes
     </p>
 
-    {currentPhoto.sizes.map((size) => (
-      <p
-        key={size}
-        style={{ margin: "0.2rem 0" }}
-      >
-        {size}
-      </p>
-    ))}
+    {currentPhoto.sizes.map((size, index) => (
+  <button
+    key={size.label}
+    onClick={() => setSelectedSize(index)}
+    style={{
+      width: "100%",
+      padding: "12px 0",
+      display: "flex",
+      justifyContent: "space-between",
+      background: "transparent",
+      border: "none",
+      borderBottom: "1px solid rgba(255,255,255,.15)",
+      color: selectedSize === index ? "#ffffff" : "#999999",
+      cursor: "pointer",
+      textAlign: "left",
+      font: "inherit",
+    }}
+  >
+    <span>
+      {selectedSize === index ? "✓ " : ""}
+      {size.label}
+    </span>
+    <span>€ {size.price}</span>
+  </button>
+))}
 
     <p style={{ marginTop: "1.5rem", opacity: .6 }}>
       Limited Edition
@@ -695,13 +922,25 @@ if (isMobile) {
     ...buttonStyle,
     width: "100%",
   }}
-  onClick={() =>
-    (window.location.href =
-      `mailto:sofiasantiphoto@gmail.com?subject=Acquire Print - ${encodeURIComponent(currentPhoto.title)}`)
-  }
+  onClick={() => {
+  addToCart({
+    type: "photo",
+    code: selectedBust,
+    index: currentImage,
+    title: currentPhoto.title,
+    image: currentPhoto.image,
+    size: currentPhoto.sizes[selectedSize].label,
+    price: currentPhoto.sizes[selectedSize].price,
+  });
+
+  setAddedToCart(true);
+
+  setTimeout(() => {
+    setAddedToCart(false);
+  }, 2000);
+}}
 >
-  ACQUIRE PRINT
-</button>
+{addedToCart ? "ADDED TO CART ✓" : "ADD TO CART"}</button>
 
 <button
   style={{
@@ -838,6 +1077,41 @@ return (
   )
     ? "♥"
     : "♡"}
+</button>
+
+<button
+  onClick={onOpenCart}
+  aria-label="Open cart"
+  style={{
+    position: "fixed",
+    top: "120px",
+    right: "176px",
+    width: "42px",
+    height: "42px",
+    background: "transparent",
+    border: "1px solid rgba(255,255,255,.25)",
+    borderRadius: "50%",
+    color: "white",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    cursor: "pointer",
+    zIndex: 1000,
+  }}
+>
+  <svg
+    width="21"
+    height="21"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.3"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M5 8h14l1 13H4L5 8Z" />
+    <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+  </svg>
 </button>
 
       <div
@@ -983,13 +1257,30 @@ return (
   Available Sizes
 </p>
 
-{currentPhoto.sizes.map((size) => (
-  <p
-    key={size}
-    style={{ margin: "0.2rem 0" }}
+{currentPhoto.sizes.map((size, index) => (
+  <button
+    key={size.label}
+    onClick={() => setSelectedSize(index)}
+    style={{
+      width: "100%",
+      padding: "12px 0",
+      display: "flex",
+      justifyContent: "space-between",
+      background: "transparent",
+      border: "none",
+      borderBottom: "1px solid rgba(255,255,255,.15)",
+      color: selectedSize === index ? "#ffffff" : "#999999",
+      cursor: "pointer",
+      textAlign: "left",
+      font: "inherit",
+    }}
   >
-    {size}
-  </p>
+    <span>
+      {selectedSize === index ? "✓ " : ""}
+      {size.label}
+    </span>
+    <span>€ {size.price}</span>
+  </button>
 ))}
 
 <p style={{ marginTop: "1.5rem", opacity: .6 }}>
@@ -1025,16 +1316,28 @@ return (
 
     <button
   style={{
-  ...buttonStyle,
-  width: "100%",
+    ...buttonStyle,
+    width: "100%",
+  }}
+  onClick={() => {
+  addToCart({
+    type: "photo",
+    code: selectedBust,
+    index: currentImage,
+    title: currentPhoto.title,
+    image: currentPhoto.image,
+    size: currentPhoto.sizes[selectedSize].label,
+    price: currentPhoto.sizes[selectedSize].price,
+  });
+
+  setAddedToCart(true);
+
+  setTimeout(() => {
+    setAddedToCart(false);
+  }, 2000);
 }}
-  onClick={() =>
-    (window.location.href =
-      `mailto:sofiasantiphoto@gmail.com?subject=Acquire Print - ${encodeURIComponent(currentPhoto.title)}`)
-  }
 >
-  ACQUIRE PRINT
-</button>
+{addedToCart ? "ADDED TO CART ✓" : "ADD TO CART"}</button>
 
     <button
       style={{
