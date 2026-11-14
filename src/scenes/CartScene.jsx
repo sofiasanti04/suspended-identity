@@ -4,10 +4,33 @@ export default function CartScene({
   onReturn,
   onRemoveItem,
 }) {
-  const total = cart.reduce(
-    (sum, item) => sum + Number(item.price || 0),
-    0
-  );
+  const photoItems = cart.filter(
+  (item) => item.type === "photo"
+);
+
+const photoCount = photoItems.length;
+
+const subtotal = cart.reduce(
+  (sum, item) => sum + Number(item.price || 0),
+  0
+);
+
+const photoSubtotal = photoItems.reduce(
+  (sum, item) => sum + Number(item.price || 0),
+  0
+);
+
+const discountRate =
+  photoCount >= 4 ? 0.15 :
+  photoCount === 3 ? 0.10 :
+  photoCount === 2 ? 0.05 :
+  0;
+
+const discount = Math.round(
+  photoSubtotal * discountRate * 100
+) / 100;
+
+const total = subtotal - discount;
 
   return (
     <main
@@ -132,32 +155,71 @@ export default function CartScene({
           </div>
 
           <div
-            style={{
-              marginTop: "3rem",
-              paddingTop: "2rem",
-              borderTop:
-                "1px solid rgba(255,255,255,.25)",
-              textAlign: "right",
-            }}
-          >
-            <p
-              style={{
-                color: "#aaa",
-                letterSpacing: ".15rem",
-              }}
-            >
-              TOTAL
-            </p>
+  style={{
+    marginTop: "3rem",
+    paddingTop: "2rem",
+    borderTop: "1px solid rgba(255,255,255,.25)",
+    maxWidth: "420px",
+    marginLeft: "auto",
+  }}
+>
+  {photoCount >= 2 && (
+    <div style={{ marginBottom: "2rem", textAlign: "left" }}>
+      <p
+        style={{
+          fontFamily: "Cormorant Garamond",
+          fontSize: "1.5rem",
+          marginBottom: ".5rem",
+        }}
+      >
+        A SPECIAL CONSIDERATION
+      </p>
 
-            <p
-              style={{
-                fontFamily: "Cormorant Garamond",
-                fontSize: "2.5rem",
-                margin: 0,
-              }}
-            >
-              € {total.toFixed(2)}
-            </p>
+      <p style={{ color: "#aaa", lineHeight: 1.7 }}>
+        A special consideration for collectors acquiring
+        multiple photographic prints.
+      </p>
+    </div>
+  )}
+
+  <div style={{ display: "flex", justifyContent: "space-between" }}>
+    <p style={{ color: "#aaa" }}>SUBTOTAL</p>
+    <p>€ {subtotal.toFixed(2)}</p>
+  </div>
+
+  {discount > 0 && (
+    <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <p style={{ color: "#aaa" }}>
+        COLLECTOR'S CONSIDERATION ({discountRate * 100}%)
+      </p>
+      <p style={{ color: "#c8bda8" }}>
+        − € {discount.toFixed(2)}
+      </p>
+    </div>
+  )}
+
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      borderTop: "1px solid rgba(255,255,255,.15)",
+      marginTop: "1.5rem",
+      paddingTop: "1rem",
+    }}
+  >
+    <p style={{ letterSpacing: ".15rem" }}>TOTAL</p>
+
+    <p
+      style={{
+        fontFamily: "Cormorant Garamond",
+        fontSize: "2.5rem",
+        margin: 0,
+      }}
+    >
+      € {total.toFixed(2)}
+    </p>
+  </div>
           </div>
         </>
       )}

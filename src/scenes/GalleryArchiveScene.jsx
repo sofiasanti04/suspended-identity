@@ -57,7 +57,7 @@ const photographs = {
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],
   edition: 3,
   available: 3,
@@ -72,7 +72,7 @@ const photographs = {
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],
       edition: 3,
       available: 3,
@@ -87,7 +87,7 @@ const photographs = {
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],
       edition: 3,
       available: 3,
@@ -102,7 +102,7 @@ const photographs = {
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],
       edition: 3,
       available: 3,
@@ -117,7 +117,7 @@ const photographs = {
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],
       edition: 3,
       available: 3,
@@ -135,7 +135,7 @@ const photographs = {
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],
   edition: 3,
   available: 3,
@@ -150,7 +150,7 @@ const photographs = {
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],
   edition: 3,
   available: 3,
@@ -165,7 +165,7 @@ const photographs = {
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],
   edition: 3,
   available: 3,
@@ -180,7 +180,7 @@ const photographs = {
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],
   edition: 3,
   available: 3,
@@ -195,7 +195,7 @@ const photographs = {
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],
   edition: 3,
   available: 3,
@@ -212,7 +212,7 @@ const photographs = {
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],
       edition: 3,
       available: 3,
@@ -227,7 +227,7 @@ const photographs = {
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],
       edition: 3,
       available: 3,
@@ -242,7 +242,7 @@ const photographs = {
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],
       edition: 3,
       available: 3,
@@ -257,7 +257,7 @@ const photographs = {
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],
       edition: 3,
       available: 3,
@@ -275,7 +275,7 @@ const photographs = {
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],
       edition: 3,
       available: 3,
@@ -290,7 +290,7 @@ const photographs = {
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],
       edition: 3,
       available: 3,
@@ -305,7 +305,7 @@ const photographs = {
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],
       edition: 3,
       available: 3,
@@ -324,7 +324,7 @@ const photographs = {
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],
       edition: 3,
       available: 3,
@@ -339,7 +339,7 @@ const photographs = {
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],
       edition: 3,
       available: 3,
@@ -354,7 +354,7 @@ const photographs = {
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],
       edition: 3,
       available: 3,
@@ -369,7 +369,7 @@ const photographs = {
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],
       edition: 3,
       available: 3,
@@ -387,7 +387,7 @@ const photographs = {
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],
     edition: 3,
     available: 3,
@@ -401,7 +401,7 @@ const photographs = {
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],
     edition: 3,
     available: 3,
@@ -415,7 +415,7 @@ sizes: [
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],    edition: 3,
     available: 3,
   },
@@ -428,7 +428,7 @@ sizes: [
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],    edition: 3,
     available: 3,
   },
@@ -441,7 +441,7 @@ sizes: [
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],    edition: 3,
     available: 3,
   },
@@ -454,7 +454,7 @@ sizes: [
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],    edition: 3,
     available: 3,
   },
@@ -471,7 +471,7 @@ sizes: [
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],    edition: 3,
     available: 3,
   },
@@ -484,7 +484,7 @@ sizes: [
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],    edition: 3,
     available: 3,
   },
@@ -497,7 +497,7 @@ sizes: [
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],    edition: 3,
     available: 3,
   },
@@ -510,7 +510,7 @@ sizes: [
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],    edition: 3,
     available: 3,
   },
@@ -523,7 +523,7 @@ sizes: [
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],    edition: 3,
     available: 3,
   },
@@ -540,7 +540,7 @@ sizes: [
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],    edition: 3,
     available: 3,
   },
@@ -553,7 +553,7 @@ sizes: [
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],    edition: 3,
     available: 3,
   },
@@ -566,7 +566,7 @@ sizes: [
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],    edition: 3,
     available: 3,
   },
@@ -579,7 +579,7 @@ sizes: [
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],    edition: 3,
     available: 3,
   },
@@ -592,7 +592,7 @@ sizes: [
   { label: "30 × 45 cm", price: 85 },
   { label: "40 × 60 cm", price: 130 },
   { label: "70 × 100 cm", price: 240 },
-  { label: "100 × 150 cm", price: 390 },
+  { label: "100 × 150 cm", price: 350 },
 ],    edition: 3,
     available: 3,
   },
@@ -834,8 +834,10 @@ if (isMobile) {
       border: "1px solid rgba(255,255,255,.15)",
       padding: "1.5rem",
       boxSizing: "border-box",
-      fontSize: ".95rem",
-      lineHeight: 1.8,
+      fontSize: "1rem",
+      lineHeight: 1.7,
+      maxHeight: "65vh",
+      overflowY: "auto",
     }}
   >
     <p style={{ margin: 0, opacity: .6 }}>
@@ -887,6 +889,34 @@ if (isMobile) {
     <span>€ {size.price}</span>
   </button>
 ))}
+
+<div
+  style={{
+    marginTop: "2rem",
+    padding: "1.25rem 0",
+    borderTop: "1px solid rgba(255,255,255,.15)",
+    borderBottom: "1px solid rgba(255,255,255,.15)",
+  }}
+>
+  <p
+    style={{
+      margin: 0,
+      fontFamily: "Cormorant Garamond",
+      fontSize: "1.25rem",
+      letterSpacing: ".08rem",
+    }}
+  >
+    A SPECIAL CONSIDERATION
+  </p>
+
+  <p style={{ color: "#aaa", lineHeight: 1.7, margin: ".6rem 0" }}>
+    A special consideration for collectors acquiring multiple photographic prints.
+  </p>
+
+  <p style={{ color: "#aaa", margin: ".35rem 0" }}>2 prints — 5%</p>
+  <p style={{ color: "#aaa", margin: ".35rem 0" }}>3 prints — 10%</p>
+  <p style={{ color: "#aaa", margin: ".35rem 0" }}>4 or more prints — 15%</p>
+</div>
 
     <p style={{ marginTop: "1.5rem", opacity: .6 }}>
       Limited Edition
@@ -1171,7 +1201,7 @@ return (
 
   <div
     style={{
-      flex: "0 0 360px",
+      flex: "0 0 460px",
       display: "flex",
       flexDirection: "column",
       gap: "1.2rem",
@@ -1229,7 +1259,7 @@ return (
       fontSize: ".95rem",
       lineHeight: 1.8,
 
-      maxHeight: "260px",
+      maxHeight: "380px",
       overflowY: "auto",
     }}
   >
@@ -1282,6 +1312,34 @@ return (
     <span>€ {size.price}</span>
   </button>
 ))}
+
+<div
+  style={{
+    marginTop: "2rem",
+    padding: "1.25rem 0",
+    borderTop: "1px solid rgba(255,255,255,.15)",
+    borderBottom: "1px solid rgba(255,255,255,.15)",
+  }}
+>
+  <p
+    style={{
+      margin: 0,
+      fontFamily: "Cormorant Garamond",
+      fontSize: "1.25rem",
+      letterSpacing: ".08rem",
+    }}
+  >
+    A SPECIAL CONSIDERATION
+  </p>
+
+  <p style={{ color: "#aaa", lineHeight: 1.7, margin: ".6rem 0" }}>
+    A special consideration for collectors acquiring multiple photographic prints.
+  </p>
+
+  <p style={{ color: "#aaa", margin: ".35rem 0" }}>2 prints — 5%</p>
+  <p style={{ color: "#aaa", margin: ".35rem 0" }}>3 prints — 10%</p>
+  <p style={{ color: "#aaa", margin: ".35rem 0" }}>4 or more prints — 15%</p>
+</div>
 
 <p style={{ marginTop: "1.5rem", opacity: .6 }}>
   Limited Edition
