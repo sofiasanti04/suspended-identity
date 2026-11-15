@@ -614,6 +614,7 @@ export default function GalleryArchiveScene({
 const [currentImage, setCurrentImage] = useState(initialImageIndex);
 const [fullscreen, setFullscreen] = useState(false);
 const [showInfo, setShowInfo] = useState(false);
+const [showExplore, setShowExplore] = useState(false);
 const {
   isMobile,
 } = useResponsive();
@@ -663,7 +664,439 @@ const [addedToCart, setAddedToCart] = useState(false);
       window.removeEventListener("keydown", handleKey);
   }, [fullscreen, images.length]);
 
-if (isMobile) {
+if (showExplore) {
+  return (
+    <main
+      style={{
+        position: "fixed",
+        inset: 0,
+        zIndex: 2000,
+        overflowY: "auto",
+        WebkitOverflowScrolling: "touch",
+        background: "#02050c",
+        color: "white",
+        padding: isMobile ? "28px 24px 50px" : "55px 6vw",
+        boxSizing: "border-box",
+      }}
+    >
+      <button
+        onClick={() => {
+          setShowExplore(false);
+          setShowInfo(false);
+        }}
+        style={{
+          ...buttonStyle,
+          padding: "12px 0",
+          border: "none",
+          fontSize: ".8rem",
+          textAlign: "left",
+          marginBottom: "2rem",
+        }}
+      >
+        ← BACK TO PRINT
+      </button>
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: isMobile ? "column" : "row",
+          alignItems: isMobile ? "center" : "flex-start",
+          gap: isMobile ? "2.5rem" : "6vw",
+          maxWidth: "1500px",
+          margin: "0 auto",
+        }}
+      >
+        {/* PHOTOGRAPH */}
+
+        <div
+          style={{
+            width: isMobile ? "100%" : "52%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            position: isMobile ? "relative" : "sticky",
+            top: isMobile ? "auto" : "30px",
+          }}
+        >
+          <img
+            src={currentPhoto.image}
+            alt={currentPhoto.title}
+            onClick={() => setFullscreen(true)}
+            style={{
+              width: "100%",
+              maxHeight: isMobile ? "65vh" : "78vh",
+              objectFit: "contain",
+              cursor: "zoom-in",
+            }}
+          />
+
+          <h2
+            style={{
+              fontFamily: "Cormorant Garamond",
+              fontWeight: 400,
+              fontSize: "2rem",
+              marginTop: "1.5rem",
+              textAlign: "center",
+            }}
+          >
+            {currentPhoto.title}
+          </h2>
+
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "2rem",
+              marginTop: ".5rem",
+            }}
+          >
+            <button onClick={previousImage} style={buttonStyle}>
+              ◀
+            </button>
+
+            <span>
+              {currentImage + 1} / {photographsList.length}
+            </span>
+
+            <button onClick={nextImage} style={buttonStyle}>
+              ▶
+            </button>
+          </div>
+        </div>
+
+        {/* PRINT OPTIONS AND SERVICES */}
+
+        <div
+          style={{
+            width: isMobile ? "100%" : "min(100%, 520px)",
+            flex: isMobile ? "none" : "1",
+            fontSize: ".95rem",
+            lineHeight: 1.8,
+          }}
+        >
+          <p
+            style={{
+              fontFamily: "Cormorant Garamond",
+              fontSize: "1.5rem",
+              margin: "0 0 1rem",
+              letterSpacing: ".08rem",
+            }}
+          >
+            PRINT SIZE
+          </p>
+
+          <p style={{ color: "#aaa" }}>
+            Select your preferred print size.
+          </p>
+
+          {currentPhoto.sizes.map((size, index) => (
+            <button
+              key={size.label}
+              onClick={() => setSelectedSize(index)}
+              style={{
+                width: "100%",
+                padding: "14px 0",
+                display: "flex",
+                background: "transparent",
+                border: "none",
+                borderBottom: "1px solid rgba(255,255,255,.15)",
+                color: selectedSize === index ? "#fff" : "#999",
+                cursor: "pointer",
+                textAlign: "left",
+                font: "inherit",
+              }}
+            >
+              {selectedSize === index ? "✓ " : ""}
+              {size.label}
+            </button>
+          ))}
+
+          <div
+            style={{
+              marginTop: "2rem",
+              borderTop: "1px solid rgba(255,255,255,.15)",
+              paddingTop: "1.5rem",
+            }}
+          >
+            <p
+              style={{
+                fontFamily: "Cormorant Garamond",
+                fontSize: "1.3rem",
+                margin: 0,
+              }}
+            >
+              PAPER
+            </p>
+            <p style={{ color: "#aaa" }}>
+              Paper type to be confirmed.
+            </p>
+          </div>
+
+          <p
+            style={{
+              marginTop: "1.5rem",
+              textAlign: "center",
+              fontSize: "1.5rem",
+              fontFamily: "Cormorant Garamond",
+            }}
+          >
+            €{currentPhoto.sizes[selectedSize].price}
+          </p>
+
+          <button
+            style={{ ...buttonStyle, width: "100%" }}
+            onClick={() => {
+              addToCart({
+                type: "photo",
+                code: selectedBust,
+                index: currentImage,
+                title: currentPhoto.title,
+                image: currentPhoto.image,
+                size: currentPhoto.sizes[selectedSize].label,
+                price: currentPhoto.sizes[selectedSize].price,
+              });
+
+              setAddedToCart(true);
+              setTimeout(() => setAddedToCart(false), 2000);
+            }}
+          >
+            {addedToCart ? "ADDED TO CART ✓" : "ADD TO CART"}
+          </button>
+
+{/* SPECIAL CONSIDERATION */}
+
+<div
+  style={{
+    marginTop: "1rem",
+    paddingTop: 0,
+    paddingBottom: "1rem",
+    lineHeight: 1.7,
+  }}
+>
+  <p style={{ color: "#aaa", marginBottom: ".75rem" }}>
+    A special consideration for collectors acquiring multiple
+    photographic prints.
+  </p>
+
+  <p>2 prints — 5%</p>
+  <p>3 prints — 10%</p>
+  <p>4 or more prints — 15%</p>
+</div>
+
+          {/* CUSTOM FRAMING */}
+
+          <div
+            style={{
+              marginTop: "1.5rem",
+              borderTop: "1px solid rgba(255,255,255,.15)",
+              paddingTop: "1.5rem",
+            }}
+          >
+            <p
+              style={{
+                fontFamily: "Cormorant Garamond",
+                fontSize: "1.3rem",
+                margin: 0,
+              }}
+            >
+              CUSTOM FRAMING
+            </p>
+
+            <div style={{ color: "#aaa" }}>
+              <p>
+                A frame developed specifically for the selected photograph,
+                in dialogue with the visual language and concept of the project.
+              </p>
+
+              <p>
+                Materials may include wood, epoxy resin, water-based resin,
+                wire or combinations of these materials.
+              </p>
+
+              <p>
+                Each frame is individually developed through a collaborative
+                process, taking into consideration the collector's personal
+                taste, aesthetic preferences and the characteristics of the
+                selected photograph.
+              </p>
+
+              <p style={{ color: "white", marginTop: "1.5rem" }}>
+                01 — PERSONAL CONSULTATION
+              </p>
+              <p>
+                A conversation to explore your ideas, preferences and the
+                relationship between the photograph and its frame.
+              </p>
+
+              <p style={{ color: "white" }}>
+                02 — DESIGN DEVELOPMENT
+              </p>
+              <p>
+                Dimensions, materials, colours and finishes are developed
+                specifically for the selected artwork.
+              </p>
+
+              <p style={{ color: "white" }}>
+                03 — CREATION PROCESS
+              </p>
+              <p>
+                You will receive updates throughout the development and
+                creation of your custom frame.
+              </p>
+
+              <p style={{ color: "white" }}>
+                04 — INDIVIDUAL QUOTATION
+              </p>
+              <p>
+                Each project is quoted individually according to its
+                dimensions, materials, complexity and development time.
+                Consultation and updates are included in the process.
+              </p>
+            </div>
+
+            <button
+              style={{
+                ...buttonStyle,
+                width: "100%",
+                marginTop: "1rem",
+                fontSize: ".75rem",
+                lineHeight: 1.6,
+              }}
+              onClick={() =>
+                (window.location.href =
+                  `mailto:sofiasantiphoto@gmail.com?subject=${encodeURIComponent(
+                    `Custom Framing — ${currentPhoto.title}`
+                  )}&body=${encodeURIComponent(
+                    `Hello,\n\nI would like to discuss a custom frame for ${currentPhoto.title} and request a quotation.\n\nI would be happy to share my ideas and preferences.\n\nThank you.`
+                  )}`)
+              }
+            >
+              DISCUSS YOUR CUSTOM FRAME & REQUEST A QUOTE
+            </button>
+          </div>
+
+          {/* ARTWORK SELECTION CONSULTATION */}
+
+          <div
+            style={{
+              marginTop: "3rem",
+              borderTop: "1px solid rgba(255,255,255,.15)",
+              paddingTop: "1.5rem",
+            }}
+          >
+            <p
+              style={{
+                fontFamily: "Cormorant Garamond",
+                fontSize: "1.3rem",
+                margin: 0,
+              }}
+            >
+              ARTWORK SELECTION CONSULTATION
+            </p>
+
+            <div style={{ color: "#aaa" }}>
+              <p>
+                Not sure which photograph would best suit your space or collection?
+                You can request a personal consultation to explore the photographs
+                that may best complement your interior, the atmosphere of a
+                particular environment or an existing collection.
+              </p>
+
+              <p>
+                Whether you are considering a single photograph or a selection
+                of multiple works, we can discuss possible combinations,
+                visual relationships and placement.
+              </p>
+            </div>
+
+            <button
+              style={{
+                ...buttonStyle,
+                width: "100%",
+                marginTop: "1rem",
+                fontSize: ".75rem",
+                lineHeight: 1.6,
+              }}
+              onClick={() =>
+                (window.location.href =
+                  `mailto:sofiasantiphoto@gmail.com?subject=${encodeURIComponent(
+                    `Artwork Selection Consultation — ${currentPhoto.title}`
+                  )}&body=${encodeURIComponent(
+                    `Hello,\n\nI would like to request a personal consultation about selecting photographic artworks.\n\nThank you.`
+                  )}`)
+              }
+            >
+              REQUEST A PERSONAL CONSULTATION
+            </button>
+          </div>
+
+          
+        </div>
+      </div>
+
+      {/* FULLSCREEN IMAGE */}
+
+      {fullscreen && (
+        <div
+          onClick={() => setFullscreen(false)}
+          style={{
+            position: "fixed",
+            inset: 0,
+            background: "rgba(0,0,0,.96)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 9999,
+          }}
+        >
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              previousImage();
+            }}
+            style={arrowLeft}
+          >
+            ‹
+          </button>
+
+          <img
+            src={images[currentImage]}
+            alt=""
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              maxWidth: "92vw",
+              maxHeight: "92vh",
+              objectFit: "contain",
+            }}
+          />
+
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              nextImage();
+            }}
+            style={arrowRight}
+          >
+            ›
+          </button>
+
+          <div
+            style={{
+              position: "absolute",
+              bottom: "40px",
+              color: "#aaa",
+              letterSpacing: ".2rem",
+            }}
+          >
+            {currentImage + 1} / {images.length}
+          </div>
+        </div>
+      )}
+    </main>
+  );
+}
+  if (isMobile) {
   return (
     <main
       style={{
@@ -861,64 +1294,6 @@ if (isMobile) {
     </p>
 
     <p style={{ marginTop: "1.5rem", opacity: .6 }}>
-      Available Sizes
-    </p>
-
-    {currentPhoto.sizes.map((size, index) => (
-  <button
-    key={size.label}
-    onClick={() => setSelectedSize(index)}
-    style={{
-      width: "100%",
-      padding: "12px 0",
-      display: "flex",
-      justifyContent: "space-between",
-      background: "transparent",
-      border: "none",
-      borderBottom: "1px solid rgba(255,255,255,.15)",
-      color: selectedSize === index ? "#ffffff" : "#999999",
-      cursor: "pointer",
-      textAlign: "left",
-      font: "inherit",
-    }}
-  >
-    <span>
-      {selectedSize === index ? "✓ " : ""}
-      {size.label}
-    </span>
-    <span>€ {size.price}</span>
-  </button>
-))}
-
-<div
-  style={{
-    marginTop: "2rem",
-    padding: "1.25rem 0",
-    borderTop: "1px solid rgba(255,255,255,.15)",
-    borderBottom: "1px solid rgba(255,255,255,.15)",
-  }}
->
-  <p
-    style={{
-      margin: 0,
-      fontFamily: "Cormorant Garamond",
-      fontSize: "1.25rem",
-      letterSpacing: ".08rem",
-    }}
-  >
-    A SPECIAL CONSIDERATION
-  </p>
-
-  <p style={{ color: "#aaa", lineHeight: 1.7, margin: ".6rem 0" }}>
-    A special consideration for collectors acquiring multiple photographic prints.
-  </p>
-
-  <p style={{ color: "#aaa", margin: ".35rem 0" }}>2 prints — 5%</p>
-  <p style={{ color: "#aaa", margin: ".35rem 0" }}>3 prints — 10%</p>
-  <p style={{ color: "#aaa", margin: ".35rem 0" }}>4 or more prints — 15%</p>
-</div>
-
-    <p style={{ marginTop: "1.5rem", opacity: .6 }}>
       Limited Edition
     </p>
 
@@ -953,6 +1328,101 @@ if (isMobile) {
     width: "100%",
   }}
   onClick={() => {
+    setShowInfo(false);
+    setShowExplore(!showExplore);
+  }}
+>
+  EXPLORE THIS PRINT
+</button>
+
+{showExplore && (
+  <div
+    style={{
+      width: "100%",
+      border: "1px solid rgba(255,255,255,.15)",
+      padding: "1.5rem",
+      boxSizing: "border-box",
+      fontSize: "1rem",
+      lineHeight: 1.7,
+    }}
+  >
+    <p
+      style={{
+        margin: 0,
+        fontFamily: "Cormorant Garamond",
+        fontSize: "1.3rem",
+        letterSpacing: ".08rem",
+      }}
+    >
+      PRINT SIZE
+    </p>
+
+    <p style={{ color: "#aaa" }}>
+      Select your preferred print size.
+    </p>
+    {currentPhoto.sizes.map((size, index) => (
+  <button
+    key={size.label}
+    onClick={() => setSelectedSize(index)}
+    style={{
+      width: "100%",
+      padding: "14px 0",
+      display: "flex",
+      justifyContent: "space-between",
+      background: "transparent",
+      border: "none",
+      borderBottom: "1px solid rgba(255,255,255,.15)",
+      color: selectedSize === index ? "#ffffff" : "#999999",
+      cursor: "pointer",
+      textAlign: "left",
+      font: "inherit",
+    }}
+  >
+    <span>
+      {selectedSize === index ? "✓ " : ""}
+      {size.label}
+    </span>
+  </button>
+))}
+<div
+  style={{
+    marginTop: "2rem",
+    borderTop: "1px solid rgba(255,255,255,.15)",
+    paddingTop: "1.5rem",
+  }}
+>
+  <p
+    style={{
+      margin: 0,
+      fontFamily: "Cormorant Garamond",
+      fontSize: "1.3rem",
+      letterSpacing: ".08rem",
+    }}
+  >
+    PAPER
+  </p>
+
+  <p style={{ color: "#aaa" }}>
+    Paper type to be confirmed.
+  </p>
+</div>
+<p
+  style={{
+    marginTop: "1.5rem",
+    marginBottom: ".5rem",
+    textAlign: "center",
+    fontSize: "1.3rem",
+    fontFamily: "Cormorant Garamond",
+  }}
+>
+  €{currentPhoto.sizes[selectedSize].price}
+</p>
+<button
+  style={{
+    ...buttonStyle,
+    width: "100%",
+  }}
+  onClick={() => {
   addToCart({
     type: "photo",
     code: selectedBust,
@@ -971,6 +1441,98 @@ if (isMobile) {
 }}
 >
 {addedToCart ? "ADDED TO CART ✓" : "ADD TO CART"}</button>
+  <div
+  style={{
+    marginTop: "2.5rem",
+    borderTop: "1px solid rgba(255,255,255,.15)",
+    paddingTop: "1.5rem",
+  }}
+>
+  <p
+    style={{
+      margin: 0,
+      fontFamily: "Cormorant Garamond",
+      fontSize: "1.3rem",
+      letterSpacing: ".08rem",
+    }}
+  >
+    CUSTOM FRAMING
+  </p>
+
+  <div style={{ color: "#aaa", lineHeight: 1.7 }}>
+  <p>
+    A frame developed specifically for the selected photograph,
+    in dialogue with the visual language and concept of the project.
+  </p>
+
+  <p>
+    Materials may include wood, epoxy resin, water-based resin,
+    wire or combinations of these materials.
+  </p>
+
+  <p>
+    Each frame is individually developed through a collaborative
+    process, taking into consideration the collector's personal
+    taste, aesthetic preferences and the characteristics of the
+    selected photograph.
+  </p>
+
+  <p style={{ color: "white", marginTop: "1.5rem" }}>
+    01 — PERSONAL CONSULTATION
+  </p>
+  <p>
+    A conversation to explore your ideas, preferences and the
+    relationship between the photograph and its frame.
+  </p>
+
+  <p style={{ color: "white" }}>
+    02 — DESIGN DEVELOPMENT
+  </p>
+  <p>
+    Dimensions, materials, colours and finishes are developed
+    specifically for the selected artwork.
+  </p>
+
+  <p style={{ color: "white" }}>
+    03 — CREATION PROCESS
+  </p>
+  <p>
+    You will receive updates throughout the development and
+    creation of your custom frame.
+  </p>
+
+    <p style={{ color: "white" }}>
+    04 — INDIVIDUAL QUOTATION
+  </p>
+  <p>
+    Each project is quoted individually according to its
+    dimensions, materials, complexity and development time.
+    Consultation and updates are included in the process.
+  </p>
+
+  <button
+    style={{
+      ...buttonStyle,
+      width: "100%",
+      marginTop: "1rem",
+      fontSize: ".75rem",
+      lineHeight: 1.6,
+    }}
+    onClick={() =>
+      (window.location.href =
+        `mailto:sofiasantiphoto@gmail.com?subject=${encodeURIComponent(
+          `Custom Framing — ${currentPhoto.title}`
+        )}&body=${encodeURIComponent(
+          `Hello,\n\nI would like to discuss a custom frame for ${currentPhoto.title} and request a quotation.\n\nI would be happy to share my ideas and preferences.\n\nThank you.`
+        )}`)
+    }
+  >
+    DISCUSS YOUR CUSTOM FRAME & REQUEST A QUOTE
+  </button>
+  </div>
+  </div>
+  </div>
+)}
 
 <button
   style={{
@@ -1284,64 +1846,6 @@ return (
   </p>
 
 <p style={{ marginTop: "1.5rem", opacity: .6 }}>
-  Available Sizes
-</p>
-
-{currentPhoto.sizes.map((size, index) => (
-  <button
-    key={size.label}
-    onClick={() => setSelectedSize(index)}
-    style={{
-      width: "100%",
-      padding: "12px 0",
-      display: "flex",
-      justifyContent: "space-between",
-      background: "transparent",
-      border: "none",
-      borderBottom: "1px solid rgba(255,255,255,.15)",
-      color: selectedSize === index ? "#ffffff" : "#999999",
-      cursor: "pointer",
-      textAlign: "left",
-      font: "inherit",
-    }}
-  >
-    <span>
-      {selectedSize === index ? "✓ " : ""}
-      {size.label}
-    </span>
-    <span>€ {size.price}</span>
-  </button>
-))}
-
-<div
-  style={{
-    marginTop: "2rem",
-    padding: "1.25rem 0",
-    borderTop: "1px solid rgba(255,255,255,.15)",
-    borderBottom: "1px solid rgba(255,255,255,.15)",
-  }}
->
-  <p
-    style={{
-      margin: 0,
-      fontFamily: "Cormorant Garamond",
-      fontSize: "1.25rem",
-      letterSpacing: ".08rem",
-    }}
-  >
-    A SPECIAL CONSIDERATION
-  </p>
-
-  <p style={{ color: "#aaa", lineHeight: 1.7, margin: ".6rem 0" }}>
-    A special consideration for collectors acquiring multiple photographic prints.
-  </p>
-
-  <p style={{ color: "#aaa", margin: ".35rem 0" }}>2 prints — 5%</p>
-  <p style={{ color: "#aaa", margin: ".35rem 0" }}>3 prints — 10%</p>
-  <p style={{ color: "#aaa", margin: ".35rem 0" }}>4 or more prints — 15%</p>
-</div>
-
-<p style={{ marginTop: "1.5rem", opacity: .6 }}>
   Limited Edition
 </p>
 
@@ -1373,42 +1877,201 @@ return (
 )}
 
     <button
-  style={{
-    ...buttonStyle,
-    width: "100%",
-  }}
+  style={buttonStyle}
   onClick={() => {
-  addToCart({
-    type: "photo",
-    code: selectedBust,
-    index: currentImage,
-    title: currentPhoto.title,
-    image: currentPhoto.image,
-    size: currentPhoto.sizes[selectedSize].label,
-    price: currentPhoto.sizes[selectedSize].price,
-  });
-
-  setAddedToCart(true);
-
-  setTimeout(() => {
-    setAddedToCart(false);
-  }, 2000);
-}}
+    setShowInfo(false);
+    setShowExplore(!showExplore);
+  }}
 >
-{addedToCart ? "ADDED TO CART ✓" : "ADD TO CART"}</button>
+  EXPLORE THIS PRINT
+</button>
+
+{showExplore && (
+  <div
+    style={{
+      border: "1px solid rgba(255,255,255,.15)",
+      padding: "1.5rem",
+      fontSize: ".95rem",
+      lineHeight: 1.8,
+      maxHeight: "65vh",
+      overflowY: "auto",
+    }}
+  >
+    <p style={{ margin: 0, fontFamily: "Cormorant Garamond", fontSize: "1.3rem" }}>
+      PRINT SIZE
+    </p>
+
+    <p style={{ color: "#aaa" }}>
+      Select your preferred print size.
+    </p>
+
+    {currentPhoto.sizes.map((size, index) => (
+      <button
+        key={size.label}
+        onClick={() => setSelectedSize(index)}
+        style={{
+          width: "100%",
+          padding: "14px 0",
+          display: "flex",
+          background: "transparent",
+          border: "none",
+          borderBottom: "1px solid rgba(255,255,255,.15)",
+          color: selectedSize === index ? "#fff" : "#999",
+          cursor: "pointer",
+          textAlign: "left",
+          font: "inherit",
+        }}
+      >
+        {selectedSize === index ? "✓ " : ""}
+        {size.label}
+      </button>
+    ))}
+
+    <div style={{ marginTop: "2rem", borderTop: "1px solid rgba(255,255,255,.15)", paddingTop: "1.5rem" }}>
+      <p style={{ margin: 0, fontFamily: "Cormorant Garamond", fontSize: "1.3rem" }}>
+        PAPER
+      </p>
+      <p style={{ color: "#aaa" }}>
+        Paper type to be confirmed.
+      </p>
+    </div>
+
+    <p style={{ marginTop: "1.5rem", textAlign: "center", fontSize: "1.3rem", fontFamily: "Cormorant Garamond" }}>
+      €{currentPhoto.sizes[selectedSize].price}
+    </p>
 
     <button
-      style={{
-  ...buttonStyle,
-  width: "100%",
-}}
-      onClick={() =>
-        (window.location.href =
-          "mailto:sofiasantiphoto@gmail.com?subject=Photography Information")
-      }
+      style={{ ...buttonStyle, width: "100%" }}
+      onClick={() => {
+        addToCart({
+          type: "photo",
+          code: selectedBust,
+          index: currentImage,
+          title: currentPhoto.title,
+          image: currentPhoto.image,
+          size: currentPhoto.sizes[selectedSize].label,
+          price: currentPhoto.sizes[selectedSize].price,
+        });
+
+        setAddedToCart(true);
+        setTimeout(() => setAddedToCart(false), 2000);
+      }}
     >
-      REQUEST INFORMATION
+      {addedToCart ? "ADDED TO CART ✓" : "ADD TO CART"}
     </button>
+
+    <div style={{ marginTop: "2.5rem", borderTop: "1px solid rgba(255,255,255,.15)", paddingTop: "1.5rem" }}>
+      <p style={{ margin: 0, fontFamily: "Cormorant Garamond", fontSize: "1.3rem" }}>
+        CUSTOM FRAMING
+      </p>
+
+      <div style={{ color: "#aaa" }}>
+        <p>
+          A frame developed specifically for the selected photograph,
+          in dialogue with the visual language and concept of the project.
+        </p>
+        <p>
+          Materials may include wood, epoxy resin, water-based resin,
+          wire or combinations of these materials.
+        </p>
+        <p>
+          Each frame is individually developed through a collaborative
+          process, taking into consideration the collector's personal
+          taste, aesthetic preferences and the characteristics of the
+          selected photograph.
+        </p>
+
+        <p style={{ color: "white", marginTop: "1.5rem" }}>
+          01 — PERSONAL CONSULTATION
+        </p>
+        <p>
+          A conversation to explore your ideas, preferences and the
+          relationship between the photograph and its frame.
+        </p>
+
+        <p style={{ color: "white" }}>02 — DESIGN DEVELOPMENT</p>
+        <p>
+          Dimensions, materials, colours and finishes are developed
+          specifically for the selected artwork.
+        </p>
+
+        <p style={{ color: "white" }}>03 — CREATION PROCESS</p>
+        <p>
+          You will receive updates throughout the development and
+          creation of your custom frame.
+        </p>
+
+        <p style={{ color: "white" }}>04 — INDIVIDUAL QUOTATION</p>
+        <p>
+          Each project is quoted individually according to its
+          dimensions, materials, complexity and development time.
+          Consultation and updates are included in the process.
+        </p>
+      </div>
+
+      <button
+        style={{ ...buttonStyle, width: "100%", marginTop: "1rem", fontSize: ".75rem", lineHeight: 1.6 }}
+        onClick={() =>
+          (window.location.href =
+            `mailto:sofiasantiphoto@gmail.com?subject=${encodeURIComponent(
+              `Custom Framing — ${currentPhoto.title}`
+            )}&body=${encodeURIComponent(
+              `Hello,\n\nI would like to discuss a custom frame for ${currentPhoto.title} and request a quotation.\n\nI would be happy to share my ideas and preferences.\n\nThank you.`
+            )}`)
+        }
+      >
+        DISCUSS YOUR CUSTOM FRAME & REQUEST A QUOTE
+      </button>
+    </div>
+
+    <div style={{ marginTop: "2.5rem", borderTop: "1px solid rgba(255,255,255,.15)", paddingTop: "1.5rem" }}>
+      <p style={{ margin: 0, fontFamily: "Cormorant Garamond", fontSize: "1.3rem" }}>
+        ARTWORK SELECTION CONSULTATION
+      </p>
+
+      <div style={{ color: "#aaa" }}>
+        <p>
+          Not sure which photograph would best suit your space or collection?
+          You can request a personal consultation to explore the photographs
+          that may best complement your interior, the atmosphere of a
+          particular environment or an existing collection.
+        </p>
+        <p>
+          Whether you are considering a single photograph or a selection
+          of multiple works, we can discuss possible combinations,
+          visual relationships and placement.
+        </p>
+      </div>
+
+      <button
+        style={{ ...buttonStyle, width: "100%", marginTop: "1rem", fontSize: ".75rem", lineHeight: 1.6 }}
+        onClick={() =>
+          (window.location.href =
+            `mailto:sofiasantiphoto@gmail.com?subject=${encodeURIComponent(
+              `Artwork Selection Consultation — ${currentPhoto.title}`
+            )}&body=${encodeURIComponent(
+              `Hello,\n\nI would like to request a personal consultation about selecting photographic artworks.\n\nThank you.`
+            )}`)
+        }
+      >
+        REQUEST A PERSONAL CONSULTATION
+      </button>
+    </div>
+
+    <div style={{ marginTop: "2.5rem", borderTop: "1px solid rgba(255,255,255,.15)", paddingTop: "1.5rem" }}>
+      <p style={{ margin: 0, fontFamily: "Cormorant Garamond", fontSize: "1.3rem" }}>
+        A SPECIAL CONSIDERATION
+      </p>
+
+      <p style={{ color: "#aaa" }}>
+        A special consideration for collectors acquiring multiple photographic prints.
+      </p>
+      <p>2 prints — 5%</p>
+      <p>3 prints — 10%</p>
+      <p>4 or more prints — 15%</p>
+    </div>
+  </div>
+)}
   </div>
   {fullscreen && (
         <div
