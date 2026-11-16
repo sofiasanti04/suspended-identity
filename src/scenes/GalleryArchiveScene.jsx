@@ -52,6 +52,7 @@ const photographs = {
   image: gallery01,
   title: "FEMALE ADAPTATION 01",
   year: 2026,
+  location: "London, England",
   medium: "Archival Pigment Print",
   sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -67,6 +68,7 @@ const photographs = {
       image: gallery02,
       title: "FEMALE ADAPTATION 02",
       year: 2026,
+      location: "London, England",
       medium: "Archival Pigment Print",
       sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -82,6 +84,7 @@ const photographs = {
       image: gallery03,
       title: "FEMALE ADAPTATION 03",
       year: 2026,
+      location: "London, England",
       medium: "Archival Pigment Print",
       sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -97,6 +100,7 @@ const photographs = {
       image: gallery04,
       title: "FEMALE ADAPTATION 04",
       year: 2026,
+      location: "London, England",
       medium: "Archival Pigment Print",
       sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -112,6 +116,7 @@ const photographs = {
       image: gallery05,
       title: "FEMALE ADAPTATION 05",
       year: 2026,
+      location: "London, England",
       medium: "Archival Pigment Print",
       sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -130,6 +135,7 @@ const photographs = {
   image: gallery201,
   title: "FEMALE ADAPTATION 06",
   year: 2026,
+  location: "London, England",
   medium: "Archival Pigment Print",
   sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -145,6 +151,7 @@ const photographs = {
   image: gallery202,
   title: "FEMALE ADAPTATION 07",
   year: 2026,
+  location: "London, England",
   medium: "Archival Pigment Print",
   sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -160,6 +167,7 @@ const photographs = {
   image: gallery203,
   title: "FEMALE ADAPTATION 08",
   year: 2026,
+  location: "London, England",
   medium: "Archival Pigment Print",
   sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -175,6 +183,7 @@ const photographs = {
   image: gallery204,
   title: "FEMALE ADAPTATION 09",
   year: 2026,
+  location: "London, England",
   medium: "Archival Pigment Print",
   sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -190,6 +199,7 @@ const photographs = {
   image: gallery205,
   title: "FEMALE ADAPTATION 10",
   year: 2026,
+  location: "London, England",
   medium: "Archival Pigment Print",
   sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -207,6 +217,7 @@ const photographs = {
       image: gallery301,
       title: "FEMALE ADAPTATION 11",
       year: 2026,
+      location: "Berlin, Germany",
       medium: "Archival Pigment Print",
       sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -222,6 +233,7 @@ const photographs = {
       image: gallery302,
       title: "FEMALE ADAPTATION 12",
       year: 2026,
+      location: "Berlin, Germany",
       medium: "Archival Pigment Print",
       sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -237,6 +249,7 @@ const photographs = {
       image: gallery303,
       title: "FEMALE ADAPTATION 13",
       year: 2026,
+      location: "Berlin, Germany",
       medium: "Archival Pigment Print",
       sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -252,6 +265,7 @@ const photographs = {
       image: gallery304,
       title: "FEMALE ADAPTATION 14",
       year: 2026,
+      location: "Berlin, Germany",
       medium: "Archival Pigment Print",
       sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -268,8 +282,9 @@ const photographs = {
 
     {
       image: gallery401,
-      title: "FEMALE ADAPTATION 16",
+      title: "FEMALE ADAPTATION 15",
       year: 2026,
+      location: "Berlin, Germany",
       medium: "Archival Pigment Print",
       sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -283,8 +298,9 @@ const photographs = {
 
     {
       image: gallery402,
-      title: "FEMALE ADAPTATION 17",
+      title: "FEMALE ADAPTATION 16",
       year: 2026,
+      location: "Berlin, Germany",
       medium: "Archival Pigment Print",
       sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -298,8 +314,9 @@ const photographs = {
 
     {
       image: gallery403,
-      title: "FEMALE ADAPTATION 18",
+      title: "FEMALE ADAPTATION 17",
       year: 2026,
+      location: "Berlin, Germany",
       medium: "Archival Pigment Print",
       sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -317,8 +334,9 @@ const photographs = {
 
     {
       image: gallery501,
-      title: "FEMALE ADAPTATION 19",
+      title: "FEMALE ADAPTATION 18",
       year: 2026,
+      location: "Berlin, Germany",
       medium: "Archival Pigment Print",
       sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -332,8 +350,9 @@ const photographs = {
 
     {
       image: gallery502,
-      title: "FEMALE ADAPTATION 20",
+      title: "FEMALE ADAPTATION 19",
       year: 2026,
+      location: "Berlin, Germany",
       medium: "Archival Pigment Print",
      sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -347,8 +366,9 @@ const photographs = {
 
     {
       image: gallery503,
-      title: "FEMALE ADAPTATION 21",
+      title: "FEMALE ADAPTATION 20",
       year: 2026,
+      location: "Berlin, Germany",
       medium: "Archival Pigment Print",
       sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -362,8 +382,9 @@ const photographs = {
 
     {
       image: gallery504,
-      title: "FEMALE ADAPTATION 22",
+      title: "FEMALE ADAPTATION 21",
       year: 2026,
+      location: "Berlin, Germany",
       medium: "Archival Pigment Print",
      sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -380,8 +401,9 @@ const photographs = {
   "FA-006": [
   {
     image: gallery601,
-    title: "FEMALE ADAPTATION 23",
+    title: "FEMALE ADAPTATION 22",
     year: 2026,
+    location: "Paris, France",
     medium: "Archival Pigment Print",
     sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -394,8 +416,9 @@ const photographs = {
   },
   {
     image: gallery602,
-    title: "FEMALE ADAPTATION 24",
+    title: "FEMALE ADAPTATION 23",
     year: 2026,
+    location: "Paris, France",
     medium: "Archival Pigment Print",
     sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -408,8 +431,9 @@ const photographs = {
   },
   {
     image: gallery603,
-    title: "FEMALE ADAPTATION 25",
+    title: "FEMALE ADAPTATION 24",
     year: 2026,
+    location: "Paris, France",
     medium: "Archival Pigment Print",
 sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -421,8 +445,9 @@ sizes: [
   },
   {
     image: gallery604,
-    title: "FEMALE ADAPTATION 26",
+    title: "FEMALE ADAPTATION 25",
     year: 2026,
+    location: "Paris, France",
     medium: "Archival Pigment Print",
 sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -434,8 +459,9 @@ sizes: [
   },
   {
     image: gallery605,
-    title: "FEMALE ADAPTATION 27",
+    title: "FEMALE ADAPTATION 26",
     year: 2026,
+    location: "Paris, France",
     medium: "Archival Pigment Print",
 sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -447,8 +473,9 @@ sizes: [
   },
   {
     image: gallery606,
-    title: "FEMALE ADAPTATION 28",
+    title: "FEMALE ADAPTATION 27",
     year: 2026,
+    location: "Paris, France",
     medium: "Archival Pigment Print",
 sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -464,8 +491,9 @@ sizes: [
 "FA-007": [
   {
     image: gallery701,
-    title: "FEMALE ADAPTATION 29",
+    title: "FEMALE ADAPTATION 28",
     year: 2026,
+    location: "Paris, France",
     medium: "Archival Pigment Print",
 sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -477,8 +505,9 @@ sizes: [
   },
   {
     image: gallery702,
-    title: "FEMALE ADAPTATION 30",
+    title: "FEMALE ADAPTATION 29",
     year: 2026,
+    location: "Paris, France",
     medium: "Archival Pigment Print",
 sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -490,8 +519,9 @@ sizes: [
   },
   {
     image: gallery703,
-    title: "FEMALE ADAPTATION 31",
+    title: "FEMALE ADAPTATION 30",
     year: 2026,
+    location: "Paris, France",
     medium: "Archival Pigment Print",
 sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -503,8 +533,9 @@ sizes: [
   },
   {
     image: gallery704,
-    title: "FEMALE ADAPTATION 32",
+    title: "FEMALE ADAPTATION 31",
     year: 2026,
+    location: "Paris, France",
     medium: "Archival Pigment Print",
 sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -516,8 +547,9 @@ sizes: [
   },
   {
     image: gallery705,
-    title: "FEMALE ADAPTATION 33",
+    title: "FEMALE ADAPTATION 32",
     year: 2026,
+    location: "Paris, France",
     medium: "Archival Pigment Print",
 sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -533,8 +565,9 @@ sizes: [
 "FA-008": [
   {
     image: gallery801,
-    title: "FEMALE ADAPTATION 34",
+    title: "FEMALE ADAPTATION 33",
     year: 2026,
+    location: "Paris, France",
     medium: "Archival Pigment Print",
 sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -546,8 +579,9 @@ sizes: [
   },
   {
     image: gallery802,
-    title: "FEMALE ADAPTATION 35",
+    title: "FEMALE ADAPTATION 34",
     year: 2026,
+    location: "Paris, France",
     medium: "Archival Pigment Print",
 sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -559,8 +593,9 @@ sizes: [
   },
   {
     image: gallery803,
-    title: "FEMALE ADAPTATION 36",
+    title: "FEMALE ADAPTATION 35",
     year: 2026,
+    location: "Paris, France",
     medium: "Archival Pigment Print",
 sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -572,8 +607,9 @@ sizes: [
   },
   {
     image: gallery804,
-    title: "FEMALE ADAPTATION 37",
+    title: "FEMALE ADAPTATION 36",
     year: 2026,
+    location: "Paris, France",
     medium: "Archival Pigment Print",
 sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -585,8 +621,9 @@ sizes: [
   },
   {
     image: gallery805,
-    title: "FEMALE ADAPTATION 38",
+    title: "FEMALE ADAPTATION 37",
     year: 2026,
+    location: "Paris, France",
     medium: "Archival Pigment Print",
 sizes: [
   { label: "30 × 45 cm", price: 85 },
@@ -1833,9 +1870,13 @@ return (
     {currentPhoto.year}
   </p>
 
-  <p style={{ marginTop: ".25rem" }}>
-    {currentPhoto.location}
-  </p>
+  <p style={{ marginTop: "1.5rem", opacity: .6 }}>
+  Location
+</p>
+
+<p style={{ marginTop: ".25rem" }}>
+  {currentPhoto.location}
+</p>
 
   <p style={{ marginTop: "1.5rem", opacity: .6 }}>
     Medium
